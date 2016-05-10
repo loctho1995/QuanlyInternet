@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -49,6 +50,13 @@
     <Compile Include="Ambiance Theme.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="BUS\HoaDon_BUS.cs" />
+    <Compile Include="BUS\KhachHang_BUS.cs" />
+    <Compile Include="BUS\SQLDataContext.cs" />
+    <Compile Include="BUS\TaiKhoan_BUS.cs" />
+    <Compile Include="BUS\ThongTinSuDungInternet_BUS.cs" />
+    <Compile Include="BUS\TTLuuThong_BUS.cs" />
+    <Compile Include="BUS\TTThanhToan_BUS.cs" />
     <Compile Include="ChartControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -60,6 +68,11 @@
     </Compile>
     <Compile Include="DangKiMoi.Designer.cs">
       <DependentUpon>DangKiMoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\quanlydangkyinternet.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>quanlydangkyinternet.dbml</DependentUpon>
     </Compile>
     <Compile Include="FilterOption.cs">
       <SubType>Form</SubType>
@@ -102,6 +115,9 @@
     <EmbeddedResource Include="DangKiMoi.resx">
       <DependentUpon>DangKiMoi.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DAO\quanlydangkyinternet.dbml.layout">
+      <DependentUpon>quanlydangkyinternet.dbml</DependentUpon>
+    </None>
     <EmbeddedResource Include="FilterOption.resx">
       <DependentUpon>FilterOption.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,6 +142,11 @@
     <EmbeddedResource Include="QuanLyTaiKhoan.resx">
       <DependentUpon>QuanLyTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DAO\quanlydangkyinternet.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>quanlydangkyinternet.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -138,6 +159,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
