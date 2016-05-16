@@ -16,7 +16,7 @@ namespace QuanLyInternet.BUS
             dt.Columns.Add("MaKH",typeof(int));
             dt.Columns.Add("Thang",typeof(int));
             dt.Columns.Add("Nam",typeof(int));
-            dt.Columns.Add("SoTienThanhToan",typeof(float));
+            dt.Columns.Add("TongTien",typeof(float));
             dt.Columns.Add("HanThanhToan",typeof(DateTime));
             dt.Columns.Add("NgayThanhToan",typeof(DateTime));
 
@@ -29,7 +29,7 @@ namespace QuanLyInternet.BUS
                 r["MaKH"] = i.MaKH;
                 r["Thang"] = i.Thang;
                 r["Nam"] = i.Nam;
-                r["SoTienThanhToan"] = i.SoTienThanhToan;
+                r["TongTien"] = i.TongTien;
                 r["HanThanhToan"] = i.HanThanhToan;
                 r["NgayThanhToan"] = i.NgayThanhToan;
                 dt.Rows.Add(r);

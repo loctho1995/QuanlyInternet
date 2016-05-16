@@ -24,6 +24,9 @@ namespace QuanLyInternet.BUS
             dt.Columns.Add("SoDienThoai", typeof(int));
             dt.Columns.Add("TTLuuThong", typeof(int));
             dt.Columns.Add("TTThanhToan", typeof(int));
+            dt.Columns.Add("MaDoiTuong", typeof(int));
+            dt.Columns.Add("MaGoiCuoc", typeof(int));
+
 
             var kh = SQLDataContext.SQLData.getKhachHang();
             int stt = 1;
@@ -42,6 +45,8 @@ namespace QuanLyInternet.BUS
                 r["SoDienThoai"] = i.SoDienThoai;
                 r["TTLuuThong"] = i.TTLuuThong;
                 r["TTThanhToan"] = i.TTThanhToan;
+                r["MaDoiTuong"] = i.MaDoiTuong;
+                r["MaGoiCuoc"] = i.MaGoiCuoc;
                 dt.Rows.Add(r);
             }
 
