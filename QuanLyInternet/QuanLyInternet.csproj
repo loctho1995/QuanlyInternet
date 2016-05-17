@@ -35,7 +35,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -50,33 +49,17 @@
     <Compile Include="Ambiance Theme.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="BUS\ApDungCTKM_BUS.cs" />
-    <Compile Include="BUS\CTKM_BUS.cs" />
-    <Compile Include="BUS\DoiTuong_BUS.cs" />
-    <Compile Include="BUS\GoiCuoc_BUS.cs" />
-    <Compile Include="BUS\HoaDon_BUS.cs" />
-    <Compile Include="BUS\KhachHang_BUS.cs" />
-    <Compile Include="BUS\SQLDataContext.cs" />
-    <Compile Include="BUS\TaiKhoan_BUS.cs" />
-    <Compile Include="BUS\ThongTinSuDungInternet_BUS.cs" />
-    <Compile Include="BUS\TTLuuThong_BUS.cs" />
-    <Compile Include="BUS\TTThanhToan_BUS.cs" />
     <Compile Include="ChartControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ChartControl.designer.cs">
       <DependentUpon>ChartControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="DangKiMoi.cs">
+    <Compile Include="FormDangKiMoi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DangKiMoi.Designer.cs">
-      <DependentUpon>DangKiMoi.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DAO\quanlydangkyinternet.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>quanlydangkyinternet.dbml</DependentUpon>
+    <Compile Include="FormDangKiMoi.Designer.cs">
+      <DependentUpon>FormDangKiMoi.cs</DependentUpon>
     </Compile>
     <Compile Include="FilterOption.cs">
       <SubType>Form</SubType>
@@ -84,17 +67,29 @@
     <Compile Include="FilterOption.Designer.cs">
       <DependentUpon>FilterOption.cs</DependentUpon>
     </Compile>
-    <Compile Include="HienThiKhachHang.cs">
+    <Compile Include="FormDSDinhChiTruyCap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HienThiKhachHang.Designer.cs">
-      <DependentUpon>HienThiKhachHang.cs</DependentUpon>
+    <Compile Include="FormDSDinhChiTruyCap.Designer.cs">
+      <DependentUpon>FormDSDinhChiTruyCap.cs</DependentUpon>
     </Compile>
-    <Compile Include="HoSoKhachHang.cs">
+    <Compile Include="FormThanhToanTre.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HoSoKhachHang.Designer.cs">
-      <DependentUpon>HoSoKhachHang.cs</DependentUpon>
+    <Compile Include="FormThanhToanTre.Designer.cs">
+      <DependentUpon>FormThanhToanTre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHienThiKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHienThiKhachHang.Designer.cs">
+      <DependentUpon>FormHienThiKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHoSoKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHoSoKhachHang.Designer.cs">
+      <DependentUpon>FormHoSoKhachHang.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -110,29 +105,38 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QuanLyTaiKhoan.cs">
+    <Compile Include="FormQuanLyTaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuanLyTaiKhoan.Designer.cs">
-      <DependentUpon>QuanLyTaiKhoan.cs</DependentUpon>
+    <Compile Include="FormQuanLyTaiKhoan.Designer.cs">
+      <DependentUpon>FormQuanLyTaiKhoan.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="DangKiMoi.resx">
-      <DependentUpon>DangKiMoi.cs</DependentUpon>
+    <Compile Include="FormSuaThongTin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSuaThongTin.Designer.cs">
+      <DependentUpon>FormSuaThongTin.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormDangKiMoi.resx">
+      <DependentUpon>FormDangKiMoi.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="DAO\quanlydangkyinternet.dbml.layout">
-      <DependentUpon>quanlydangkyinternet.dbml</DependentUpon>
-    </None>
     <EmbeddedResource Include="FilterOption.resx">
       <DependentUpon>FilterOption.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HienThiKhachHang.resx">
-      <DependentUpon>HienThiKhachHang.cs</DependentUpon>
+    <EmbeddedResource Include="FormDSDinhChiTruyCap.resx">
+      <DependentUpon>FormDSDinhChiTruyCap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HoSoKhachHang.resx">
-      <DependentUpon>HoSoKhachHang.cs</DependentUpon>
+    <EmbeddedResource Include="FormHienThiKhachHang.resx">
+      <DependentUpon>FormHienThiKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHoSoKhachHang.resx">
+      <DependentUpon>FormHoSoKhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThanhToanTre.resx">
+      <DependentUpon>FormThanhToanTre.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -143,14 +147,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="QuanLyTaiKhoan.resx">
-      <DependentUpon>QuanLyTaiKhoan.cs</DependentUpon>
+    <EmbeddedResource Include="FormQuanLyTaiKhoan.resx">
+      <DependentUpon>FormQuanLyTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="DAO\quanlydangkyinternet.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>quanlydangkyinternet.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
+    <EmbeddedResource Include="FormSuaThongTin.resx">
+      <DependentUpon>FormSuaThongTin.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -163,9 +165,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

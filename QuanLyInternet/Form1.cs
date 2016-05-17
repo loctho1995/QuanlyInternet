@@ -50,13 +50,13 @@ namespace QuanLyInternet
 
         private void monoFlat_Button1_Click(object sender, EventArgs e)
         {
-            DangKiMoi form = new DangKiMoi();
+            FormDangKiMoi form = new FormDangKiMoi();
             form.Show();
         }
 
         private void monoFlat_Button2_Click(object sender, EventArgs e)
         {
-            HoSoKhachHang form = new HoSoKhachHang();
+            FormHoSoKhachHang form = new FormHoSoKhachHang();
             form.Show();
         }
     }
