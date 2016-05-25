@@ -31,8 +31,6 @@
             this.ambiance_Button_11 = new Ambiance.Ambiance_Button_1();
             this.ambiance_ComboBox1 = new Ambiance.Ambiance_ComboBox();
             this.ambiance_Label9 = new Ambiance.Ambiance_Label();
-            this.tbSoTaiKhoan = new Ambiance.Ambiance_TextBox();
-            this.ambiance_Label8 = new Ambiance.Ambiance_Label();
             this.tbDCThanhToan = new Ambiance.Ambiance_TextBox();
             this.ambiance_Label7 = new Ambiance.Ambiance_Label();
             this.tbDCCaidat = new Ambiance.Ambiance_TextBox();
@@ -47,6 +45,10 @@
             this.ambiance_Label2 = new Ambiance.Ambiance_Label();
             this.tbHoVaTen = new Ambiance.Ambiance_TextBox();
             this.ambiance_Label1 = new Ambiance.Ambiance_Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.ambiance_Label8 = new Ambiance.Ambiance_Label();
+            this.ambiance_ComboBox2 = new Ambiance.Ambiance_ComboBox();
+            this.ambiance_Label10 = new Ambiance.Ambiance_Label();
             this.SuspendLayout();
             // 
             // ambiance_Button_11
@@ -57,7 +59,7 @@
             this.ambiance_Button_11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ambiance_Button_11.InActiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.ambiance_Button_11.InActiveColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(237)))), ((int)(((byte)(236)))));
-            this.ambiance_Button_11.Location = new System.Drawing.Point(498, 253);
+            this.ambiance_Button_11.Location = new System.Drawing.Point(553, 231);
             this.ambiance_Button_11.Name = "ambiance_Button_11";
             this.ambiance_Button_11.Size = new System.Drawing.Size(193, 38);
             this.ambiance_Button_11.TabIndex = 18;
@@ -80,9 +82,9 @@
             "Đang đợi",
             "Đang sử dụng",
             "Bị treo"});
-            this.ambiance_ComboBox1.Location = new System.Drawing.Point(127, 197);
+            this.ambiance_ComboBox1.Location = new System.Drawing.Point(536, 156);
             this.ambiance_ComboBox1.Name = "ambiance_ComboBox1";
-            this.ambiance_ComboBox1.Size = new System.Drawing.Size(165, 26);
+            this.ambiance_ComboBox1.Size = new System.Drawing.Size(207, 26);
             this.ambiance_ComboBox1.StartIndex = 0;
             this.ambiance_ComboBox1.TabIndex = 17;
             // 
@@ -92,38 +94,11 @@
             this.ambiance_Label9.BackColor = System.Drawing.Color.Transparent;
             this.ambiance_Label9.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.ambiance_Label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
-            this.ambiance_Label9.Location = new System.Drawing.Point(12, 197);
+            this.ambiance_Label9.Location = new System.Drawing.Point(405, 156);
             this.ambiance_Label9.Name = "ambiance_Label9";
             this.ambiance_Label9.Size = new System.Drawing.Size(75, 20);
             this.ambiance_Label9.TabIndex = 16;
             this.ambiance_Label9.Text = "Trạng thái";
-            // 
-            // tbSoTaiKhoan
-            // 
-            this.tbSoTaiKhoan.BackColor = System.Drawing.Color.Transparent;
-            this.tbSoTaiKhoan.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.tbSoTaiKhoan.ForeColor = System.Drawing.Color.DimGray;
-            this.tbSoTaiKhoan.Location = new System.Drawing.Point(569, 151);
-            this.tbSoTaiKhoan.MaxLength = 32767;
-            this.tbSoTaiKhoan.Multiline = false;
-            this.tbSoTaiKhoan.Name = "tbSoTaiKhoan";
-            this.tbSoTaiKhoan.ReadOnly = false;
-            this.tbSoTaiKhoan.Size = new System.Drawing.Size(104, 28);
-            this.tbSoTaiKhoan.TabIndex = 15;
-            this.tbSoTaiKhoan.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.tbSoTaiKhoan.UseSystemPasswordChar = false;
-            // 
-            // ambiance_Label8
-            // 
-            this.ambiance_Label8.AutoSize = true;
-            this.ambiance_Label8.BackColor = System.Drawing.Color.Transparent;
-            this.ambiance_Label8.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.ambiance_Label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
-            this.ambiance_Label8.Location = new System.Drawing.Point(405, 156);
-            this.ambiance_Label8.Name = "ambiance_Label8";
-            this.ambiance_Label8.Size = new System.Drawing.Size(148, 20);
-            this.ambiance_Label8.TabIndex = 14;
-            this.ambiance_Label8.Text = "Số tài khoản sử dụng";
             // 
             // tbDCThanhToan
             // 
@@ -157,12 +132,12 @@
             this.tbDCCaidat.BackColor = System.Drawing.Color.Transparent;
             this.tbDCCaidat.Font = new System.Drawing.Font("Tahoma", 11F);
             this.tbDCCaidat.ForeColor = System.Drawing.Color.DimGray;
-            this.tbDCCaidat.Location = new System.Drawing.Point(515, 112);
+            this.tbDCCaidat.Location = new System.Drawing.Point(536, 112);
             this.tbDCCaidat.MaxLength = 32767;
             this.tbDCCaidat.Multiline = false;
             this.tbDCCaidat.Name = "tbDCCaidat";
             this.tbDCCaidat.ReadOnly = false;
-            this.tbDCCaidat.Size = new System.Drawing.Size(161, 28);
+            this.tbDCCaidat.Size = new System.Drawing.Size(207, 28);
             this.tbDCCaidat.TabIndex = 11;
             this.tbDCCaidat.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.tbDCCaidat.UseSystemPasswordChar = false;
@@ -211,12 +186,12 @@
             this.tbSoDienThoai.BackColor = System.Drawing.Color.Transparent;
             this.tbSoDienThoai.Font = new System.Drawing.Font("Tahoma", 11F);
             this.tbSoDienThoai.ForeColor = System.Drawing.Color.DimGray;
-            this.tbSoDienThoai.Location = new System.Drawing.Point(515, 63);
+            this.tbSoDienThoai.Location = new System.Drawing.Point(536, 63);
             this.tbSoDienThoai.MaxLength = 32767;
             this.tbSoDienThoai.Multiline = false;
             this.tbSoDienThoai.Name = "tbSoDienThoai";
             this.tbSoDienThoai.ReadOnly = false;
-            this.tbSoDienThoai.Size = new System.Drawing.Size(161, 28);
+            this.tbSoDienThoai.Size = new System.Drawing.Size(207, 28);
             this.tbSoDienThoai.TabIndex = 7;
             this.tbSoDienThoai.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.tbSoDienThoai.UseSystemPasswordChar = false;
@@ -265,12 +240,12 @@
             this.tbSoCMND.BackColor = System.Drawing.Color.Transparent;
             this.tbSoCMND.Font = new System.Drawing.Font("Tahoma", 11F);
             this.tbSoCMND.ForeColor = System.Drawing.Color.DimGray;
-            this.tbSoCMND.Location = new System.Drawing.Point(515, 18);
+            this.tbSoCMND.Location = new System.Drawing.Point(536, 18);
             this.tbSoCMND.MaxLength = 32767;
             this.tbSoCMND.Multiline = false;
             this.tbSoCMND.Name = "tbSoCMND";
             this.tbSoCMND.ReadOnly = false;
-            this.tbSoCMND.Size = new System.Drawing.Size(161, 28);
+            this.tbSoCMND.Size = new System.Drawing.Size(207, 28);
             this.tbSoCMND.TabIndex = 3;
             this.tbSoCMND.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.tbSoCMND.UseSystemPasswordChar = false;
@@ -314,16 +289,73 @@
             this.ambiance_Label1.TabIndex = 0;
             this.ambiance_Label1.Text = "Họ và tên";
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(536, 196);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(207, 20);
+            this.dateTimePicker1.TabIndex = 19;
+            // 
+            // ambiance_Label8
+            // 
+            this.ambiance_Label8.AutoSize = true;
+            this.ambiance_Label8.BackColor = System.Drawing.Color.Transparent;
+            this.ambiance_Label8.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.ambiance_Label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
+            this.ambiance_Label8.Location = new System.Drawing.Point(405, 197);
+            this.ambiance_Label8.Name = "ambiance_Label8";
+            this.ambiance_Label8.Size = new System.Drawing.Size(103, 20);
+            this.ambiance_Label8.TabIndex = 20;
+            this.ambiance_Label8.Text = "Ngày áp dụng";
+            // 
+            // ambiance_ComboBox2
+            // 
+            this.ambiance_ComboBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.ambiance_ComboBox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ambiance_ComboBox2.DropDownHeight = 100;
+            this.ambiance_ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ambiance_ComboBox2.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.ambiance_ComboBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(142)))), ((int)(((byte)(142)))));
+            this.ambiance_ComboBox2.FormattingEnabled = true;
+            this.ambiance_ComboBox2.HoverSelectionColor = System.Drawing.Color.Empty;
+            this.ambiance_ComboBox2.IntegralHeight = false;
+            this.ambiance_ComboBox2.ItemHeight = 20;
+            this.ambiance_ComboBox2.Items.AddRange(new object[] {
+            "F10 (10 Mbps)",
+            "F15 (15 Mbps)",
+            "F20 (20 Mbps)",
+            "F25 (25 Mbps)",
+            "F32 (32 Mbps)"});
+            this.ambiance_ComboBox2.Location = new System.Drawing.Point(127, 191);
+            this.ambiance_ComboBox2.Name = "ambiance_ComboBox2";
+            this.ambiance_ComboBox2.Size = new System.Drawing.Size(211, 26);
+            this.ambiance_ComboBox2.StartIndex = 0;
+            this.ambiance_ComboBox2.TabIndex = 22;
+            // 
+            // ambiance_Label10
+            // 
+            this.ambiance_Label10.AutoSize = true;
+            this.ambiance_Label10.BackColor = System.Drawing.Color.Transparent;
+            this.ambiance_Label10.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.ambiance_Label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
+            this.ambiance_Label10.Location = new System.Drawing.Point(12, 194);
+            this.ambiance_Label10.Name = "ambiance_Label10";
+            this.ambiance_Label10.Size = new System.Drawing.Size(68, 20);
+            this.ambiance_Label10.TabIndex = 21;
+            this.ambiance_Label10.Text = "Gói cước";
+            // 
             // FormDangKiMoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(703, 303);
+            this.ClientSize = new System.Drawing.Size(758, 280);
+            this.Controls.Add(this.ambiance_ComboBox2);
+            this.Controls.Add(this.ambiance_Label10);
+            this.Controls.Add(this.ambiance_Label8);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.ambiance_Button_11);
             this.Controls.Add(this.ambiance_ComboBox1);
             this.Controls.Add(this.ambiance_Label9);
-            this.Controls.Add(this.tbSoTaiKhoan);
-            this.Controls.Add(this.ambiance_Label8);
             this.Controls.Add(this.tbDCThanhToan);
             this.Controls.Add(this.ambiance_Label7);
             this.Controls.Add(this.tbDCCaidat);
@@ -361,10 +393,12 @@
         private Ambiance.Ambiance_Label ambiance_Label6;
         private Ambiance.Ambiance_TextBox tbDCThanhToan;
         private Ambiance.Ambiance_Label ambiance_Label7;
-        private Ambiance.Ambiance_TextBox tbSoTaiKhoan;
-        private Ambiance.Ambiance_Label ambiance_Label8;
         private Ambiance.Ambiance_Label ambiance_Label9;
         private Ambiance.Ambiance_ComboBox ambiance_ComboBox1;
         private Ambiance.Ambiance_Button_1 ambiance_Button_11;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private Ambiance.Ambiance_Label ambiance_Label8;
+        private Ambiance.Ambiance_ComboBox ambiance_ComboBox2;
+        private Ambiance.Ambiance_Label ambiance_Label10;
     }
 }

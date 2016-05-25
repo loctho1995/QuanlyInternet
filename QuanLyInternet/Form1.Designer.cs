@@ -46,6 +46,7 @@
             this.chartCustomerStatus = new TaskManager.ChartControl();
             this.monoFlat_Button2 = new MonoFlat.MonoFlat_Button();
             this.monoFlat_Button1 = new MonoFlat.MonoFlat_Button();
+            this.monoFlat_Button3 = new MonoFlat.MonoFlat_Button();
             this.SuspendLayout();
             // 
             // monoFlat_Button7
@@ -63,8 +64,9 @@
             this.monoFlat_Button7.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
             this.monoFlat_Button7.Size = new System.Drawing.Size(217, 147);
             this.monoFlat_Button7.TabIndex = 19;
-            this.monoFlat_Button7.Text = "Cài đặt";
+            this.monoFlat_Button7.Text = "Quản lý gói cước";
             this.monoFlat_Button7.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.monoFlat_Button7.Click += new System.EventHandler(this.monoFlat_Button7_Click);
             // 
             // monoFlat_Button6
             // 
@@ -303,7 +305,7 @@
             this.monoFlat_Button2.Location = new System.Drawing.Point(263, 12);
             this.monoFlat_Button2.Name = "monoFlat_Button2";
             this.monoFlat_Button2.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.monoFlat_Button2.Size = new System.Drawing.Size(175, 147);
+            this.monoFlat_Button2.Size = new System.Drawing.Size(178, 73);
             this.monoFlat_Button2.TabIndex = 1;
             this.monoFlat_Button2.Text = "Hồ sơ khách hàng";
             this.monoFlat_Button2.TextAlignment = System.Drawing.StringAlignment.Center;
@@ -322,11 +324,30 @@
             this.monoFlat_Button1.Location = new System.Drawing.Point(25, 12);
             this.monoFlat_Button1.Name = "monoFlat_Button1";
             this.monoFlat_Button1.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.monoFlat_Button1.Size = new System.Drawing.Size(232, 147);
+            this.monoFlat_Button1.Size = new System.Drawing.Size(232, 73);
             this.monoFlat_Button1.TabIndex = 0;
             this.monoFlat_Button1.Text = "Đăng kí mới";
             this.monoFlat_Button1.TextAlignment = System.Drawing.StringAlignment.Center;
             this.monoFlat_Button1.Click += new System.EventHandler(this.monoFlat_Button1_Click);
+            // 
+            // monoFlat_Button3
+            // 
+            this.monoFlat_Button3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.monoFlat_Button3.BackColor = System.Drawing.Color.Transparent;
+            this.monoFlat_Button3.BorderInactiveColor = System.Drawing.Color.Empty;
+            this.monoFlat_Button3.BorderPressedColor = System.Drawing.Color.Empty;
+            this.monoFlat_Button3.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.monoFlat_Button3.Image = null;
+            this.monoFlat_Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.monoFlat_Button3.InactiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(41)))), ((int)(((byte)(42)))));
+            this.monoFlat_Button3.Location = new System.Drawing.Point(25, 91);
+            this.monoFlat_Button3.Name = "monoFlat_Button3";
+            this.monoFlat_Button3.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.monoFlat_Button3.Size = new System.Drawing.Size(416, 73);
+            this.monoFlat_Button3.TabIndex = 20;
+            this.monoFlat_Button3.Text = "Chương trình khuyến mãi";
+            this.monoFlat_Button3.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.monoFlat_Button3.Click += new System.EventHandler(this.monoFlat_Button3_Click);
             // 
             // Form1
             // 
@@ -334,6 +355,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(922, 498);
+            this.Controls.Add(this.monoFlat_Button3);
             this.Controls.Add(this.monoFlat_Button7);
             this.Controls.Add(this.monoFlat_Button6);
             this.Controls.Add(this.lbPercentUnpaid);
@@ -379,6 +401,7 @@
         private TaskManager.ChartControl chartPayment;
         private MonoFlat.MonoFlat_Button monoFlat_Button6;
         private MonoFlat.MonoFlat_Button monoFlat_Button7;
+        private MonoFlat.MonoFlat_Button monoFlat_Button3;
 
     }
 }

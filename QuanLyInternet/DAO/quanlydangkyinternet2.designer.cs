@@ -33,6 +33,9 @@ namespace QuanLyInternet.DAO
     partial void InsertAPDUNGCTKM(APDUNGCTKM instance);
     partial void UpdateAPDUNGCTKM(APDUNGCTKM instance);
     partial void DeleteAPDUNGCTKM(APDUNGCTKM instance);
+    partial void InsertTHONGTTINSUDUNGINTERNET(THONGTTINSUDUNGINTERNET instance);
+    partial void UpdateTHONGTTINSUDUNGINTERNET(THONGTTINSUDUNGINTERNET instance);
+    partial void DeleteTHONGTTINSUDUNGINTERNET(THONGTTINSUDUNGINTERNET instance);
     partial void InsertCTKM(CTKM instance);
     partial void UpdateCTKM(CTKM instance);
     partial void DeleteCTKM(CTKM instance);
@@ -57,13 +60,10 @@ namespace QuanLyInternet.DAO
     partial void InsertTTTHANHTOAN(TTTHANHTOAN instance);
     partial void UpdateTTTHANHTOAN(TTTHANHTOAN instance);
     partial void DeleteTTTHANHTOAN(TTTHANHTOAN instance);
-    partial void InsertTHONGTTINSUDUNGINTERNET(THONGTTINSUDUNGINTERNET instance);
-    partial void UpdateTHONGTTINSUDUNGINTERNET(THONGTTINSUDUNGINTERNET instance);
-    partial void DeleteTHONGTTINSUDUNGINTERNET(THONGTTINSUDUNGINTERNET instance);
     #endregion
 		
 		public quanlydangkyinternetDataContext() : 
-				base(global::QuanLyInternet.Properties.Settings.Default.QuanLyDangKyInternetConnectionString, mappingSource)
+				base(global::QuanLyInternet.Properties.Settings.Default.QuanLyDangKyInternetConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -100,11 +100,11 @@ namespace QuanLyInternet.DAO
 			}
 		}
 		
-		public System.Data.Linq.Table<THAMSO> THAMSOs
+		public System.Data.Linq.Table<THONGTTINSUDUNGINTERNET> THONGTTINSUDUNGINTERNETs
 		{
 			get
 			{
-				return this.GetTable<THAMSO>();
+				return this.GetTable<THONGTTINSUDUNGINTERNET>();
 			}
 		}
 		
@@ -172,11 +172,11 @@ namespace QuanLyInternet.DAO
 			}
 		}
 		
-		public System.Data.Linq.Table<THONGTTINSUDUNGINTERNET> THONGTTINSUDUNGINTERNETs
+		public System.Data.Linq.Table<THAMSO> THAMSOs
 		{
 			get
 			{
-				return this.GetTable<THONGTTINSUDUNGINTERNET>();
+				return this.GetTable<THAMSO>();
 			}
 		}
 		
@@ -515,65 +515,201 @@ namespace QuanLyInternet.DAO
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.THAMSO")]
-	public partial class THAMSO
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.THONGTTINSUDUNGINTERNET")]
+	public partial class THONGTTINSUDUNGINTERNET : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
-		private System.Nullable<double> _PhiDangKy;
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private System.Nullable<int> _NgayTinhCuoc;
+		private int _MaKH;
 		
-		private System.Nullable<int> _NgayHetHanThanhToan;
+		private int _MaTK;
 		
-		public THAMSO()
+		private System.DateTime _ThoiGianBatDau;
+		
+		private System.Nullable<System.DateTime> _ThoiGianKetThuc;
+		
+		private System.Nullable<double> _DungLuongSuDung;
+		
+		private EntityRef<KHACHHANG> _KHACHHANG;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaKHChanging(int value);
+    partial void OnMaKHChanged();
+    partial void OnMaTKChanging(int value);
+    partial void OnMaTKChanged();
+    partial void OnThoiGianBatDauChanging(System.DateTime value);
+    partial void OnThoiGianBatDauChanged();
+    partial void OnThoiGianKetThucChanging(System.Nullable<System.DateTime> value);
+    partial void OnThoiGianKetThucChanged();
+    partial void OnDungLuongSuDungChanging(System.Nullable<double> value);
+    partial void OnDungLuongSuDungChanged();
+    #endregion
+		
+		public THONGTTINSUDUNGINTERNET()
 		{
+			this._KHACHHANG = default(EntityRef<KHACHHANG>);
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhiDangKy", DbType="Float")]
-		public System.Nullable<double> PhiDangKy
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaKH", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int MaKH
 		{
 			get
 			{
-				return this._PhiDangKy;
+				return this._MaKH;
 			}
 			set
 			{
-				if ((this._PhiDangKy != value))
+				if ((this._MaKH != value))
 				{
-					this._PhiDangKy = value;
+					if (this._KHACHHANG.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMaKHChanging(value);
+					this.SendPropertyChanging();
+					this._MaKH = value;
+					this.SendPropertyChanged("MaKH");
+					this.OnMaKHChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayTinhCuoc", DbType="Int")]
-		public System.Nullable<int> NgayTinhCuoc
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaTK", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int MaTK
 		{
 			get
 			{
-				return this._NgayTinhCuoc;
+				return this._MaTK;
 			}
 			set
 			{
-				if ((this._NgayTinhCuoc != value))
+				if ((this._MaTK != value))
 				{
-					this._NgayTinhCuoc = value;
+					this.OnMaTKChanging(value);
+					this.SendPropertyChanging();
+					this._MaTK = value;
+					this.SendPropertyChanged("MaTK");
+					this.OnMaTKChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayHetHanThanhToan", DbType="Int")]
-		public System.Nullable<int> NgayHetHanThanhToan
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ThoiGianBatDau", DbType="DateTime NOT NULL", IsPrimaryKey=true)]
+		public System.DateTime ThoiGianBatDau
 		{
 			get
 			{
-				return this._NgayHetHanThanhToan;
+				return this._ThoiGianBatDau;
 			}
 			set
 			{
-				if ((this._NgayHetHanThanhToan != value))
+				if ((this._ThoiGianBatDau != value))
 				{
-					this._NgayHetHanThanhToan = value;
+					this.OnThoiGianBatDauChanging(value);
+					this.SendPropertyChanging();
+					this._ThoiGianBatDau = value;
+					this.SendPropertyChanged("ThoiGianBatDau");
+					this.OnThoiGianBatDauChanged();
 				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ThoiGianKetThuc", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ThoiGianKetThuc
+		{
+			get
+			{
+				return this._ThoiGianKetThuc;
+			}
+			set
+			{
+				if ((this._ThoiGianKetThuc != value))
+				{
+					this.OnThoiGianKetThucChanging(value);
+					this.SendPropertyChanging();
+					this._ThoiGianKetThuc = value;
+					this.SendPropertyChanged("ThoiGianKetThuc");
+					this.OnThoiGianKetThucChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DungLuongSuDung", DbType="Float")]
+		public System.Nullable<double> DungLuongSuDung
+		{
+			get
+			{
+				return this._DungLuongSuDung;
+			}
+			set
+			{
+				if ((this._DungLuongSuDung != value))
+				{
+					this.OnDungLuongSuDungChanging(value);
+					this.SendPropertyChanging();
+					this._DungLuongSuDung = value;
+					this.SendPropertyChanged("DungLuongSuDung");
+					this.OnDungLuongSuDungChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHACHHANG_THONGTTINSUDUNGINTERNET", Storage="_KHACHHANG", ThisKey="MaKH", OtherKey="MaKH", IsForeignKey=true)]
+		public KHACHHANG KHACHHANG
+		{
+			get
+			{
+				return this._KHACHHANG.Entity;
+			}
+			set
+			{
+				KHACHHANG previousValue = this._KHACHHANG.Entity;
+				if (((previousValue != value) 
+							|| (this._KHACHHANG.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._KHACHHANG.Entity = null;
+						previousValue.THONGTTINSUDUNGINTERNETs.Remove(this);
+					}
+					this._KHACHHANG.Entity = value;
+					if ((value != null))
+					{
+						value.THONGTTINSUDUNGINTERNETs.Add(this);
+						this._MaKH = value.MaKH;
+					}
+					else
+					{
+						this._MaKH = default(int);
+					}
+					this.SendPropertyChanged("KHACHHANG");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
@@ -1375,11 +1511,11 @@ namespace QuanLyInternet.DAO
 		
 		private System.Nullable<int> _MaGoiCuoc;
 		
+		private EntitySet<THONGTTINSUDUNGINTERNET> _THONGTTINSUDUNGINTERNETs;
+		
 		private EntitySet<HOADON> _HOADONs;
 		
 		private EntitySet<TAIKHOAN> _TAIKHOANs;
-		
-		private EntitySet<THONGTTINSUDUNGINTERNET> _THONGTTINSUDUNGINTERNETs;
 		
 		private EntityRef<DOITUONG> _DOITUONG;
 		
@@ -1423,9 +1559,9 @@ namespace QuanLyInternet.DAO
 		
 		public KHACHHANG()
 		{
+			this._THONGTTINSUDUNGINTERNETs = new EntitySet<THONGTTINSUDUNGINTERNET>(new Action<THONGTTINSUDUNGINTERNET>(this.attach_THONGTTINSUDUNGINTERNETs), new Action<THONGTTINSUDUNGINTERNET>(this.detach_THONGTTINSUDUNGINTERNETs));
 			this._HOADONs = new EntitySet<HOADON>(new Action<HOADON>(this.attach_HOADONs), new Action<HOADON>(this.detach_HOADONs));
 			this._TAIKHOANs = new EntitySet<TAIKHOAN>(new Action<TAIKHOAN>(this.attach_TAIKHOANs), new Action<TAIKHOAN>(this.detach_TAIKHOANs));
-			this._THONGTTINSUDUNGINTERNETs = new EntitySet<THONGTTINSUDUNGINTERNET>(new Action<THONGTTINSUDUNGINTERNET>(this.attach_THONGTTINSUDUNGINTERNETs), new Action<THONGTTINSUDUNGINTERNET>(this.detach_THONGTTINSUDUNGINTERNETs));
 			this._DOITUONG = default(EntityRef<DOITUONG>);
 			this._GOICUOC = default(EntityRef<GOICUOC>);
 			this._TTLUUTHONG1 = default(EntityRef<TTLUUTHONG>);
@@ -1709,6 +1845,19 @@ namespace QuanLyInternet.DAO
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHACHHANG_THONGTTINSUDUNGINTERNET", Storage="_THONGTTINSUDUNGINTERNETs", ThisKey="MaKH", OtherKey="MaKH")]
+		public EntitySet<THONGTTINSUDUNGINTERNET> THONGTTINSUDUNGINTERNETs
+		{
+			get
+			{
+				return this._THONGTTINSUDUNGINTERNETs;
+			}
+			set
+			{
+				this._THONGTTINSUDUNGINTERNETs.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHACHHANG_HOADON", Storage="_HOADONs", ThisKey="MaKH", OtherKey="MaKH")]
 		public EntitySet<HOADON> HOADONs
 		{
@@ -1732,19 +1881,6 @@ namespace QuanLyInternet.DAO
 			set
 			{
 				this._TAIKHOANs.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHACHHANG_THONGTTINSUDUNGINTERNET", Storage="_THONGTTINSUDUNGINTERNETs", ThisKey="MaKH", OtherKey="MaKH")]
-		public EntitySet<THONGTTINSUDUNGINTERNET> THONGTTINSUDUNGINTERNETs
-		{
-			get
-			{
-				return this._THONGTTINSUDUNGINTERNETs;
-			}
-			set
-			{
-				this._THONGTTINSUDUNGINTERNETs.Assign(value);
 			}
 		}
 		
@@ -1904,6 +2040,18 @@ namespace QuanLyInternet.DAO
 			}
 		}
 		
+		private void attach_THONGTTINSUDUNGINTERNETs(THONGTTINSUDUNGINTERNET entity)
+		{
+			this.SendPropertyChanging();
+			entity.KHACHHANG = this;
+		}
+		
+		private void detach_THONGTTINSUDUNGINTERNETs(THONGTTINSUDUNGINTERNET entity)
+		{
+			this.SendPropertyChanging();
+			entity.KHACHHANG = null;
+		}
+		
 		private void attach_HOADONs(HOADON entity)
 		{
 			this.SendPropertyChanging();
@@ -1923,18 +2071,6 @@ namespace QuanLyInternet.DAO
 		}
 		
 		private void detach_TAIKHOANs(TAIKHOAN entity)
-		{
-			this.SendPropertyChanging();
-			entity.KHACHHANG = null;
-		}
-		
-		private void attach_THONGTTINSUDUNGINTERNETs(THONGTTINSUDUNGINTERNET entity)
-		{
-			this.SendPropertyChanging();
-			entity.KHACHHANG = this;
-		}
-		
-		private void detach_THONGTTINSUDUNGINTERNETs(THONGTTINSUDUNGINTERNET entity)
 		{
 			this.SendPropertyChanging();
 			entity.KHACHHANG = null;
@@ -2344,201 +2480,65 @@ namespace QuanLyInternet.DAO
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.THONGTTINSUDUNGINTERNET")]
-	public partial class THONGTTINSUDUNGINTERNET : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.THAMSO")]
+	public partial class THAMSO
 	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		private System.Nullable<double> _PhiDangKy;
 		
-		private int _MaKH;
+		private System.Nullable<int> _NgayTinhCuoc;
 		
-		private int _MaTK;
+		private System.Nullable<int> _NgayHetHanThanhToan;
 		
-		private System.DateTime _ThoiGianBatDau;
-		
-		private System.Nullable<System.DateTime> _ThoiGianKetThuc;
-		
-		private System.Nullable<double> _DungLuongSuDung;
-		
-		private EntityRef<KHACHHANG> _KHACHHANG;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMaKHChanging(int value);
-    partial void OnMaKHChanged();
-    partial void OnMaTKChanging(int value);
-    partial void OnMaTKChanged();
-    partial void OnThoiGianBatDauChanging(System.DateTime value);
-    partial void OnThoiGianBatDauChanged();
-    partial void OnThoiGianKetThucChanging(System.Nullable<System.DateTime> value);
-    partial void OnThoiGianKetThucChanged();
-    partial void OnDungLuongSuDungChanging(System.Nullable<double> value);
-    partial void OnDungLuongSuDungChanged();
-    #endregion
-		
-		public THONGTTINSUDUNGINTERNET()
+		public THAMSO()
 		{
-			this._KHACHHANG = default(EntityRef<KHACHHANG>);
-			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaKH", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int MaKH
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhiDangKy", DbType="Float")]
+		public System.Nullable<double> PhiDangKy
 		{
 			get
 			{
-				return this._MaKH;
+				return this._PhiDangKy;
 			}
 			set
 			{
-				if ((this._MaKH != value))
+				if ((this._PhiDangKy != value))
 				{
-					if (this._KHACHHANG.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMaKHChanging(value);
-					this.SendPropertyChanging();
-					this._MaKH = value;
-					this.SendPropertyChanged("MaKH");
-					this.OnMaKHChanged();
+					this._PhiDangKy = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaTK", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int MaTK
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayTinhCuoc", DbType="Int")]
+		public System.Nullable<int> NgayTinhCuoc
 		{
 			get
 			{
-				return this._MaTK;
+				return this._NgayTinhCuoc;
 			}
 			set
 			{
-				if ((this._MaTK != value))
+				if ((this._NgayTinhCuoc != value))
 				{
-					this.OnMaTKChanging(value);
-					this.SendPropertyChanging();
-					this._MaTK = value;
-					this.SendPropertyChanged("MaTK");
-					this.OnMaTKChanged();
+					this._NgayTinhCuoc = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ThoiGianBatDau", DbType="DateTime NOT NULL", IsPrimaryKey=true)]
-		public System.DateTime ThoiGianBatDau
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayHetHanThanhToan", DbType="Int")]
+		public System.Nullable<int> NgayHetHanThanhToan
 		{
 			get
 			{
-				return this._ThoiGianBatDau;
+				return this._NgayHetHanThanhToan;
 			}
 			set
 			{
-				if ((this._ThoiGianBatDau != value))
+				if ((this._NgayHetHanThanhToan != value))
 				{
-					this.OnThoiGianBatDauChanging(value);
-					this.SendPropertyChanging();
-					this._ThoiGianBatDau = value;
-					this.SendPropertyChanged("ThoiGianBatDau");
-					this.OnThoiGianBatDauChanged();
+					this._NgayHetHanThanhToan = value;
 				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ThoiGianKetThuc", DbType="DateTime")]
-		public System.Nullable<System.DateTime> ThoiGianKetThuc
-		{
-			get
-			{
-				return this._ThoiGianKetThuc;
-			}
-			set
-			{
-				if ((this._ThoiGianKetThuc != value))
-				{
-					this.OnThoiGianKetThucChanging(value);
-					this.SendPropertyChanging();
-					this._ThoiGianKetThuc = value;
-					this.SendPropertyChanged("ThoiGianKetThuc");
-					this.OnThoiGianKetThucChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DungLuongSuDung", DbType="Float")]
-		public System.Nullable<double> DungLuongSuDung
-		{
-			get
-			{
-				return this._DungLuongSuDung;
-			}
-			set
-			{
-				if ((this._DungLuongSuDung != value))
-				{
-					this.OnDungLuongSuDungChanging(value);
-					this.SendPropertyChanging();
-					this._DungLuongSuDung = value;
-					this.SendPropertyChanged("DungLuongSuDung");
-					this.OnDungLuongSuDungChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHACHHANG_THONGTTINSUDUNGINTERNET", Storage="_KHACHHANG", ThisKey="MaKH", OtherKey="MaKH", IsForeignKey=true)]
-		public KHACHHANG KHACHHANG
-		{
-			get
-			{
-				return this._KHACHHANG.Entity;
-			}
-			set
-			{
-				KHACHHANG previousValue = this._KHACHHANG.Entity;
-				if (((previousValue != value) 
-							|| (this._KHACHHANG.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._KHACHHANG.Entity = null;
-						previousValue.THONGTTINSUDUNGINTERNETs.Remove(this);
-					}
-					this._KHACHHANG.Entity = value;
-					if ((value != null))
-					{
-						value.THONGTTINSUDUNGINTERNETs.Add(this);
-						this._MaKH = value.MaKH;
-					}
-					else
-					{
-						this._MaKH = default(int);
-					}
-					this.SendPropertyChanged("KHACHHANG");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}

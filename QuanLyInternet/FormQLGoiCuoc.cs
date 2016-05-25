@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QuanLyInternet
 {
-    public partial class FormQuanLyTaiKhoan:Form
+    public partial class FormQLGoiCuoc:Form
     {
-        public FormQuanLyTaiKhoan()
+        public FormQLGoiCuoc()
         {
             InitializeComponent();
         }

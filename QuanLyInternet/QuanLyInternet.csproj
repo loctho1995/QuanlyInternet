@@ -56,12 +56,16 @@
     <Compile Include="ChartControl.designer.cs">
       <DependentUpon>ChartControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="DAO\quanlydangkyinternet.designer.cs" />
-    <Compile Include="DAO\quanlydangkyinternet1.designer.cs" />
     <Compile Include="DAO\quanlydangkyinternet2.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>quanlydangkyinternet.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="FormCTKhuyenMai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCTKhuyenMai.Designer.cs">
+      <DependentUpon>FormCTKhuyenMai.cs</DependentUpon>
     </Compile>
     <Compile Include="FormDangKiMoi.cs">
       <SubType>Form</SubType>
@@ -80,6 +84,18 @@
     </Compile>
     <Compile Include="FormDSDinhChiTruyCap.Designer.cs">
       <DependentUpon>FormDSDinhChiTruyCap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormQLGoiCuoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormQLGoiCuoc.Designer.cs">
+      <DependentUpon>FormQLGoiCuoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormQLKhuyenMai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormQLKhuyenMai.Designer.cs">
+      <DependentUpon>FormQLKhuyenMai.cs</DependentUpon>
     </Compile>
     <Compile Include="FormThanhToanTre.cs">
       <SubType>Form</SubType>
@@ -113,12 +129,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="FormQuanLyTaiKhoan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormQuanLyTaiKhoan.Designer.cs">
-      <DependentUpon>FormQuanLyTaiKhoan.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormSuaThongTin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +155,9 @@
     <None Include="DAO\quanlydangkyinternet.dbml.layout">
       <DependentUpon>quanlydangkyinternet.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="FormCTKhuyenMai.resx">
+      <DependentUpon>FormCTKhuyenMai.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormDangKiMoi.resx">
       <DependentUpon>FormDangKiMoi.cs</DependentUpon>
     </EmbeddedResource>
@@ -163,6 +176,12 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormQLGoiCuoc.resx">
+      <DependentUpon>FormQLGoiCuoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormQLKhuyenMai.resx">
+      <DependentUpon>FormQLKhuyenMai.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormThanhToanTre.resx">
       <DependentUpon>FormThanhToanTre.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,9 +194,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FormQuanLyTaiKhoan.resx">
-      <DependentUpon>FormQuanLyTaiKhoan.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormSuaThongTin.resx">
       <DependentUpon>FormSuaThongTin.cs</DependentUpon>
     </EmbeddedResource>

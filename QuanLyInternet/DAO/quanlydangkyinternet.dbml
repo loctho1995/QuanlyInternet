@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QuanLyDangKyInternet" Class="quanlydangkyinternetDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=THINH;Initial Catalog=QuanLyDangKyInternet;Integrated Security=True" SettingsObjectName="QuanLyInternet.Properties.Settings" SettingsPropertyName="QuanLyDangKyInternetConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LOCTHO\LOCTHO;Initial Catalog=QuanLyDangKyInternet;Integrated Security=True" SettingsObjectName="QuanLyInternet.Properties.Settings" SettingsPropertyName="QuanLyDangKyInternetConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.APDUNGCTKM" Member="APDUNGCTKMs">
     <Type Name="APDUNGCTKM">
       <Column Name="STT" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -11,11 +11,14 @@
       <Association Name="GOICUOC_APDUNGCTKM" Member="GOICUOC" ThisKey="MaGoiCuocKM" OtherKey="MaGoiCuoc" Type="GOICUOC" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.THAMSO" Member="THAMSOs">
-    <Type Name="THAMSO">
-      <Column Name="PhiDangKy" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="NgayTinhCuoc" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NgayHetHanThanhToan" Type="System.Int32" DbType="Int" CanBeNull="true" />
+  <Table Name="dbo.THONGTTINSUDUNGINTERNET" Member="THONGTTINSUDUNGINTERNETs">
+    <Type Name="THONGTTINSUDUNGINTERNET">
+      <Column Name="MaKH" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaTK" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ThoiGianBatDau" Type="System.DateTime" DbType="DateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ThoiGianKetThuc" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DungLuongSuDung" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="KHACHHANG_THONGTTINSUDUNGINTERNET" Member="KHACHHANG" ThisKey="MaKH" OtherKey="MaKH" Type="KHACHHANG" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.CTKM" Member="CTKMs">
@@ -73,9 +76,9 @@
       <Column Name="TTThanhToan" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="MaDoiTuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="MaGoiCuoc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="KHACHHANG_THONGTTINSUDUNGINTERNET" Member="THONGTTINSUDUNGINTERNETs" ThisKey="MaKH" OtherKey="MaKH" Type="THONGTTINSUDUNGINTERNET" />
       <Association Name="KHACHHANG_HOADON" Member="HOADONs" ThisKey="MaKH" OtherKey="MaKH" Type="HOADON" />
       <Association Name="KHACHHANG_TAIKHOAN" Member="TAIKHOANs" ThisKey="MaKH" OtherKey="MaKH" Type="TAIKHOAN" />
-      <Association Name="KHACHHANG_THONGTTINSUDUNGINTERNET" Member="THONGTTINSUDUNGINTERNETs" ThisKey="MaKH" OtherKey="MaKH" Type="THONGTTINSUDUNGINTERNET" />
       <Association Name="DOITUONG_KHACHHANG" Member="DOITUONG" ThisKey="MaDoiTuong" OtherKey="MaDoiTuong" Type="DOITUONG" IsForeignKey="true" />
       <Association Name="GOICUOC_KHACHHANG" Member="GOICUOC" ThisKey="MaGoiCuoc" OtherKey="MaGoiCuoc" Type="GOICUOC" IsForeignKey="true" />
       <Association Name="TTLUUTHONG_KHACHHANG" Member="TTLUUTHONG1" ThisKey="TTLuuThong" OtherKey="MaTT" Type="TTLUUTHONG" IsForeignKey="true" />
@@ -105,14 +108,11 @@
       <Association Name="TTTHANHTOAN_KHACHHANG" Member="KHACHHANGs" ThisKey="MaTT" OtherKey="TTThanhToan" Type="KHACHHANG" />
     </Type>
   </Table>
-  <Table Name="dbo.THONGTTINSUDUNGINTERNET" Member="THONGTTINSUDUNGINTERNETs">
-    <Type Name="THONGTTINSUDUNGINTERNET">
-      <Column Name="MaKH" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MaTK" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="ThoiGianBatDau" Type="System.DateTime" DbType="DateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="ThoiGianKetThuc" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="DungLuongSuDung" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Association Name="KHACHHANG_THONGTTINSUDUNGINTERNET" Member="KHACHHANG" ThisKey="MaKH" OtherKey="MaKH" Type="KHACHHANG" IsForeignKey="true" />
+  <Table Name="dbo.THAMSO" Member="THAMSOs">
+    <Type Name="THAMSO">
+      <Column Name="PhiDangKy" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NgayTinhCuoc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NgayHetHanThanhToan" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.getApDungCTKM" Method="getApDungCTKM">

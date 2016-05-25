@@ -22,5 +22,26 @@ namespace QuanLyInternet.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=THINH;Initial Catalog=QuanLyDangKyInternet;Integrated Security=True")]
+        public string QuanLyDangKyInternetConnectionString {
+            get {
+                return ((string)(this["QuanLyDangKyInternetConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LOCTHO\\LOCTHO;Initial Catalog=QuanLyDangKyInternet;Integrated Securit" +
+            "y=True")]
+        public string QuanLyDangKyInternetConnectionString1 {
+            get {
+                return ((string)(this["QuanLyDangKyInternetConnectionString1"]));
+            }
+        }
     }
 }

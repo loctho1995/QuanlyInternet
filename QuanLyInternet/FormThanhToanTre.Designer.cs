@@ -29,16 +29,38 @@
         private void InitializeComponent()
         {
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.Sohopdong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView
             // 
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Sohopdong,
+            this.Column1,
+            this.Column2});
             this.dataGridView.Location = new System.Drawing.Point(12, 12);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.Size = new System.Drawing.Size(759, 411);
             this.dataGridView.TabIndex = 0;
+            // 
+            // Sohopdong
+            // 
+            this.Sohopdong.HeaderText = "Số hợp đồng";
+            this.Sohopdong.Name = "Sohopdong";
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Tháng";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Số tiền nợ";
+            this.Column2.Name = "Column2";
             // 
             // FormThanhToanTre
             // 
@@ -56,5 +78,8 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sohopdong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }

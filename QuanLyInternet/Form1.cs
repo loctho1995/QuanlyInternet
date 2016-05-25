@@ -59,5 +59,17 @@ namespace QuanLyInternet
             FormHoSoKhachHang form = new FormHoSoKhachHang();
             form.Show();
         }
+
+        private void monoFlat_Button7_Click(object sender, EventArgs e)
+        {
+            FormQLGoiCuoc fr = new FormQLGoiCuoc();
+            fr.Show();
+        }
+
+        private void monoFlat_Button3_Click(object sender, EventArgs e)
+        {
+            FormQLKhuyenMai km = new FormQLKhuyenMai();
+            km.Show();
+        }
     }
 }
