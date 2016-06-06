@@ -7,21 +7,23 @@ using System.Data;
 
 namespace QuanLyInternet.BUS
 {
-    class TTLuuThong_BUS
+    class ThamSo
     {
         public DataTable getAllResult()
         {
             DataTable dt = new DataTable();
-            dt.Columns.Add("MaTT", typeof(int));
-            dt.Columns.Add("TenTT", typeof(string));
+            dt.Columns.Add("PhiDangKy", typeof(float));
+            dt.Columns.Add("NgayBatDauThuPhi", typeof(int));
+            dt.Columns.Add("NgayKetThucThuPhi", typeof(int));
 
+            var tt = SQLDataContext.SQLData.getThamSo();
 
-            var lt = SQLDataContext.SQLData.getTTLuuThong();
-            foreach (var i in lt)
+            foreach (var i in tt)
             {
                 DataRow r = dt.NewRow();
-                r["MaTT"] = i.MaTT;
-                r["TenTT"] = i.TenTT;
+                r["PhiDangKy"] = i.PhiDangKy;
+                r["NgayBatDauThuPhi"] = i.NgayBatDauThuPhi;
+                r["NgayKetThucThuPhi"] = i.NgayKetThucThuPhi;
                 dt.Rows.Add(r);
             }
 

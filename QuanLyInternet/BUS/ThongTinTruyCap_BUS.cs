@@ -7,29 +7,28 @@ using System.Data;
 
 namespace QuanLyInternet.BUS
 {
-    class ThongTinSuDungInternet_BUS
+    class ThongTinTruyCap_BUS
     {
         public DataTable getAllResult()
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("STT", typeof(int));
-            dt.Columns.Add("MaKH", typeof(int));
-            dt.Columns.Add("MaTK", typeof(int));
-            dt.Columns.Add("ThoiGianBatDau", typeof(DateTime));
-            dt.Columns.Add("ThoiGianKetThuc", typeof(DateTime));
+            dt.Columns.Add("MaHopDong", typeof(string));
+            dt.Columns.Add("NgayTruyCap", typeof(DateTime));
+            dt.Columns.Add("ThoiDiemTruyCap", typeof(TimeSpan));
+            dt.Columns.Add("DiaChiTruyCap", typeof(string));
             dt.Columns.Add("DungLuongSuDung", typeof(float));
 
-            var tt = SQLDataContext.SQLData.getTTSuDungInternet();
-            int stt = 1;
+            var tt = SQLDataContext.SQLData.getThongTinTruyCap();
 
             foreach (var i in tt)
             {
                 DataRow r = dt.NewRow();
-                r["STT"] = stt++;
-                r["MaKH"] = i.MaKH;
-                r["MaTK"] = i.MaTK;
-                r["ThoiGianBatDau"] = i.ThoiGianBatDau;
-                r["ThoiGianKetThuc"] = i.ThoiGianKetThuc;
+                r["STT"] = i.STT;
+                r["MaHopDong"] = i.MaHopDong;
+                r["NgayTruyCap"] = i.NgayTruyCap;
+                r["ThoiDiemTruyCap"] = i.ThoiDiemTruyCap;
+                r["DiaChiTruyCap"] = i.DiaChiTruyCap;
                 r["DungLuongSuDung"] = i.DungLuongSuDung;
                 dt.Rows.Add(r);
             }

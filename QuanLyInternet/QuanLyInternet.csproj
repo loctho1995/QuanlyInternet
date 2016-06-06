@@ -50,6 +50,9 @@
     <Compile Include="Ambiance Theme.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="BUS\LoaiGioTruyCap_BUS.cs" />
+    <Compile Include="BUS\ThamSo.cs" />
+    <Compile Include="BUS\TinhTrang_BUS.cs" />
     <Compile Include="ChartControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -135,17 +138,14 @@
     <Compile Include="FormSuaThongTin.Designer.cs">
       <DependentUpon>FormSuaThongTin.cs</DependentUpon>
     </Compile>
-    <Compile Include="BUS\ApDungCTKM_BUS.cs" />
+    <Compile Include="BUS\DoiTuongApDungKM_BUS.cs" />
     <Compile Include="BUS\CTKM_BUS.cs" />
     <Compile Include="BUS\DoiTuong_BUS.cs" />
     <Compile Include="BUS\GoiCuoc_BUS.cs" />
-    <Compile Include="BUS\HoaDon_BUS.cs" />
-    <Compile Include="BUS\KhachHang_BUS.cs" />
+    <Compile Include="BUS\HoaDonThang_BUS.cs" />
+    <Compile Include="BUS\HopDong_BUS.cs" />
     <Compile Include="BUS\SQLDataContext.cs" />
-    <Compile Include="BUS\TaiKhoan_BUS.cs" />
-    <Compile Include="BUS\ThongTinSuDungInternet_BUS.cs" />
-    <Compile Include="BUS\TTLuuThong_BUS.cs" />
-    <Compile Include="BUS\TTThanhToan_BUS.cs" />
+    <Compile Include="BUS\ThongTinTruyCap_BUS.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>

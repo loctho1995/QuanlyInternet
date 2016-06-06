@@ -17,6 +17,8 @@ namespace QuanLyInternet.BUS
             dt.Columns.Add("NoiDung", typeof(string));
             dt.Columns.Add("TuNgay", typeof(DateTime));
             dt.Columns.Add("DenNgay", typeof(DateTime));
+            dt.Columns.Add("MaGoiCuocKhuyenMai", typeof(string));
+            dt.Columns.Add("PhiDangKyKhuyenMai", typeof(float));
 
             var kh = SQLDataContext.SQLData.getCTKM();
             int stt = 1;
@@ -28,6 +30,8 @@ namespace QuanLyInternet.BUS
                 r["NoiDung"] = i.NoiDung;
                 r["TuNgay"] = i.TuNgay;
                 r["DenNgay"] = i.DenNgay;
+                r["MaGoiCuocKhuyenMai"] = i.MaGoiCuocKhuyenMai;
+                r["PhiDangKyKhuyenMai"] = i.PhiDangKyKhuyenMai;
                 dt.Rows.Add(r);
             }
 

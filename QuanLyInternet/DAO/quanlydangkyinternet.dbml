@@ -1,213 +1,221 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QuanLyDangKyInternet" Class="quanlydangkyinternetDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=LOCTHO\LOCTHO;Initial Catalog=QuanLyDangKyInternet;Integrated Security=True" SettingsObjectName="QuanLyInternet.Properties.Settings" SettingsPropertyName="QuanLyDangKyInternetConnectionString1" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.APDUNGCTKM" Member="APDUNGCTKMs">
-    <Type Name="APDUNGCTKM">
-      <Column Name="STT" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MaCTKM" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MaDoiTuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MaGoiCuocKM" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="CTKM_APDUNGCTKM" Member="CTKM" ThisKey="MaCTKM" OtherKey="MaCTKM" Type="CTKM" IsForeignKey="true" />
-      <Association Name="DOITUONG_APDUNGCTKM" Member="DOITUONG" ThisKey="MaDoiTuong" OtherKey="MaDoiTuong" Type="DOITUONG" IsForeignKey="true" />
-      <Association Name="GOICUOC_APDUNGCTKM" Member="GOICUOC" ThisKey="MaGoiCuocKM" OtherKey="MaGoiCuoc" Type="GOICUOC" IsForeignKey="true" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=THINH;Initial Catalog=QuanLyDangKyInternet;Integrated Security=True" SettingsObjectName="QuanLyInternet.Properties.Settings" SettingsPropertyName="QuanLyDangKyInternetConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CTGOICUOC" Member="CTGOICUOCs">
+    <Type Name="CTGOICUOC">
+      <Column Name="MaGoiCuoc" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaLoaiGioTruyCap" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DonGia" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="GOICUOC_CTGOICUOC" Member="GOICUOC" ThisKey="MaGoiCuoc" OtherKey="MaGoiCuoc" Type="GOICUOC" IsForeignKey="true" />
+      <Association Name="LOAIGIOTRUYCAP_CTGOICUOC" Member="LOAIGIOTRUYCAP" ThisKey="MaLoaiGioTruyCap" OtherKey="MaLoaiGioTruyCap" Type="LOAIGIOTRUYCAP" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.THONGTTINSUDUNGINTERNET" Member="THONGTTINSUDUNGINTERNETs">
-    <Type Name="THONGTTINSUDUNGINTERNET">
-      <Column Name="MaKH" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MaTK" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="ThoiGianBatDau" Type="System.DateTime" DbType="DateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="ThoiGianKetThuc" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+  <Table Name="dbo.THONGTINTRUYCAP" Member="THONGTINTRUYCAPs">
+    <Type Name="THONGTINTRUYCAP">
+      <Column Name="STT" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaHopDong" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="NgayTruyCap" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ThoiDiemTruyCap" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="DiaChiTruyCap" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="DungLuongSuDung" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Association Name="KHACHHANG_THONGTTINSUDUNGINTERNET" Member="KHACHHANG" ThisKey="MaKH" OtherKey="MaKH" Type="KHACHHANG" IsForeignKey="true" />
+      <Association Name="HOPDONG_THONGTINTRUYCAP" Member="HOPDONG" ThisKey="MaHopDong" OtherKey="MaHopDong" Type="HOPDONG" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.CTKM" Member="CTKMs">
     <Type Name="CTKM">
-      <Column Name="MaCTKM" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaCTKM" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="NoiDung" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="TuNgay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="DenNgay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Association Name="CTKM_APDUNGCTKM" Member="APDUNGCTKMs" ThisKey="MaCTKM" OtherKey="MaCTKM" Type="APDUNGCTKM" />
+      <Column Name="MaGoiCuocKhuyenMai" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="PhiDangKyKhuyenMai" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="CTKM_DOTUONGAPDUNGKM" Member="DOTUONGAPDUNGKMs" ThisKey="MaCTKM" OtherKey="MaCTKM" Type="DOTUONGAPDUNGKM" />
+      <Association Name="GOICUOC_CTKM" Member="GOICUOC" ThisKey="MaGoiCuocKhuyenMai" OtherKey="MaGoiCuoc" Type="GOICUOC" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.DOITUONG" Member="DOITUONGs">
     <Type Name="DOITUONG">
-      <Column Name="MaDoiTuong" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MoTa" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MaDoiTuong" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="SoThangCanTren" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="SoThangCanDuoi" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="DOITUONG_APDUNGCTKM" Member="APDUNGCTKMs" ThisKey="MaDoiTuong" OtherKey="MaDoiTuong" Type="APDUNGCTKM" />
-      <Association Name="DOITUONG_KHACHHANG" Member="KHACHHANGs" ThisKey="MaDoiTuong" OtherKey="MaDoiTuong" Type="KHACHHANG" />
+      <Column Name="MoTa" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="DOITUONG_DOTUONGAPDUNGKM" Member="DOTUONGAPDUNGKMs" ThisKey="MaDoiTuong" OtherKey="MaDoiTuong" Type="DOTUONGAPDUNGKM" />
+      <Association Name="DOITUONG_HOPDONG" Member="HOPDONGs" ThisKey="MaDoiTuong" OtherKey="MaDoiTuong" Type="HOPDONG" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DOTUONGAPDUNGKM" Member="DOTUONGAPDUNGKMs">
+    <Type Name="DOTUONGAPDUNGKM">
+      <Column Name="MaCTKM" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaDoiTuong" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="CTKM_DOTUONGAPDUNGKM" Member="CTKM" ThisKey="MaCTKM" OtherKey="MaCTKM" Type="CTKM" IsForeignKey="true" />
+      <Association Name="DOITUONG_DOTUONGAPDUNGKM" Member="DOITUONG" ThisKey="MaDoiTuong" OtherKey="MaDoiTuong" Type="DOITUONG" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.GOICUOC" Member="GOICUOCs">
     <Type Name="GOICUOC">
-      <Column Name="MaGoiCuoc" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaGoiCuoc" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TocDo" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="CuocThueBaoThang" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="SoMBMienPhi" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Association Name="GOICUOC_APDUNGCTKM" Member="APDUNGCTKMs" ThisKey="MaGoiCuoc" OtherKey="MaGoiCuocKM" Type="APDUNGCTKM" />
-      <Association Name="GOICUOC_KHACHHANG" Member="KHACHHANGs" ThisKey="MaGoiCuoc" OtherKey="MaGoiCuoc" Type="KHACHHANG" />
+      <Association Name="GOICUOC_CTGOICUOC" Member="CTGOICUOCs" ThisKey="MaGoiCuoc" OtherKey="MaGoiCuoc" Type="CTGOICUOC" />
+      <Association Name="GOICUOC_CTKM" Member="CTKMs" ThisKey="MaGoiCuoc" OtherKey="MaGoiCuocKhuyenMai" Type="CTKM" />
+      <Association Name="GOICUOC_HOPDONG" Member="HOPDONGs" ThisKey="MaGoiCuoc" OtherKey="MaGoiCuoc" Type="HOPDONG" />
     </Type>
   </Table>
-  <Table Name="dbo.HOADON" Member="HOADONs">
-    <Type Name="HOADON">
-      <Column Name="MaKH" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Thang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Nam" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="TongTien" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="HanThanhToan" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+  <Table Name="dbo.HOADONTHANG" Member="HOADONTHANGs">
+    <Type Name="HOADONTHANG">
+      <Column Name="MaHoaDon" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaHopDong" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Thang" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Nam" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="NgayThanhToan" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Association Name="KHACHHANG_HOADON" Member="KHACHHANG" ThisKey="MaKH" OtherKey="MaKH" Type="KHACHHANG" IsForeignKey="true" />
+      <Column Name="TongTien" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="HOPDONG_HOADONTHANG" Member="HOPDONG" ThisKey="MaHopDong" OtherKey="MaHopDong" Type="HOPDONG" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.KHACHHANG" Member="KHACHHANGs">
-    <Type Name="KHACHHANG">
-      <Column Name="MaKH" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+  <Table Name="dbo.HOPDONG" Member="HOPDONGs">
+    <Type Name="HOPDONG">
+      <Column Name="MaHopDong" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="HoTen" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="CMND" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="NgheNghiep" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="DCNha" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="DCCaiDat" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="DCThanhToan" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="SLTaiKhoan" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DCNha" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="DCCaiDat" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="DCThanhToan" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
       <Column Name="SoDienThoai" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TTLuuThong" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TTThanhToan" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MaDoiTuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MaGoiCuoc" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="KHACHHANG_THONGTTINSUDUNGINTERNET" Member="THONGTTINSUDUNGINTERNETs" ThisKey="MaKH" OtherKey="MaKH" Type="THONGTTINSUDUNGINTERNET" />
-      <Association Name="KHACHHANG_HOADON" Member="HOADONs" ThisKey="MaKH" OtherKey="MaKH" Type="HOADON" />
-      <Association Name="KHACHHANG_TAIKHOAN" Member="TAIKHOANs" ThisKey="MaKH" OtherKey="MaKH" Type="TAIKHOAN" />
-      <Association Name="DOITUONG_KHACHHANG" Member="DOITUONG" ThisKey="MaDoiTuong" OtherKey="MaDoiTuong" Type="DOITUONG" IsForeignKey="true" />
-      <Association Name="GOICUOC_KHACHHANG" Member="GOICUOC" ThisKey="MaGoiCuoc" OtherKey="MaGoiCuoc" Type="GOICUOC" IsForeignKey="true" />
-      <Association Name="TTLUUTHONG_KHACHHANG" Member="TTLUUTHONG1" ThisKey="TTLuuThong" OtherKey="MaTT" Type="TTLUUTHONG" IsForeignKey="true" />
-      <Association Name="TTTHANHTOAN_KHACHHANG" Member="TTTHANHTOAN1" ThisKey="TTThanhToan" OtherKey="MaTT" Type="TTTHANHTOAN" IsForeignKey="true" />
+      <Column Name="NgayDangKy" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="MaDoiTuong" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="MaGoiCuoc" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="NgayApDungGoiCuoc" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PhiDangKy" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TinhTrang" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Association Name="HOPDONG_THONGTINTRUYCAP" Member="THONGTINTRUYCAPs" ThisKey="MaHopDong" OtherKey="MaHopDong" Type="THONGTINTRUYCAP" />
+      <Association Name="HOPDONG_HOADONTHANG" Member="HOADONTHANGs" ThisKey="MaHopDong" OtherKey="MaHopDong" Type="HOADONTHANG" />
+      <Association Name="DOITUONG_HOPDONG" Member="DOITUONG" ThisKey="MaDoiTuong" OtherKey="MaDoiTuong" Type="DOITUONG" IsForeignKey="true" />
+      <Association Name="GOICUOC_HOPDONG" Member="GOICUOC" ThisKey="MaGoiCuoc" OtherKey="MaGoiCuoc" Type="GOICUOC" IsForeignKey="true" />
+      <Association Name="TINHTRANG_HOPDONG" Member="TINHTRANG1" ThisKey="TinhTrang" OtherKey="MaTinhTrang" Type="TINHTRANG" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.TAIKHOAN" Member="TAIKHOANs">
-    <Type Name="TAIKHOAN">
-      <Column Name="MaKH" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MaTK" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MatKhau" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Email" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
-      <Association Name="KHACHHANG_TAIKHOAN" Member="KHACHHANG" ThisKey="MaKH" OtherKey="MaKH" Type="KHACHHANG" IsForeignKey="true" />
+  <Table Name="dbo.LOAIGIOTRUYCAP" Member="LOAIGIOTRUYCAPs">
+    <Type Name="LOAIGIOTRUYCAP">
+      <Column Name="MaLoaiGioTruyCap" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="KhoangThoiGian" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="LOAIGIOTRUYCAP_CTGOICUOC" Member="CTGOICUOCs" ThisKey="MaLoaiGioTruyCap" OtherKey="MaLoaiGioTruyCap" Type="CTGOICUOC" />
     </Type>
   </Table>
-  <Table Name="dbo.TTLUUTHONG" Member="TTLUUTHONGs">
-    <Type Name="TTLUUTHONG">
-      <Column Name="MaTT" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="TenTT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Association Name="TTLUUTHONG_KHACHHANG" Member="KHACHHANGs" ThisKey="MaTT" OtherKey="TTLuuThong" Type="KHACHHANG" />
-    </Type>
-  </Table>
-  <Table Name="dbo.TTTHANHTOAN" Member="TTTHANHTOANs">
-    <Type Name="TTTHANHTOAN">
-      <Column Name="MaTT" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="TenTT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Association Name="TTTHANHTOAN_KHACHHANG" Member="KHACHHANGs" ThisKey="MaTT" OtherKey="TTThanhToan" Type="KHACHHANG" />
+  <Table Name="dbo.TINHTRANG" Member="TINHTRANGs">
+    <Type Name="TINHTRANG">
+      <Column Name="MaTinhTrang" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NoiDung" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="TINHTRANG_HOPDONG" Member="HOPDONGs" ThisKey="MaTinhTrang" OtherKey="TinhTrang" Type="HOPDONG" />
     </Type>
   </Table>
   <Table Name="dbo.THAMSO" Member="THAMSOs">
     <Type Name="THAMSO">
       <Column Name="PhiDangKy" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="NgayTinhCuoc" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NgayHetHanThanhToan" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NgayBatDauThuPhi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NgayKetThucThuPhi" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
-  <Function Name="dbo.getApDungCTKM" Method="getApDungCTKM">
-    <ElementType Name="getApDungCTKMResult">
-      <Column Name="STT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="MaCTKM" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MaDoiTuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MaGoiCuocKM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+  <Function Name="dbo.getCTGoiCuoc" Method="getCTGoiCuoc">
+    <ElementType Name="getCTGoiCuocResult">
+      <Column Name="MaGoiCuoc" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="MaLoaiGioTruyCap" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="DonGia" Type="System.Double" DbType="Float" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.getThamSo" Method="getThamSo">
-    <ElementType Name="getThamSoResult">
-      <Column Name="PhiDangKy" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="NgayTinhCuoc" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NgayHetHanThanhToan" Type="System.Int32" DbType="Int" CanBeNull="true" />
+  <Function Name="dbo.getThongTinTruyCap" Method="getThongTinTruyCap">
+    <ElementType Name="getThongTinTruyCapResult">
+      <Column Name="STT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaHopDong" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="NgayTruyCap" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ThoiDiemTruyCap" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="DiaChiTruyCap" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DungLuongSuDung" Type="System.Double" DbType="Float" CanBeNull="true" />
     </ElementType>
   </Function>
   <Function Name="dbo.getCTKM" Method="getCTKM">
     <ElementType Name="getCTKMResult">
-      <Column Name="MaCTKM" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaCTKM" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="NoiDung" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="TuNgay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="DenNgay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="MaGoiCuocKhuyenMai" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="PhiDangKyKhuyenMai" Type="System.Double" DbType="Float" CanBeNull="true" />
     </ElementType>
   </Function>
   <Function Name="dbo.getDoiTuong" Method="getDoiTuong">
     <ElementType Name="getDoiTuongResult">
-      <Column Name="MaDoiTuong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="MoTa" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MaDoiTuong" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="SoThangCanTren" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="SoThangCanDuoi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MoTa" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.getDoiTuongApDungKM" Method="getDoiTuongApDungKM">
+    <ElementType Name="getDoiTuongApDungKMResult">
+      <Column Name="MaCTKM" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="MaDoiTuong" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
   <Function Name="dbo.getGoiCuoc" Method="getGoiCuoc">
     <ElementType Name="getGoiCuocResult">
-      <Column Name="MaGoiCuoc" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaGoiCuoc" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="TocDo" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="CuocThueBaoThang" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="SoMBMienPhi" Type="System.Double" DbType="Float" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.getHoaDon" Method="getHoaDon">
-    <ElementType Name="getHoaDonResult">
-      <Column Name="MaKH" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Thang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Nam" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="TongTien" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="HanThanhToan" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+  <Function Name="dbo.getHoaDonThang" Method="getHoaDonThang">
+    <ElementType Name="getHoaDonThangResult">
+      <Column Name="MaHoaDon" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="MaHopDong" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Thang" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Nam" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="NgayThanhToan" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="TongTien" Type="System.Double" DbType="Float" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.getKhachHang" Method="getKhachHang">
-    <ElementType Name="getKhachHangResult">
-      <Column Name="MaKH" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+  <Function Name="dbo.getHopDong" Method="getHopDong">
+    <ElementType Name="getHopDongResult">
+      <Column Name="MaHopDong" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="HoTen" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="CMND" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="NgheNghiep" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="DCNha" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="DCCaiDat" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="DCThanhToan" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="SLTaiKhoan" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DCNha" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="DCCaiDat" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="DCThanhToan" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
       <Column Name="SoDienThoai" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TTLuuThong" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TTThanhToan" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MaDoiTuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MaGoiCuoc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NgayDangKy" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="MaDoiTuong" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="MaGoiCuoc" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="NgayApDungGoiCuoc" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PhiDangKy" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TinhTrang" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.getTaiKhoan" Method="getTaiKhoan">
-    <ElementType Name="getTaiKhoanResult">
-      <Column Name="MaKH" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="MaTK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="MatKhau" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Email" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+  <Function Name="dbo.getLoaiGioTruyCap" Method="getLoaiGioTruyCap">
+    <ElementType Name="getLoaiGioTruyCapResult">
+      <Column Name="MaLoaiGioTruyCap" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="KhoangThoiGian" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.getTTLuuThong" Method="getTTLuuThong">
-    <ElementType Name="getTTLuuThongResult">
-      <Column Name="MaTT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="TenTT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+  <Function Name="dbo.getTinhTrang" Method="getTinhTrang">
+    <ElementType Name="getTinhTrangResult">
+      <Column Name="MaTinhTrang" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="NoiDung" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.getTTSuDungInternet" Method="getTTSuDungInternet">
-    <ElementType Name="getTTSuDungInternetResult">
-      <Column Name="MaKH" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="MaTK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ThoiGianBatDau" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="ThoiGianKetThuc" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="DungLuongSuDung" Type="System.Double" DbType="Float" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.getTTThanhToan" Method="getTTThanhToan">
-    <ElementType Name="getTTThanhToanResult">
-      <Column Name="MaTT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="TenTT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+  <Function Name="dbo.getThamSo" Method="getThamSo">
+    <ElementType Name="getThamSoResult">
+      <Column Name="PhiDangKy" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NgayBatDauThuPhi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NgayKetThucThuPhi" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>
