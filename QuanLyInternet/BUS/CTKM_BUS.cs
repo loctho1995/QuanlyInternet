@@ -13,7 +13,7 @@ namespace QuanLyInternet.BUS
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("STT", typeof(int));
-            dt.Columns.Add("MaCTKM", typeof(int));
+            dt.Columns.Add("MaCTKM", typeof(string));
             dt.Columns.Add("NoiDung", typeof(string));
             dt.Columns.Add("TuNgay", typeof(DateTime));
             dt.Columns.Add("DenNgay", typeof(DateTime));
@@ -38,6 +38,11 @@ namespace QuanLyInternet.BUS
             //if (dt.Rows.Count == 0)
             //    return null;
             return dt;
+        }
+
+        public void addCTKM(string mactkm, string noidung, DateTime tungay, DateTime denngay, string magoicuockhuyenmai, float phidangkykhuyenmai)
+        {
+            SQLDataContext.SQLData.addCTKM(mactkm, noidung, tungay, denngay, magoicuockhuyenmai, phidangkykhuyenmai);
         }
     }
 }
