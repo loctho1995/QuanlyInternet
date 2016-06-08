@@ -180,6 +180,20 @@ namespace QuanLyInternet.DAO
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.addCTGoiCuoc")]
+		public int addCTGoiCuoc([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string magoicuoc, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string maloaigiotruycap, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Float")] System.Nullable<double> dongia)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), magoicuoc, maloaigiotruycap, dongia);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.searchThongTinTruyCap")]
+		public ISingleResult<searchThongTinTruyCapResult> searchThongTinTruyCap([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string mahopdong)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mahopdong);
+			return ((ISingleResult<searchThongTinTruyCapResult>)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.addCTKM")]
 		public int addCTKM([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaCTKM", DbType="VarChar(10)")] string maCTKM, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NoiDung", DbType="Text")] string noiDung, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TuNgay", DbType="Date")] System.Nullable<System.DateTime> tuNgay, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DenNgay", DbType="Date")] System.Nullable<System.DateTime> denNgay, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaGoiCuocKhuyenMai", DbType="VarChar(10)")] string maGoiCuocKhuyenMai, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PhiDangKyKhuyenMai", DbType="Float")] System.Nullable<double> phiDangKyKhuyenMai)
 		{
@@ -187,17 +201,31 @@ namespace QuanLyInternet.DAO
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.searchHopDong")]
-		public ISingleResult<searchHopDongResult> searchHopDong([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaHopDong", DbType="VarChar(50)")] string maHopDong, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="HoTen", DbType="VarChar(50)")] string hoTen, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CMND", DbType="VarChar(50)")] string cMND, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NgheNghiep", DbType="VarChar(50)")] string ngheNghiep, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DCNha", DbType="VarChar(1000)")] string dCNha, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DCCaiDat", DbType="VarChar(1000)")] string dCCaiDat, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DCThanhToan", DbType="VarChar(1000)")] string dCThanhToan, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoDienThoai", DbType="VarChar(50)")] string soDienThoai, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaDoiTuong", DbType="VarChar(50)")] string maDoiTuong, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaGoiCuoc", DbType="VarChar(50)")] string maGoiCuoc, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TinhTrang", DbType="VarChar(50)")] string tinhTrang)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.addDoiTuong")]
+		public int addDoiTuong([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string madoituong, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string mota, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> sothangcantren, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> sothangcanduoi)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maHopDong, hoTen, cMND, ngheNghiep, dCNha, dCCaiDat, dCThanhToan, soDienThoai, maDoiTuong, maGoiCuoc, tinhTrang);
-			return ((ISingleResult<searchHopDongResult>)(result.ReturnValue));
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), madoituong, mota, sothangcantren, sothangcanduoi);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.addDoiTuongApDungKM")]
+		public int addDoiTuongApDungKM([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string mactkm, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string madoituong)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mactkm, madoituong);
+			return ((int)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.addGoiCuoc")]
 		public int addGoiCuoc([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaGoiCuoc", DbType="VarChar(10)")] string maGoiCuoc, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TocDo", DbType="Float")] System.Nullable<double> tocDo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CuocThueBaoThang", DbType="Float")] System.Nullable<double> cuocThueBaoThang, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoMBMienPhi", DbType="Float")] System.Nullable<double> soMBMienPhi)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maGoiCuoc, tocDo, cuocThueBaoThang, soMBMienPhi);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.addHoaDonThang")]
+		public int addHoaDonThang([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string mahoadon, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string mahopdong, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> thang, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> nam, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> ngaythanhtoan, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Float")] System.Nullable<double> tongtien)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mahoadon, mahopdong, thang, nam, ngaythanhtoan, tongtien);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -225,6 +253,55 @@ namespace QuanLyInternet.DAO
 			return ((int)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.addLoaiGioTruyCap")]
+		public int addLoaiGioTruyCap([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string maloaigiotruycap, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string khoangthoigian)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maloaigiotruycap, khoangthoigian);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.addTinhTrang")]
+		public int addTinhTrang([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string matinhtrang, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string noidung)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), matinhtrang, noidung);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.addThongTinTruyCap")]
+		public int addThongTinTruyCap([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string mahopdong, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> ngaytruycap, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Time")] System.Nullable<System.TimeSpan> thoidiemtruycap, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string diachitruycap, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Float")] System.Nullable<double> dungluongsudung)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mahopdong, ngaytruycap, thoidiemtruycap, diachitruycap, dungluongsudung);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.deleteCTGoiCuoc")]
+		public int deleteCTGoiCuoc([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string magoicuoc, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string maloaigiotruycap)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), magoicuoc, maloaigiotruycap);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.deleteCTKM")]
+		public int deleteCTKM([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaCTKM", DbType="VarChar(10)")] string maCTKM)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maCTKM);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.deleteDoiTuong")]
+		public int deleteDoiTuong([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string madoituong)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), madoituong);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.deleteDoiTuongApDungKM")]
+		public int deleteDoiTuongApDungKM([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string mactkm, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string madoituong)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mactkm, madoituong);
+			return ((int)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.deleteGoiCuoc")]
 		public int deleteGoiCuoc([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaGoiCuoc", DbType="VarChar(10)")] string maGoiCuoc)
 		{
@@ -232,10 +309,118 @@ namespace QuanLyInternet.DAO
 			return ((int)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.deleteHoaDonThang")]
+		public int deleteHoaDonThang([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string mahoadon)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mahoadon);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.deleteHopDong")]
+		public int deleteHopDong([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string mahopdong)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mahopdong);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.deleteLoaiGioTruyCap")]
+		public int deleteLoaiGioTruyCap([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string maloaigiotruycap)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maloaigiotruycap);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.deleteTinhTrang")]
+		public int deleteTinhTrang([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string matinhtrang)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), matinhtrang);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.editCTGoiCuoc")]
+		public int editCTGoiCuoc([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string magoicuoc, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string maloaigiotruycap, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Float")] System.Nullable<double> dongia)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), magoicuoc, maloaigiotruycap, dongia);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.editCTKM")]
+		public int editCTKM([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaCTKM", DbType="VarChar(10)")] string maCTKM, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NoiDung", DbType="Text")] string noiDung, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TuNgay", DbType="Date")] System.Nullable<System.DateTime> tuNgay, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DenNgay", DbType="Date")] System.Nullable<System.DateTime> denNgay, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaGoiCuocKhuyenMai", DbType="VarChar(10)")] string maGoiCuocKhuyenMai, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PhiDangKyKhuyenMai", DbType="Float")] System.Nullable<double> phiDangKyKhuyenMai)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maCTKM, noiDung, tuNgay, denNgay, maGoiCuocKhuyenMai, phiDangKyKhuyenMai);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.editDoiTuong")]
+		public int editDoiTuong([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string madoituong, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string mota, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> sothangcantren, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> sothangcanduoi)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), madoituong, mota, sothangcantren, sothangcanduoi);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.editDoiTuongApDungKM")]
+		public int editDoiTuongApDungKM([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string mactkm, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string madoituong)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mactkm, madoituong);
+			return ((int)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.editGoiCuoc")]
 		public int editGoiCuoc([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaGoiCuoc", DbType="VarChar(10)")] string maGoiCuoc, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TocDo", DbType="Float")] System.Nullable<double> tocDo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CuocThueBaoThang", DbType="Float")] System.Nullable<double> cuocThueBaoThang, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoMBMienPhi", DbType="Float")] System.Nullable<double> soMBMienPhi)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maGoiCuoc, tocDo, cuocThueBaoThang, soMBMienPhi);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.editHoaDonThang")]
+		public int editHoaDonThang([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string mahoadon, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string mahopdong, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> thang, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> nam, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> ngaythanhtoan, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Float")] System.Nullable<double> tongtien)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mahoadon, mahopdong, thang, nam, ngaythanhtoan, tongtien);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.editHopDong")]
+		public int editHopDong(
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaHopDong", DbType="VarChar(50)")] string maHopDong, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="HoTen", DbType="VarChar(50)")] string hoTen, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="CMND", DbType="VarChar(50)")] string cMND, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="NgheNghiep", DbType="VarChar(50)")] string ngheNghiep, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="DCNha", DbType="VarChar(1000)")] string dCNha, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="DCCaiDat", DbType="VarChar(1000)")] string dCCaiDat, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="DCThanhToan", DbType="VarChar(1000)")] string dCThanhToan, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoDienThoai", DbType="VarChar(50)")] string soDienThoai, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="NgayDangKy", DbType="Date")] System.Nullable<System.DateTime> ngayDangKy, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaDoiTuong", DbType="VarChar(50)")] string maDoiTuong, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaGoiCuoc", DbType="VarChar(50)")] string maGoiCuoc, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="NgayApDungGoiCuoc", DbType="Date")] System.Nullable<System.DateTime> ngayApDungGoiCuoc, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="PhiDangKy", DbType="Float")] System.Nullable<double> phiDangKy, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="TinhTrang", DbType="VarChar(50)")] string tinhTrang, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Username", DbType="VarChar(10)")] string username, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Password", DbType="VarChar(30)")] string password, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(Name="Email", DbType="VarChar(30)")] string email)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maHopDong, hoTen, cMND, ngheNghiep, dCNha, dCCaiDat, dCThanhToan, soDienThoai, ngayDangKy, maDoiTuong, maGoiCuoc, ngayApDungGoiCuoc, phiDangKy, tinhTrang, username, password, email);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.editLoaiGioTruyCap")]
+		public int editLoaiGioTruyCap([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string maloaigiotruycap, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string khoangthoigian)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maloaigiotruycap, khoangthoigian);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.editTinhTrang")]
+		public int editTinhTrang([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string matinhtrang, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string noidung)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), matinhtrang, noidung);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.editThamSo")]
+		public int editThamSo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Float")] System.Nullable<double> phidangky, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> ngaybatdauthuphi, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> ngayketthucthuphi)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), phidangky, ngaybatdauthuphi, ngayketthucthuphi);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -314,6 +499,13 @@ namespace QuanLyInternet.DAO
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<getThongTinTruyCapResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.searchHopDong")]
+		public ISingleResult<searchHopDongResult> searchHopDong([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaHopDong", DbType="VarChar(50)")] string maHopDong, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="HoTen", DbType="VarChar(50)")] string hoTen, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CMND", DbType="VarChar(50)")] string cMND, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NgheNghiep", DbType="VarChar(50)")] string ngheNghiep, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DCNha", DbType="VarChar(1000)")] string dCNha, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DCCaiDat", DbType="VarChar(1000)")] string dCCaiDat, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DCThanhToan", DbType="VarChar(1000)")] string dCThanhToan, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SoDienThoai", DbType="VarChar(50)")] string soDienThoai, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaDoiTuong", DbType="VarChar(50)")] string maDoiTuong, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MaGoiCuoc", DbType="VarChar(50)")] string maGoiCuoc, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TinhTrang", DbType="VarChar(50)")] string tinhTrang)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maHopDong, hoTen, cMND, ngheNghiep, dCNha, dCCaiDat, dCThanhToan, soDienThoai, maDoiTuong, maGoiCuoc, tinhTrang);
+			return ((ISingleResult<searchHopDongResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -2698,48 +2890,42 @@ namespace QuanLyInternet.DAO
 		}
 	}
 	
-	public partial class searchHopDongResult
+	public partial class searchThongTinTruyCapResult
 	{
+		
+		private int _STT;
 		
 		private string _MaHopDong;
 		
-		private string _HoTen;
+		private System.Nullable<System.DateTime> _NgayTruyCap;
 		
-		private System.Nullable<int> _CMND;
+		private System.Nullable<System.TimeSpan> _ThoiDiemTruyCap;
 		
-		private string _NgheNghiep;
+		private string _DiaChiTruyCap;
 		
-		private string _DCNha;
+		private System.Nullable<double> _DungLuongSuDung;
 		
-		private string _DCCaiDat;
-		
-		private string _DCThanhToan;
-		
-		private System.Nullable<int> _SoDienThoai;
-		
-		private System.Nullable<System.DateTime> _NgayDangKy;
-		
-		private string _MaDoiTuong;
-		
-		private string _MaGoiCuoc;
-		
-		private System.Nullable<System.DateTime> _NgayApDungGoiCuoc;
-		
-		private System.Nullable<double> _PhiDangKy;
-		
-		private string _TinhTrang;
-		
-		private string _Username;
-		
-		private string _Password;
-		
-		private string _Email;
-		
-		public searchHopDongResult()
+		public searchThongTinTruyCapResult()
 		{
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaHopDong", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STT", DbType="Int NOT NULL")]
+		public int STT
+		{
+			get
+			{
+				return this._STT;
+			}
+			set
+			{
+				if ((this._STT != value))
+				{
+					this._STT = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaHopDong", DbType="VarChar(10)")]
 		public string MaHopDong
 		{
 			get
@@ -2755,258 +2941,66 @@ namespace QuanLyInternet.DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HoTen", DbType="VarChar(50)")]
-		public string HoTen
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayTruyCap", DbType="Date")]
+		public System.Nullable<System.DateTime> NgayTruyCap
 		{
 			get
 			{
-				return this._HoTen;
+				return this._NgayTruyCap;
 			}
 			set
 			{
-				if ((this._HoTen != value))
+				if ((this._NgayTruyCap != value))
 				{
-					this._HoTen = value;
+					this._NgayTruyCap = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CMND", DbType="Int")]
-		public System.Nullable<int> CMND
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ThoiDiemTruyCap", DbType="Time")]
+		public System.Nullable<System.TimeSpan> ThoiDiemTruyCap
 		{
 			get
 			{
-				return this._CMND;
+				return this._ThoiDiemTruyCap;
 			}
 			set
 			{
-				if ((this._CMND != value))
+				if ((this._ThoiDiemTruyCap != value))
 				{
-					this._CMND = value;
+					this._ThoiDiemTruyCap = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgheNghiep", DbType="VarChar(50)")]
-		public string NgheNghiep
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiaChiTruyCap", DbType="VarChar(50)")]
+		public string DiaChiTruyCap
 		{
 			get
 			{
-				return this._NgheNghiep;
+				return this._DiaChiTruyCap;
 			}
 			set
 			{
-				if ((this._NgheNghiep != value))
+				if ((this._DiaChiTruyCap != value))
 				{
-					this._NgheNghiep = value;
+					this._DiaChiTruyCap = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DCNha", DbType="VarChar(1000)")]
-		public string DCNha
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DungLuongSuDung", DbType="Float")]
+		public System.Nullable<double> DungLuongSuDung
 		{
 			get
 			{
-				return this._DCNha;
+				return this._DungLuongSuDung;
 			}
 			set
 			{
-				if ((this._DCNha != value))
+				if ((this._DungLuongSuDung != value))
 				{
-					this._DCNha = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DCCaiDat", DbType="VarChar(1000)")]
-		public string DCCaiDat
-		{
-			get
-			{
-				return this._DCCaiDat;
-			}
-			set
-			{
-				if ((this._DCCaiDat != value))
-				{
-					this._DCCaiDat = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DCThanhToan", DbType="VarChar(1000)")]
-		public string DCThanhToan
-		{
-			get
-			{
-				return this._DCThanhToan;
-			}
-			set
-			{
-				if ((this._DCThanhToan != value))
-				{
-					this._DCThanhToan = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoDienThoai", DbType="Int")]
-		public System.Nullable<int> SoDienThoai
-		{
-			get
-			{
-				return this._SoDienThoai;
-			}
-			set
-			{
-				if ((this._SoDienThoai != value))
-				{
-					this._SoDienThoai = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayDangKy", DbType="Date")]
-		public System.Nullable<System.DateTime> NgayDangKy
-		{
-			get
-			{
-				return this._NgayDangKy;
-			}
-			set
-			{
-				if ((this._NgayDangKy != value))
-				{
-					this._NgayDangKy = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaDoiTuong", DbType="VarChar(10)")]
-		public string MaDoiTuong
-		{
-			get
-			{
-				return this._MaDoiTuong;
-			}
-			set
-			{
-				if ((this._MaDoiTuong != value))
-				{
-					this._MaDoiTuong = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaGoiCuoc", DbType="VarChar(10)")]
-		public string MaGoiCuoc
-		{
-			get
-			{
-				return this._MaGoiCuoc;
-			}
-			set
-			{
-				if ((this._MaGoiCuoc != value))
-				{
-					this._MaGoiCuoc = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayApDungGoiCuoc", DbType="Date")]
-		public System.Nullable<System.DateTime> NgayApDungGoiCuoc
-		{
-			get
-			{
-				return this._NgayApDungGoiCuoc;
-			}
-			set
-			{
-				if ((this._NgayApDungGoiCuoc != value))
-				{
-					this._NgayApDungGoiCuoc = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhiDangKy", DbType="Float")]
-		public System.Nullable<double> PhiDangKy
-		{
-			get
-			{
-				return this._PhiDangKy;
-			}
-			set
-			{
-				if ((this._PhiDangKy != value))
-				{
-					this._PhiDangKy = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TinhTrang", DbType="VarChar(10)")]
-		public string TinhTrang
-		{
-			get
-			{
-				return this._TinhTrang;
-			}
-			set
-			{
-				if ((this._TinhTrang != value))
-				{
-					this._TinhTrang = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Username", DbType="VarChar(10)")]
-		public string Username
-		{
-			get
-			{
-				return this._Username;
-			}
-			set
-			{
-				if ((this._Username != value))
-				{
-					this._Username = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="VarChar(30)")]
-		public string Password
-		{
-			get
-			{
-				return this._Password;
-			}
-			set
-			{
-				if ((this._Password != value))
-				{
-					this._Password = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(30)")]
-		public string Email
-		{
-			get
-			{
-				return this._Email;
-			}
-			set
-			{
-				if ((this._Email != value))
-				{
-					this._Email = value;
+					this._DungLuongSuDung = value;
 				}
 			}
 		}
@@ -3851,7 +3845,7 @@ namespace QuanLyInternet.DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KhoangThoiGian", DbType="NVarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KhoangThoiGian", DbType="VarChar(50)")]
 		public string KhoangThoiGian
 		{
 			get
@@ -4085,6 +4079,320 @@ namespace QuanLyInternet.DAO
 				if ((this._DungLuongSuDung != value))
 				{
 					this._DungLuongSuDung = value;
+				}
+			}
+		}
+	}
+	
+	public partial class searchHopDongResult
+	{
+		
+		private string _MaHopDong;
+		
+		private string _HoTen;
+		
+		private System.Nullable<int> _CMND;
+		
+		private string _NgheNghiep;
+		
+		private string _DCNha;
+		
+		private string _DCCaiDat;
+		
+		private string _DCThanhToan;
+		
+		private System.Nullable<int> _SoDienThoai;
+		
+		private System.Nullable<System.DateTime> _NgayDangKy;
+		
+		private string _MaDoiTuong;
+		
+		private string _MaGoiCuoc;
+		
+		private System.Nullable<System.DateTime> _NgayApDungGoiCuoc;
+		
+		private System.Nullable<double> _PhiDangKy;
+		
+		private string _TinhTrang;
+		
+		private string _Username;
+		
+		private string _Password;
+		
+		private string _Email;
+		
+		public searchHopDongResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaHopDong", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string MaHopDong
+		{
+			get
+			{
+				return this._MaHopDong;
+			}
+			set
+			{
+				if ((this._MaHopDong != value))
+				{
+					this._MaHopDong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HoTen", DbType="VarChar(50)")]
+		public string HoTen
+		{
+			get
+			{
+				return this._HoTen;
+			}
+			set
+			{
+				if ((this._HoTen != value))
+				{
+					this._HoTen = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CMND", DbType="Int")]
+		public System.Nullable<int> CMND
+		{
+			get
+			{
+				return this._CMND;
+			}
+			set
+			{
+				if ((this._CMND != value))
+				{
+					this._CMND = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgheNghiep", DbType="VarChar(50)")]
+		public string NgheNghiep
+		{
+			get
+			{
+				return this._NgheNghiep;
+			}
+			set
+			{
+				if ((this._NgheNghiep != value))
+				{
+					this._NgheNghiep = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DCNha", DbType="VarChar(1000)")]
+		public string DCNha
+		{
+			get
+			{
+				return this._DCNha;
+			}
+			set
+			{
+				if ((this._DCNha != value))
+				{
+					this._DCNha = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DCCaiDat", DbType="VarChar(1000)")]
+		public string DCCaiDat
+		{
+			get
+			{
+				return this._DCCaiDat;
+			}
+			set
+			{
+				if ((this._DCCaiDat != value))
+				{
+					this._DCCaiDat = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DCThanhToan", DbType="VarChar(1000)")]
+		public string DCThanhToan
+		{
+			get
+			{
+				return this._DCThanhToan;
+			}
+			set
+			{
+				if ((this._DCThanhToan != value))
+				{
+					this._DCThanhToan = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoDienThoai", DbType="Int")]
+		public System.Nullable<int> SoDienThoai
+		{
+			get
+			{
+				return this._SoDienThoai;
+			}
+			set
+			{
+				if ((this._SoDienThoai != value))
+				{
+					this._SoDienThoai = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayDangKy", DbType="Date")]
+		public System.Nullable<System.DateTime> NgayDangKy
+		{
+			get
+			{
+				return this._NgayDangKy;
+			}
+			set
+			{
+				if ((this._NgayDangKy != value))
+				{
+					this._NgayDangKy = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaDoiTuong", DbType="VarChar(10)")]
+		public string MaDoiTuong
+		{
+			get
+			{
+				return this._MaDoiTuong;
+			}
+			set
+			{
+				if ((this._MaDoiTuong != value))
+				{
+					this._MaDoiTuong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaGoiCuoc", DbType="VarChar(10)")]
+		public string MaGoiCuoc
+		{
+			get
+			{
+				return this._MaGoiCuoc;
+			}
+			set
+			{
+				if ((this._MaGoiCuoc != value))
+				{
+					this._MaGoiCuoc = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayApDungGoiCuoc", DbType="Date")]
+		public System.Nullable<System.DateTime> NgayApDungGoiCuoc
+		{
+			get
+			{
+				return this._NgayApDungGoiCuoc;
+			}
+			set
+			{
+				if ((this._NgayApDungGoiCuoc != value))
+				{
+					this._NgayApDungGoiCuoc = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhiDangKy", DbType="Float")]
+		public System.Nullable<double> PhiDangKy
+		{
+			get
+			{
+				return this._PhiDangKy;
+			}
+			set
+			{
+				if ((this._PhiDangKy != value))
+				{
+					this._PhiDangKy = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TinhTrang", DbType="VarChar(10)")]
+		public string TinhTrang
+		{
+			get
+			{
+				return this._TinhTrang;
+			}
+			set
+			{
+				if ((this._TinhTrang != value))
+				{
+					this._TinhTrang = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Username", DbType="VarChar(10)")]
+		public string Username
+		{
+			get
+			{
+				return this._Username;
+			}
+			set
+			{
+				if ((this._Username != value))
+				{
+					this._Username = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="VarChar(30)")]
+		public string Password
+		{
+			get
+			{
+				return this._Password;
+			}
+			set
+			{
+				if ((this._Password != value))
+				{
+					this._Password = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(30)")]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this._Email = value;
 				}
 			}
 		}

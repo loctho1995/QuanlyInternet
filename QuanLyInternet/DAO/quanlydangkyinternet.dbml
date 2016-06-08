@@ -119,6 +119,23 @@
       <Association Name="HOPDONG_THONGTINTRUYCAP" Member="HOPDONG" ThisKey="MaHopDong" OtherKey="MaHopDong" Type="HOPDONG" IsForeignKey="true" />
     </Type>
   </Table>
+  <Function Name="dbo.addCTGoiCuoc" Method="addCTGoiCuoc">
+    <Parameter Name="magoicuoc" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="maloaigiotruycap" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="dongia" Type="System.Double" DbType="Float" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.searchThongTinTruyCap" Method="searchThongTinTruyCap">
+    <Parameter Name="mahopdong" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="searchThongTinTruyCapResult">
+      <Column Name="STT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaHopDong" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="NgayTruyCap" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ThoiDiemTruyCap" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="DiaChiTruyCap" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DungLuongSuDung" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
   <Function Name="dbo.addCTKM" Method="addCTKM">
     <Parameter Name="MaCTKM" Parameter="maCTKM" Type="System.String" DbType="VarChar(10)" />
     <Parameter Name="NoiDung" Parameter="noiDung" Type="System.String" DbType="Text" />
@@ -128,43 +145,32 @@
     <Parameter Name="PhiDangKyKhuyenMai" Parameter="phiDangKyKhuyenMai" Type="System.Double" DbType="Float" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.searchHopDong" Method="searchHopDong">
-    <Parameter Name="MaHopDong" Parameter="maHopDong" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="HoTen" Parameter="hoTen" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="CMND" Parameter="cMND" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="NgheNghiep" Parameter="ngheNghiep" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="DCNha" Parameter="dCNha" Type="System.String" DbType="VarChar(1000)" />
-    <Parameter Name="DCCaiDat" Parameter="dCCaiDat" Type="System.String" DbType="VarChar(1000)" />
-    <Parameter Name="DCThanhToan" Parameter="dCThanhToan" Type="System.String" DbType="VarChar(1000)" />
-    <Parameter Name="SoDienThoai" Parameter="soDienThoai" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="MaDoiTuong" Parameter="maDoiTuong" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="MaGoiCuoc" Parameter="maGoiCuoc" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="TinhTrang" Parameter="tinhTrang" Type="System.String" DbType="VarChar(50)" />
-    <ElementType Name="searchHopDongResult">
-      <Column Name="MaHopDong" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="HoTen" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="CMND" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NgheNghiep" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="DCNha" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
-      <Column Name="DCCaiDat" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
-      <Column Name="DCThanhToan" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
-      <Column Name="SoDienThoai" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NgayDangKy" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="MaDoiTuong" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="MaGoiCuoc" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="NgayApDungGoiCuoc" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="PhiDangKy" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="TinhTrang" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="Username" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="Password" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="Email" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-    </ElementType>
+  <Function Name="dbo.addDoiTuong" Method="addDoiTuong">
+    <Parameter Name="madoituong" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="mota" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="sothangcantren" Type="System.Int32" DbType="Int" />
+    <Parameter Name="sothangcanduoi" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.addDoiTuongApDungKM" Method="addDoiTuongApDungKM">
+    <Parameter Name="mactkm" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="madoituong" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.addGoiCuoc" Method="addGoiCuoc">
     <Parameter Name="MaGoiCuoc" Parameter="maGoiCuoc" Type="System.String" DbType="VarChar(10)" />
     <Parameter Name="TocDo" Parameter="tocDo" Type="System.Double" DbType="Float" />
     <Parameter Name="CuocThueBaoThang" Parameter="cuocThueBaoThang" Type="System.Double" DbType="Float" />
     <Parameter Name="SoMBMienPhi" Parameter="soMBMienPhi" Type="System.Double" DbType="Float" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.addHoaDonThang" Method="addHoaDonThang">
+    <Parameter Name="mahoadon" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="mahopdong" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="thang" Type="System.Int32" DbType="Int" />
+    <Parameter Name="nam" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ngaythanhtoan" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="tongtien" Type="System.Double" DbType="Float" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.addHopDong" Method="addHopDong">
@@ -187,8 +193,87 @@
     <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(30)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.addLoaiGioTruyCap" Method="addLoaiGioTruyCap">
+    <Parameter Name="maloaigiotruycap" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="khoangthoigian" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.addTinhTrang" Method="addTinhTrang">
+    <Parameter Name="matinhtrang" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="noidung" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.addThongTinTruyCap" Method="addThongTinTruyCap">
+    <Parameter Name="mahopdong" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="ngaytruycap" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="thoidiemtruycap" Type="System.TimeSpan" DbType="Time" />
+    <Parameter Name="diachitruycap" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="dungluongsudung" Type="System.Double" DbType="Float" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.deleteCTGoiCuoc" Method="deleteCTGoiCuoc">
+    <Parameter Name="magoicuoc" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="maloaigiotruycap" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.deleteCTKM" Method="deleteCTKM">
+    <Parameter Name="MaCTKM" Parameter="maCTKM" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.deleteDoiTuong" Method="deleteDoiTuong">
+    <Parameter Name="madoituong" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.deleteDoiTuongApDungKM" Method="deleteDoiTuongApDungKM">
+    <Parameter Name="mactkm" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="madoituong" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
   <Function Name="dbo.deleteGoiCuoc" Method="deleteGoiCuoc">
     <Parameter Name="MaGoiCuoc" Parameter="maGoiCuoc" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.deleteHoaDonThang" Method="deleteHoaDonThang">
+    <Parameter Name="mahoadon" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.deleteHopDong" Method="deleteHopDong">
+    <Parameter Name="mahopdong" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.deleteLoaiGioTruyCap" Method="deleteLoaiGioTruyCap">
+    <Parameter Name="maloaigiotruycap" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.deleteTinhTrang" Method="deleteTinhTrang">
+    <Parameter Name="matinhtrang" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.editCTGoiCuoc" Method="editCTGoiCuoc">
+    <Parameter Name="magoicuoc" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="maloaigiotruycap" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="dongia" Type="System.Double" DbType="Float" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.editCTKM" Method="editCTKM">
+    <Parameter Name="MaCTKM" Parameter="maCTKM" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="NoiDung" Parameter="noiDung" Type="System.String" DbType="Text" />
+    <Parameter Name="TuNgay" Parameter="tuNgay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="DenNgay" Parameter="denNgay" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="MaGoiCuocKhuyenMai" Parameter="maGoiCuocKhuyenMai" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="PhiDangKyKhuyenMai" Parameter="phiDangKyKhuyenMai" Type="System.Double" DbType="Float" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.editDoiTuong" Method="editDoiTuong">
+    <Parameter Name="madoituong" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="mota" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="sothangcantren" Type="System.Int32" DbType="Int" />
+    <Parameter Name="sothangcanduoi" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.editDoiTuongApDungKM" Method="editDoiTuongApDungKM">
+    <Parameter Name="mactkm" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="madoituong" Type="System.String" DbType="VarChar(10)" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.editGoiCuoc" Method="editGoiCuoc">
@@ -196,6 +281,51 @@
     <Parameter Name="TocDo" Parameter="tocDo" Type="System.Double" DbType="Float" />
     <Parameter Name="CuocThueBaoThang" Parameter="cuocThueBaoThang" Type="System.Double" DbType="Float" />
     <Parameter Name="SoMBMienPhi" Parameter="soMBMienPhi" Type="System.Double" DbType="Float" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.editHoaDonThang" Method="editHoaDonThang">
+    <Parameter Name="mahoadon" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="mahopdong" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="thang" Type="System.Int32" DbType="Int" />
+    <Parameter Name="nam" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ngaythanhtoan" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="tongtien" Type="System.Double" DbType="Float" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.editHopDong" Method="editHopDong">
+    <Parameter Name="MaHopDong" Parameter="maHopDong" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="HoTen" Parameter="hoTen" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CMND" Parameter="cMND" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="NgheNghiep" Parameter="ngheNghiep" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DCNha" Parameter="dCNha" Type="System.String" DbType="VarChar(1000)" />
+    <Parameter Name="DCCaiDat" Parameter="dCCaiDat" Type="System.String" DbType="VarChar(1000)" />
+    <Parameter Name="DCThanhToan" Parameter="dCThanhToan" Type="System.String" DbType="VarChar(1000)" />
+    <Parameter Name="SoDienThoai" Parameter="soDienThoai" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="NgayDangKy" Parameter="ngayDangKy" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="MaDoiTuong" Parameter="maDoiTuong" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="MaGoiCuoc" Parameter="maGoiCuoc" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="NgayApDungGoiCuoc" Parameter="ngayApDungGoiCuoc" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="PhiDangKy" Parameter="phiDangKy" Type="System.Double" DbType="Float" />
+    <Parameter Name="TinhTrang" Parameter="tinhTrang" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Username" Parameter="username" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.editLoaiGioTruyCap" Method="editLoaiGioTruyCap">
+    <Parameter Name="maloaigiotruycap" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="khoangthoigian" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.editTinhTrang" Method="editTinhTrang">
+    <Parameter Name="matinhtrang" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="noidung" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.editThamSo" Method="editThamSo">
+    <Parameter Name="phidangky" Type="System.Double" DbType="Float" />
+    <Parameter Name="ngaybatdauthuphi" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ngayketthucthuphi" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.getCTGoiCuoc" Method="getCTGoiCuoc">
@@ -271,7 +401,7 @@
   <Function Name="dbo.getLoaiGioTruyCap" Method="getLoaiGioTruyCap">
     <ElementType Name="getLoaiGioTruyCapResult">
       <Column Name="MaLoaiGioTruyCap" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="KhoangThoiGian" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="KhoangThoiGian" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
   <Function Name="dbo.getTinhTrang" Method="getTinhTrang">
@@ -295,6 +425,38 @@
       <Column Name="ThoiDiemTruyCap" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
       <Column Name="DiaChiTruyCap" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="DungLuongSuDung" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.searchHopDong" Method="searchHopDong">
+    <Parameter Name="MaHopDong" Parameter="maHopDong" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="HoTen" Parameter="hoTen" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CMND" Parameter="cMND" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="NgheNghiep" Parameter="ngheNghiep" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="DCNha" Parameter="dCNha" Type="System.String" DbType="VarChar(1000)" />
+    <Parameter Name="DCCaiDat" Parameter="dCCaiDat" Type="System.String" DbType="VarChar(1000)" />
+    <Parameter Name="DCThanhToan" Parameter="dCThanhToan" Type="System.String" DbType="VarChar(1000)" />
+    <Parameter Name="SoDienThoai" Parameter="soDienThoai" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="MaDoiTuong" Parameter="maDoiTuong" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="MaGoiCuoc" Parameter="maGoiCuoc" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="TinhTrang" Parameter="tinhTrang" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="searchHopDongResult">
+      <Column Name="MaHopDong" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CMND" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NgheNghiep" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DCNha" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="DCCaiDat" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="DCThanhToan" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="SoDienThoai" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NgayDangKy" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="MaDoiTuong" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="MaGoiCuoc" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="NgayApDungGoiCuoc" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PhiDangKy" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TinhTrang" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

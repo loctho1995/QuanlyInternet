@@ -31,5 +31,10 @@ namespace QuanLyInternet.BUS
                 return null;
             return dt;
         }
+
+        public void edit(float phidangky, int ngaybatdauthuphi, int ngayketthucthuphi)
+        {
+            SQLDataContext.SQLData.editThamSo(phidangky, ngaybatdauthuphi, ngayketthucthuphi);
+        }
     }
 }

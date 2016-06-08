@@ -32,5 +32,20 @@ namespace QuanLyInternet.BUS
                 return null;
             return dt;
         }
+
+        public void add(string maloaigiotruycap, string khoangthoigian)
+        {
+            SQLDataContext.SQLData.addLoaiGioTruyCap(maloaigiotruycap, khoangthoigian);
+        }
+
+        public void edit(string maloaigiotruycap, string khoangthoigian)
+        {
+            SQLDataContext.SQLData.editLoaiGioTruyCap(maloaigiotruycap, khoangthoigian);
+        }
+
+        public void delete(string maloaigiotruycap)
+        {
+            SQLDataContext.SQLData.deleteLoaiGioTruyCap(maloaigiotruycap);
+        }
     }
 }

@@ -50,6 +50,7 @@
     <Compile Include="Ambiance Theme.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="BUS\CTGoiCuoc.cs" />
     <Compile Include="BUS\LoaiGioTruyCap_BUS.cs" />
     <Compile Include="BUS\ThamSo.cs" />
     <Compile Include="BUS\TinhTrang_BUS.cs" />

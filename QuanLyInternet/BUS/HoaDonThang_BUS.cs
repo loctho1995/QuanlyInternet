@@ -39,5 +39,20 @@ namespace QuanLyInternet.BUS
                 return null;
             return dt;
         }
+
+        public void add(string mahoadon, string mahopdong, int thang, int nam, DateTime ngaythanhtoan, float tongtien)
+        {
+            SQLDataContext.SQLData.addHoaDonThang(mahoadon, mahopdong, thang, nam, ngaythanhtoan, tongtien);
+        }
+
+        public void edit(string mahoadon, string mahopdong, int thang, int nam, DateTime ngaythanhtoan, float tongtien)
+        {
+            SQLDataContext.SQLData.editHoaDonThang(mahoadon, mahopdong, thang, nam, ngaythanhtoan, tongtien);
+        }
+
+        public void delete(string mahoadon)
+        {
+            SQLDataContext.SQLData.deleteHoaDonThang(mahoadon);
+        }
     }
 }

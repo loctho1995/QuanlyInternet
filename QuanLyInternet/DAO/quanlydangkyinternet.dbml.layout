@@ -110,7 +110,7 @@
         <classShapeMoniker Id="d2de88b1-4491-4856-830d-6630b95af422" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 7.45115397135417); (6.5 : 7.45115397135417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.75 : 7.45115397135417); (6.26041666666667 : 7.45115397135417 : JumpStart); (6.42708333333333 : 7.45115397135417 : JumpEnd); (6.5 : 7.45115397135417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/quanlydangkyinternetDataContext/GOICUOC/GOICUOC_HOPDONG" />
       <nodes>
         <classShapeMoniker Id="9813fa3f-92ed-45c9-94ce-07438758b450" />

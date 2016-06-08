@@ -13,8 +13,8 @@ namespace QuanLyInternet.BUS
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("STT", typeof(int));
-            dt.Columns.Add("MaCTKM", typeof(int));
-            dt.Columns.Add("MaDoiTuong", typeof(int));
+            dt.Columns.Add("MaCTKM", typeof(string));
+            dt.Columns.Add("MaDoiTuong", typeof(string));
 
             var km = SQLDataContext.SQLData.getDoiTuongApDungKM();
             int stt = 1;
@@ -30,6 +30,21 @@ namespace QuanLyInternet.BUS
             if (dt.Rows.Count == 0)
                 return null;
             return dt;
+        }
+
+        public void add(string mactkm, string madoituong)
+        {
+            SQLDataContext.SQLData.addDoiTuongApDungKM(mactkm, madoituong);
+        }
+
+        public void edit(string mactkm, string madoituong)
+        {
+            SQLDataContext.SQLData.editDoiTuongApDungKM(mactkm, madoituong);
+        }
+
+        public void delete(string mactkm, string madoituong)
+        {
+            SQLDataContext.SQLData.deleteDoiTuongApDungKM(mactkm, madoituong);
         }
     }
 }

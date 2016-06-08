@@ -121,5 +121,15 @@ namespace QuanLyInternet.BUS
         {
             SQLDataContext.SQLData.addHopDong(mahopdong, hoten, cmnd.ToString(), nghenghiep, dcnha, dccaidat, dcthanhtoan, sodienthoai.ToString(), ngaydangky, madoituong, magoicuoc, ngayapdunggoicuoc, phidangky, tinhtrang, username, password, email);
         }
+
+        public void editHopDong(string mahopdong, string hoten, int cmnd, string nghenghiep, string dcnha, string dccaidat, string dcthanhtoan, int sodienthoai, DateTime ngaydangky, string madoituong, string magoicuoc, DateTime ngayapdunggoicuoc, float phidangky, string tinhtrang, string username, string password, string email)
+        {
+            SQLDataContext.SQLData.editHopDong(mahopdong, hoten, cmnd.ToString(), nghenghiep, dcnha, dccaidat, dcthanhtoan, sodienthoai.ToString(), ngaydangky, madoituong, magoicuoc, ngayapdunggoicuoc, phidangky, tinhtrang, username, password, email);
+        }
+
+        public void deleteHopDong(string mahopdong)
+        {
+            SQLDataContext.SQLData.deleteHopDong(mahopdong);
+        }
     }
 }

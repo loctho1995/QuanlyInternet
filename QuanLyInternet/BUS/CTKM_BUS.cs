@@ -44,5 +44,15 @@ namespace QuanLyInternet.BUS
         {
             SQLDataContext.SQLData.addCTKM(mactkm, noidung, tungay, denngay, magoicuockhuyenmai, phidangkykhuyenmai);
         }
+
+        public void editCTKM(string mactkm, string noidung, DateTime tungay, DateTime denngay, string magoicuockhuyenmai, float phidangkykhuyenmai)
+        {
+            SQLDataContext.SQLData.editCTKM(mactkm, noidung, tungay, denngay, magoicuockhuyenmai, phidangkykhuyenmai);
+        }
+
+        public void deleteCTKM(string mactkm)
+        {
+            SQLDataContext.SQLData.deleteCTKM(mactkm);
+        }
     }
 }

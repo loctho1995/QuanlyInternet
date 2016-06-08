@@ -32,5 +32,20 @@ namespace QuanLyInternet.BUS
                 return null;
             return dt;
         }
+
+        public void add(string matinhtrang, string tentinhtrang)
+        {
+            SQLDataContext.SQLData.addTinhtrang(matinhtrang, tentinhtrang);
+        }
+
+        public void edit(string matinhtrang, string tentinhtrang)
+        {
+            SQLDataContext.SQLData.editTinhtrang(matinhtrang, tentinhtrang);
+        }
+
+        public void delete(string matinhtrang)
+        {
+            SQLDataContext.SQLData.deleteTinhtrang(matinhtrang);
+        }
     }
 }
