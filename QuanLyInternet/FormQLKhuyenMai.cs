@@ -15,6 +15,7 @@ namespace QuanLyInternet
         public FormQLKhuyenMai()
         {
             InitializeComponent();
+            this.dataGridView1.DataSource = Database.GetInstance.CTKM.getAllResult();
         }
 
         private void btOK_Click(object sender, EventArgs e)

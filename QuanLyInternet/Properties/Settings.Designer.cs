@@ -43,5 +43,15 @@ namespace QuanLyInternet.Properties {
                 return ((string)(this["QuanLyDangKyInternetConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SKY;Initial Catalog=QuanLyDangKyInternet;Integrated Security=True")]
+        public string QuanLyDangKyInternetConnectionString2 {
+            get {
+                return ((string)(this["QuanLyDangKyInternetConnectionString2"]));
+            }
+        }
     }
 }

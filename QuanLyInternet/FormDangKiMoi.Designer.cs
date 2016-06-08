@@ -65,6 +65,7 @@
             this.ambiance_Button_11.TabIndex = 18;
             this.ambiance_Button_11.Text = "Hoàn tất đăng kí";
             this.ambiance_Button_11.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.ambiance_Button_11.Click += new System.EventHandler(this.ambiance_Button_11_Click);
             // 
             // ambiance_ComboBox1
             // 
@@ -141,6 +142,7 @@
             this.tbDCCaidat.TabIndex = 11;
             this.tbDCCaidat.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.tbDCCaidat.UseSystemPasswordChar = false;
+            this.tbDCCaidat.TextChanged += new System.EventHandler(this.tbDCCaidat_TextChanged);
             // 
             // ambiance_Label6
             // 
@@ -195,6 +197,7 @@
             this.tbSoDienThoai.TabIndex = 7;
             this.tbSoDienThoai.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.tbSoDienThoai.UseSystemPasswordChar = false;
+            this.tbSoDienThoai.TextChanged += new System.EventHandler(this.tbSoDienThoai_TextChanged);
             // 
             // ambiance_Label4
             // 
@@ -249,6 +252,7 @@
             this.tbSoCMND.TabIndex = 3;
             this.tbSoCMND.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.tbSoCMND.UseSystemPasswordChar = false;
+            this.tbSoCMND.TextChanged += new System.EventHandler(this.tbSoCMND_TextChanged);
             // 
             // ambiance_Label2
             // 

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QuanLyDangKyInternet" Class="quanlydangkyinternetDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=THINH;Initial Catalog=QuanLyDangKyInternet;Integrated Security=True" SettingsObjectName="QuanLyInternet.Properties.Settings" SettingsPropertyName="QuanLyDangKyInternetConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=SKY;Initial Catalog=QuanLyDangKyInternet;Integrated Security=True" SettingsObjectName="QuanLyInternet.Properties.Settings" SettingsPropertyName="QuanLyDangKyInternetConnectionString2" Provider="System.Data.SqlClient" />
   <Table Name="dbo.CTGOICUOC" Member="CTGOICUOCs">
     <Type Name="CTGOICUOC">
       <Column Name="MaGoiCuoc" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -9,15 +9,11 @@
       <Association Name="LOAIGIOTRUYCAP_CTGOICUOC" Member="LOAIGIOTRUYCAP" ThisKey="MaLoaiGioTruyCap" OtherKey="MaLoaiGioTruyCap" Type="LOAIGIOTRUYCAP" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.THONGTINTRUYCAP" Member="THONGTINTRUYCAPs">
-    <Type Name="THONGTINTRUYCAP">
-      <Column Name="STT" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="MaHopDong" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="NgayTruyCap" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="ThoiDiemTruyCap" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
-      <Column Name="DiaChiTruyCap" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="DungLuongSuDung" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Association Name="HOPDONG_THONGTINTRUYCAP" Member="HOPDONG" ThisKey="MaHopDong" OtherKey="MaHopDong" Type="HOPDONG" IsForeignKey="true" />
+  <Table Name="dbo.TINHTRANG" Member="TINHTRANGs">
+    <Type Name="TINHTRANG">
+      <Column Name="MaTinhTrang" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NoiDung" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="TINHTRANG_HOPDONG" Member="HOPDONGs" ThisKey="MaTinhTrang" OtherKey="TinhTrang" Type="HOPDONG" />
     </Type>
   </Table>
   <Table Name="dbo.CTKM" Member="CTKMs">
@@ -28,7 +24,7 @@
       <Column Name="DenNgay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="MaGoiCuocKhuyenMai" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="PhiDangKyKhuyenMai" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Association Name="CTKM_DOTUONGAPDUNGKM" Member="DOTUONGAPDUNGKMs" ThisKey="MaCTKM" OtherKey="MaCTKM" Type="DOTUONGAPDUNGKM" />
+      <Association Name="CTKM_DOITUONGAPDUNGKM" Member="DOITUONGAPDUNGKMs" ThisKey="MaCTKM" OtherKey="MaCTKM" Type="DOITUONGAPDUNGKM" />
       <Association Name="GOICUOC_CTKM" Member="GOICUOC" ThisKey="MaGoiCuocKhuyenMai" OtherKey="MaGoiCuoc" Type="GOICUOC" IsForeignKey="true" />
     </Type>
   </Table>
@@ -38,16 +34,16 @@
       <Column Name="SoThangCanTren" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="SoThangCanDuoi" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="MoTa" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Association Name="DOITUONG_DOTUONGAPDUNGKM" Member="DOTUONGAPDUNGKMs" ThisKey="MaDoiTuong" OtherKey="MaDoiTuong" Type="DOTUONGAPDUNGKM" />
+      <Association Name="DOITUONG_DOITUONGAPDUNGKM" Member="DOITUONGAPDUNGKMs" ThisKey="MaDoiTuong" OtherKey="MaDoiTuong" Type="DOITUONGAPDUNGKM" />
       <Association Name="DOITUONG_HOPDONG" Member="HOPDONGs" ThisKey="MaDoiTuong" OtherKey="MaDoiTuong" Type="HOPDONG" />
     </Type>
   </Table>
-  <Table Name="dbo.DOTUONGAPDUNGKM" Member="DOTUONGAPDUNGKMs">
-    <Type Name="DOTUONGAPDUNGKM">
+  <Table Name="dbo.DOITUONGAPDUNGKM" Member="DOITUONGAPDUNGKMs">
+    <Type Name="DOITUONGAPDUNGKM">
       <Column Name="MaCTKM" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="MaDoiTuong" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Association Name="CTKM_DOTUONGAPDUNGKM" Member="CTKM" ThisKey="MaCTKM" OtherKey="MaCTKM" Type="CTKM" IsForeignKey="true" />
-      <Association Name="DOITUONG_DOTUONGAPDUNGKM" Member="DOITUONG" ThisKey="MaDoiTuong" OtherKey="MaDoiTuong" Type="DOITUONG" IsForeignKey="true" />
+      <Association Name="CTKM_DOITUONGAPDUNGKM" Member="CTKM" ThisKey="MaCTKM" OtherKey="MaCTKM" Type="CTKM" IsForeignKey="true" />
+      <Association Name="DOITUONG_DOITUONGAPDUNGKM" Member="DOITUONG" ThisKey="MaDoiTuong" OtherKey="MaDoiTuong" Type="DOITUONG" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.GOICUOC" Member="GOICUOCs">
@@ -91,8 +87,8 @@
       <Column Name="Username" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="Password" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
       <Column Name="Email" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Association Name="HOPDONG_THONGTINTRUYCAP" Member="THONGTINTRUYCAPs" ThisKey="MaHopDong" OtherKey="MaHopDong" Type="THONGTINTRUYCAP" />
       <Association Name="HOPDONG_HOADONTHANG" Member="HOADONTHANGs" ThisKey="MaHopDong" OtherKey="MaHopDong" Type="HOADONTHANG" />
+      <Association Name="HOPDONG_THONGTINTRUYCAP" Member="THONGTINTRUYCAPs" ThisKey="MaHopDong" OtherKey="MaHopDong" Type="THONGTINTRUYCAP" />
       <Association Name="DOITUONG_HOPDONG" Member="DOITUONG" ThisKey="MaDoiTuong" OtherKey="MaDoiTuong" Type="DOITUONG" IsForeignKey="true" />
       <Association Name="GOICUOC_HOPDONG" Member="GOICUOC" ThisKey="MaGoiCuoc" OtherKey="MaGoiCuoc" Type="GOICUOC" IsForeignKey="true" />
       <Association Name="TINHTRANG_HOPDONG" Member="TINHTRANG1" ThisKey="TinhTrang" OtherKey="MaTinhTrang" Type="TINHTRANG" IsForeignKey="true" />
@@ -101,15 +97,8 @@
   <Table Name="dbo.LOAIGIOTRUYCAP" Member="LOAIGIOTRUYCAPs">
     <Type Name="LOAIGIOTRUYCAP">
       <Column Name="MaLoaiGioTruyCap" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="KhoangThoiGian" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="KhoangThoiGian" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="LOAIGIOTRUYCAP_CTGOICUOC" Member="CTGOICUOCs" ThisKey="MaLoaiGioTruyCap" OtherKey="MaLoaiGioTruyCap" Type="CTGOICUOC" />
-    </Type>
-  </Table>
-  <Table Name="dbo.TINHTRANG" Member="TINHTRANGs">
-    <Type Name="TINHTRANG">
-      <Column Name="MaTinhTrang" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="NoiDung" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Association Name="TINHTRANG_HOPDONG" Member="HOPDONGs" ThisKey="MaTinhTrang" OtherKey="TinhTrang" Type="HOPDONG" />
     </Type>
   </Table>
   <Table Name="dbo.THAMSO" Member="THAMSOs">
@@ -119,6 +108,17 @@
       <Column Name="NgayKetThucThuPhi" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.THONGTINTRUYCAP" Member="THONGTINTRUYCAPs">
+    <Type Name="THONGTINTRUYCAP">
+      <Column Name="STT" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaHopDong" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="NgayTruyCap" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ThoiDiemTruyCap" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="DiaChiTruyCap" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DungLuongSuDung" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="HOPDONG_THONGTINTRUYCAP" Member="HOPDONG" ThisKey="MaHopDong" OtherKey="MaHopDong" Type="HOPDONG" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Function Name="dbo.getCTGoiCuoc" Method="getCTGoiCuoc">
     <ElementType Name="getCTGoiCuocResult">
       <Column Name="MaGoiCuoc" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
@@ -126,14 +126,10 @@
       <Column Name="DonGia" Type="System.Double" DbType="Float" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.getThongTinTruyCap" Method="getThongTinTruyCap">
-    <ElementType Name="getThongTinTruyCapResult">
-      <Column Name="STT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="MaHopDong" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="NgayTruyCap" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="ThoiDiemTruyCap" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
-      <Column Name="DiaChiTruyCap" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="DungLuongSuDung" Type="System.Double" DbType="Float" CanBeNull="true" />
+  <Function Name="dbo.getTinhTrang" Method="getTinhTrang">
+    <ElementType Name="getTinhTrangResult">
+      <Column Name="MaTinhTrang" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="NoiDung" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
     </ElementType>
   </Function>
   <Function Name="dbo.getCTKM" Method="getCTKM">
@@ -205,17 +201,21 @@
       <Column Name="KhoangThoiGian" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.getTinhTrang" Method="getTinhTrang">
-    <ElementType Name="getTinhTrangResult">
-      <Column Name="MaTinhTrang" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="NoiDung" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.getThamSo" Method="getThamSo">
     <ElementType Name="getThamSoResult">
       <Column Name="PhiDangKy" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="NgayBatDauThuPhi" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="NgayKetThucThuPhi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.getThongTinTruyCap" Method="getThongTinTruyCap">
+    <ElementType Name="getThongTinTruyCapResult">
+      <Column Name="STT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaHopDong" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="NgayTruyCap" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ThoiDiemTruyCap" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="DiaChiTruyCap" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DungLuongSuDung" Type="System.Double" DbType="Float" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

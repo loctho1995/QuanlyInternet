@@ -219,6 +219,7 @@
             this.btOK.TabIndex = 40;
             this.btOK.Text = "Hoàn tất";
             this.btOK.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btOK.Click += new System.EventHandler(this.btOK_Click);
             // 
             // FormCTKhuyenMai
             // 

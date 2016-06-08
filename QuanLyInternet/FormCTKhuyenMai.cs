@@ -16,5 +16,10 @@ namespace QuanLyInternet
         {
             InitializeComponent();
         }
+
+        private void btOK_Click(object sender, EventArgs e)
+        {
+            //
+        }
     }
 }

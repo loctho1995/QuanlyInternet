@@ -21,9 +21,9 @@ namespace QuanLyInternet.BUS
             set { db = value; }
         }
 
-        //public static void CreateDataContext()
-        //{
-        //    db = new DAO.quanlydangkyinternetDataContext();
-        //}
+        public static void CreateDataContext()
+        {
+            db = new DAO.quanlydangkyinternetDataContext();
+        }
     }
 }

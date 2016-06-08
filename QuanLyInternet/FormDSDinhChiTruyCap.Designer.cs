@@ -46,6 +46,7 @@
             this.Column4});
             this.dataGridView.Location = new System.Drawing.Point(12, 20);
             this.dataGridView.Name = "dataGridView";
+            this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.Size = new System.Drawing.Size(710, 388);
             this.dataGridView.TabIndex = 1;
             // 

@@ -7,7 +7,7 @@ using System.Data;
 
 namespace QuanLyInternet.BUS
 {
-    class ThamSo
+    public class ThamSo
     {
         public DataTable getAllResult()
         {

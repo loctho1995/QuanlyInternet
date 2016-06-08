@@ -7,7 +7,7 @@ using System.Data;
 
 namespace QuanLyInternet.BUS
 {
-    class ThongTinTruyCap_BUS
+    public class ThongTinTruyCap_BUS
     {
         public DataTable getAllResult()
         {

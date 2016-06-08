@@ -15,6 +15,8 @@ namespace QuanLyInternet
         public FormHoSoKhachHang()
         {
             InitializeComponent();
+            this.dataGridView1.DataSource = null;
+            this.dataGridView1.DataSource = Database.GetInstance.HopDong.getAllResult();
         }
 
         private void ambiance_Button_11_Click(object sender, EventArgs e)

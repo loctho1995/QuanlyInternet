@@ -7,7 +7,7 @@ using System.Data;
 
 namespace QuanLyInternet.BUS
 {
-    class DoiTuongApDungKM_BUS
+    public class DoiTuongApDungKM_BUS
     {
         public DataTable getAllResult()
         {

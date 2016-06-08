@@ -7,7 +7,7 @@ using System.Data;
 
 namespace QuanLyInternet.BUS
 {
-    class HopDong_BUS
+    public class HopDong_BUS
     {
         public DataTable getAllResult()
         {
@@ -58,8 +58,8 @@ namespace QuanLyInternet.BUS
                 dt.Rows.Add(r);
             }
 
-            if (dt.Rows.Count == 0)
-                return null;
+            //if (dt.Rows.Count == 0)
+            //    return null;
             return dt;
         }
     }
