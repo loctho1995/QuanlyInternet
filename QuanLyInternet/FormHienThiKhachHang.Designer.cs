@@ -28,9 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btCloseAndSave = new Ambiance.Ambiance_Button_1();
-            this.cbbTrangThai = new Ambiance.Ambiance_ComboBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.cbbGoiCuoc = new Ambiance.Ambiance_ComboBox();
+            this.ambiance_Label16 = new Ambiance.Ambiance_Label();
+            this.cbbTT = new Ambiance.Ambiance_ComboBox();
             this.ambiance_Label9 = new Ambiance.Ambiance_Label();
+            this.tbPassword = new Ambiance.Ambiance_TextBox();
+            this.ambiance_Label8 = new Ambiance.Ambiance_Label();
+            this.tbUserName = new Ambiance.Ambiance_TextBox();
+            this.ambiance_Label15 = new Ambiance.Ambiance_Label();
+            this.ambiance_Label14 = new Ambiance.Ambiance_Label();
+            this.ambiance_Label13 = new Ambiance.Ambiance_Label();
+            this.tbEmail = new Ambiance.Ambiance_TextBox();
+            this.ambiance_TextBox1 = new Ambiance.Ambiance_TextBox();
+            this.ambiance_Label12 = new Ambiance.Ambiance_Label();
+            this.tbLuuLuong = new Ambiance.Ambiance_TextBox();
+            this.ambiance_Label11 = new Ambiance.Ambiance_Label();
+            this.tbCloseAndNotSave = new Ambiance.Ambiance_Button_1();
+            this.cbbDoiTuong = new Ambiance.Ambiance_ComboBox();
+            this.ambiance_Label10 = new Ambiance.Ambiance_Label();
+            this.btCloseAndSave = new Ambiance.Ambiance_Button_1();
             this.tbDCThanhToan = new Ambiance.Ambiance_TextBox();
             this.ambiance_Label7 = new Ambiance.Ambiance_Label();
             this.tbDCCaiDat = new Ambiance.Ambiance_TextBox();
@@ -45,22 +62,278 @@
             this.ambiance_Label2 = new Ambiance.Ambiance_Label();
             this.tbHoVaTen = new Ambiance.Ambiance_TextBox();
             this.ambiance_Label1 = new Ambiance.Ambiance_Label();
-            this.ambiance_Label10 = new Ambiance.Ambiance_Label();
-            this.cbbHoaDon = new Ambiance.Ambiance_ComboBox();
-            this.tbCloseAndNotSave = new Ambiance.Ambiance_Button_1();
-            this.ambiance_Label11 = new Ambiance.Ambiance_Label();
-            this.tbLuuLuong = new Ambiance.Ambiance_TextBox();
-            this.ambiance_TextBox1 = new Ambiance.Ambiance_TextBox();
-            this.ambiance_Label12 = new Ambiance.Ambiance_Label();
-            this.ambiance_TextBox2 = new Ambiance.Ambiance_TextBox();
-            this.ambiance_Label13 = new Ambiance.Ambiance_Label();
-            this.ambiance_Label14 = new Ambiance.Ambiance_Label();
-            this.ambiance_TextBox3 = new Ambiance.Ambiance_TextBox();
-            this.ambiance_TextBox4 = new Ambiance.Ambiance_TextBox();
-            this.ambiance_Label8 = new Ambiance.Ambiance_Label();
-            this.ambiance_TextBox5 = new Ambiance.Ambiance_TextBox();
-            this.ambiance_Label15 = new Ambiance.Ambiance_Label();
             this.SuspendLayout();
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(150, 312);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(160, 20);
+            this.dateTimePicker1.TabIndex = 54;
+            // 
+            // cbbGoiCuoc
+            // 
+            this.cbbGoiCuoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.cbbGoiCuoc.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbGoiCuoc.DropDownHeight = 100;
+            this.cbbGoiCuoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbGoiCuoc.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbGoiCuoc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(142)))), ((int)(((byte)(142)))));
+            this.cbbGoiCuoc.FormattingEnabled = true;
+            this.cbbGoiCuoc.HoverSelectionColor = System.Drawing.Color.Empty;
+            this.cbbGoiCuoc.IntegralHeight = false;
+            this.cbbGoiCuoc.ItemHeight = 20;
+            this.cbbGoiCuoc.Items.AddRange(new object[] {
+            "1"});
+            this.cbbGoiCuoc.Location = new System.Drawing.Point(552, 227);
+            this.cbbGoiCuoc.Name = "cbbGoiCuoc";
+            this.cbbGoiCuoc.Size = new System.Drawing.Size(161, 26);
+            this.cbbGoiCuoc.StartIndex = 0;
+            this.cbbGoiCuoc.TabIndex = 57;
+            // 
+            // ambiance_Label16
+            // 
+            this.ambiance_Label16.AutoSize = true;
+            this.ambiance_Label16.BackColor = System.Drawing.Color.Transparent;
+            this.ambiance_Label16.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.ambiance_Label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
+            this.ambiance_Label16.Location = new System.Drawing.Point(441, 230);
+            this.ambiance_Label16.Name = "ambiance_Label16";
+            this.ambiance_Label16.Size = new System.Drawing.Size(70, 20);
+            this.ambiance_Label16.TabIndex = 58;
+            this.ambiance_Label16.Text = "Gói Cước";
+            // 
+            // cbbTT
+            // 
+            this.cbbTT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.cbbTT.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbTT.DropDownHeight = 100;
+            this.cbbTT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbTT.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbTT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(142)))), ((int)(((byte)(142)))));
+            this.cbbTT.FormattingEnabled = true;
+            this.cbbTT.HoverSelectionColor = System.Drawing.Color.Empty;
+            this.cbbTT.IntegralHeight = false;
+            this.cbbTT.ItemHeight = 20;
+            this.cbbTT.Items.AddRange(new object[] {
+            "1"});
+            this.cbbTT.Location = new System.Drawing.Point(550, 312);
+            this.cbbTT.Name = "cbbTT";
+            this.cbbTT.Size = new System.Drawing.Size(165, 26);
+            this.cbbTT.StartIndex = 0;
+            this.cbbTT.TabIndex = 55;
+            // 
+            // ambiance_Label9
+            // 
+            this.ambiance_Label9.AutoSize = true;
+            this.ambiance_Label9.BackColor = System.Drawing.Color.Transparent;
+            this.ambiance_Label9.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.ambiance_Label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
+            this.ambiance_Label9.Location = new System.Drawing.Point(433, 318);
+            this.ambiance_Label9.Name = "ambiance_Label9";
+            this.ambiance_Label9.Size = new System.Drawing.Size(75, 20);
+            this.ambiance_Label9.TabIndex = 56;
+            this.ambiance_Label9.Text = "Trạng thái";
+            // 
+            // tbPassword
+            // 
+            this.tbPassword.BackColor = System.Drawing.Color.Transparent;
+            this.tbPassword.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.tbPassword.ForeColor = System.Drawing.Color.DimGray;
+            this.tbPassword.Location = new System.Drawing.Point(552, 185);
+            this.tbPassword.MaxLength = 32767;
+            this.tbPassword.Multiline = false;
+            this.tbPassword.Name = "tbPassword";
+            this.tbPassword.ReadOnly = false;
+            this.tbPassword.Size = new System.Drawing.Size(161, 28);
+            this.tbPassword.TabIndex = 53;
+            this.tbPassword.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.tbPassword.UseSystemPasswordChar = false;
+            // 
+            // ambiance_Label8
+            // 
+            this.ambiance_Label8.AutoSize = true;
+            this.ambiance_Label8.BackColor = System.Drawing.Color.Transparent;
+            this.ambiance_Label8.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.ambiance_Label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
+            this.ambiance_Label8.Location = new System.Drawing.Point(441, 190);
+            this.ambiance_Label8.Name = "ambiance_Label8";
+            this.ambiance_Label8.Size = new System.Drawing.Size(72, 20);
+            this.ambiance_Label8.TabIndex = 52;
+            this.ambiance_Label8.Text = "password";
+            // 
+            // tbUserName
+            // 
+            this.tbUserName.BackColor = System.Drawing.Color.Transparent;
+            this.tbUserName.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.tbUserName.ForeColor = System.Drawing.Color.DimGray;
+            this.tbUserName.Location = new System.Drawing.Point(150, 185);
+            this.tbUserName.MaxLength = 32767;
+            this.tbUserName.Multiline = false;
+            this.tbUserName.Name = "tbUserName";
+            this.tbUserName.ReadOnly = false;
+            this.tbUserName.Size = new System.Drawing.Size(210, 28);
+            this.tbUserName.TabIndex = 51;
+            this.tbUserName.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.tbUserName.UseSystemPasswordChar = false;
+            // 
+            // ambiance_Label15
+            // 
+            this.ambiance_Label15.AutoSize = true;
+            this.ambiance_Label15.BackColor = System.Drawing.Color.Transparent;
+            this.ambiance_Label15.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.ambiance_Label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
+            this.ambiance_Label15.Location = new System.Drawing.Point(12, 190);
+            this.ambiance_Label15.Name = "ambiance_Label15";
+            this.ambiance_Label15.Size = new System.Drawing.Size(75, 20);
+            this.ambiance_Label15.TabIndex = 50;
+            this.ambiance_Label15.Text = "Username";
+            // 
+            // ambiance_Label14
+            // 
+            this.ambiance_Label14.AutoSize = true;
+            this.ambiance_Label14.BackColor = System.Drawing.Color.Transparent;
+            this.ambiance_Label14.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.ambiance_Label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
+            this.ambiance_Label14.Location = new System.Drawing.Point(9, 312);
+            this.ambiance_Label14.Name = "ambiance_Label14";
+            this.ambiance_Label14.Size = new System.Drawing.Size(72, 20);
+            this.ambiance_Label14.TabIndex = 49;
+            this.ambiance_Label14.Text = "Ngày cấp";
+            // 
+            // ambiance_Label13
+            // 
+            this.ambiance_Label13.AutoSize = true;
+            this.ambiance_Label13.BackColor = System.Drawing.Color.Transparent;
+            this.ambiance_Label13.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.ambiance_Label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
+            this.ambiance_Label13.Location = new System.Drawing.Point(441, 150);
+            this.ambiance_Label13.Name = "ambiance_Label13";
+            this.ambiance_Label13.Size = new System.Drawing.Size(46, 20);
+            this.ambiance_Label13.TabIndex = 47;
+            this.ambiance_Label13.Text = "EMail";
+            // 
+            // tbEmail
+            // 
+            this.tbEmail.BackColor = System.Drawing.Color.Transparent;
+            this.tbEmail.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.tbEmail.ForeColor = System.Drawing.Color.DimGray;
+            this.tbEmail.Location = new System.Drawing.Point(551, 142);
+            this.tbEmail.MaxLength = 32767;
+            this.tbEmail.Multiline = false;
+            this.tbEmail.Name = "tbEmail";
+            this.tbEmail.ReadOnly = false;
+            this.tbEmail.Size = new System.Drawing.Size(161, 28);
+            this.tbEmail.TabIndex = 33;
+            this.tbEmail.Text = "Khong cho phep chinh sua";
+            this.tbEmail.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.tbEmail.UseSystemPasswordChar = false;
+            // 
+            // ambiance_TextBox1
+            // 
+            this.ambiance_TextBox1.BackColor = System.Drawing.Color.Transparent;
+            this.ambiance_TextBox1.Enabled = false;
+            this.ambiance_TextBox1.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.ambiance_TextBox1.ForeColor = System.Drawing.Color.DimGray;
+            this.ambiance_TextBox1.Location = new System.Drawing.Point(151, 270);
+            this.ambiance_TextBox1.MaxLength = 32767;
+            this.ambiance_TextBox1.Multiline = false;
+            this.ambiance_TextBox1.Name = "ambiance_TextBox1";
+            this.ambiance_TextBox1.ReadOnly = false;
+            this.ambiance_TextBox1.Size = new System.Drawing.Size(209, 28);
+            this.ambiance_TextBox1.TabIndex = 37;
+            this.ambiance_TextBox1.Text = "0";
+            this.ambiance_TextBox1.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.ambiance_TextBox1.UseSystemPasswordChar = false;
+            // 
+            // ambiance_Label12
+            // 
+            this.ambiance_Label12.AutoSize = true;
+            this.ambiance_Label12.BackColor = System.Drawing.Color.Transparent;
+            this.ambiance_Label12.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.ambiance_Label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
+            this.ambiance_Label12.Location = new System.Drawing.Point(11, 273);
+            this.ambiance_Label12.Name = "ambiance_Label12";
+            this.ambiance_Label12.Size = new System.Drawing.Size(117, 20);
+            this.ambiance_Label12.TabIndex = 44;
+            this.ambiance_Label12.Text = "Tổng tiền (VNĐ)";
+            // 
+            // tbLuuLuong
+            // 
+            this.tbLuuLuong.BackColor = System.Drawing.Color.Transparent;
+            this.tbLuuLuong.Enabled = false;
+            this.tbLuuLuong.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.tbLuuLuong.ForeColor = System.Drawing.Color.DimGray;
+            this.tbLuuLuong.Location = new System.Drawing.Point(150, 230);
+            this.tbLuuLuong.MaxLength = 32767;
+            this.tbLuuLuong.Multiline = false;
+            this.tbLuuLuong.Name = "tbLuuLuong";
+            this.tbLuuLuong.ReadOnly = false;
+            this.tbLuuLuong.Size = new System.Drawing.Size(208, 28);
+            this.tbLuuLuong.TabIndex = 36;
+            this.tbLuuLuong.Text = "0";
+            this.tbLuuLuong.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.tbLuuLuong.UseSystemPasswordChar = false;
+            // 
+            // ambiance_Label11
+            // 
+            this.ambiance_Label11.AutoSize = true;
+            this.ambiance_Label11.BackColor = System.Drawing.Color.Transparent;
+            this.ambiance_Label11.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.ambiance_Label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
+            this.ambiance_Label11.Location = new System.Drawing.Point(9, 235);
+            this.ambiance_Label11.Name = "ambiance_Label11";
+            this.ambiance_Label11.Size = new System.Drawing.Size(112, 20);
+            this.ambiance_Label11.TabIndex = 41;
+            this.ambiance_Label11.Text = "Lưu lượng (Mb)";
+            // 
+            // tbCloseAndNotSave
+            // 
+            this.tbCloseAndNotSave.BackColor = System.Drawing.Color.Transparent;
+            this.tbCloseAndNotSave.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.tbCloseAndNotSave.Image = null;
+            this.tbCloseAndNotSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tbCloseAndNotSave.InActiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.tbCloseAndNotSave.InActiveColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(237)))), ((int)(((byte)(236)))));
+            this.tbCloseAndNotSave.Location = new System.Drawing.Point(413, 367);
+            this.tbCloseAndNotSave.Name = "tbCloseAndNotSave";
+            this.tbCloseAndNotSave.Size = new System.Drawing.Size(163, 38);
+            this.tbCloseAndNotSave.TabIndex = 40;
+            this.tbCloseAndNotSave.Text = "Đóng và không lưu";
+            this.tbCloseAndNotSave.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.tbCloseAndNotSave.Click += new System.EventHandler(this.tbCloseAndNotSave_Click);
+            // 
+            // cbbDoiTuong
+            // 
+            this.cbbDoiTuong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.cbbDoiTuong.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbbDoiTuong.DropDownHeight = 100;
+            this.cbbDoiTuong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbDoiTuong.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbbDoiTuong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(142)))), ((int)(((byte)(142)))));
+            this.cbbDoiTuong.FormattingEnabled = true;
+            this.cbbDoiTuong.HoverSelectionColor = System.Drawing.Color.Empty;
+            this.cbbDoiTuong.IntegralHeight = false;
+            this.cbbDoiTuong.ItemHeight = 20;
+            this.cbbDoiTuong.Items.AddRange(new object[] {
+            "1"});
+            this.cbbDoiTuong.Location = new System.Drawing.Point(552, 270);
+            this.cbbDoiTuong.Name = "cbbDoiTuong";
+            this.cbbDoiTuong.Size = new System.Drawing.Size(161, 26);
+            this.cbbDoiTuong.StartIndex = 0;
+            this.cbbDoiTuong.TabIndex = 35;
+            // 
+            // ambiance_Label10
+            // 
+            this.ambiance_Label10.AutoSize = true;
+            this.ambiance_Label10.BackColor = System.Drawing.Color.Transparent;
+            this.ambiance_Label10.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.ambiance_Label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
+            this.ambiance_Label10.Location = new System.Drawing.Point(441, 273);
+            this.ambiance_Label10.Name = "ambiance_Label10";
+            this.ambiance_Label10.Size = new System.Drawing.Size(80, 20);
+            this.ambiance_Label10.TabIndex = 38;
+            this.ambiance_Label10.Text = "Đối Tượng";
             // 
             // btCloseAndSave
             // 
@@ -76,40 +349,7 @@
             this.btCloseAndSave.TabIndex = 37;
             this.btCloseAndSave.Text = "Đóng và lưu";
             this.btCloseAndSave.TextAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // cbbTrangThai
-            // 
-            this.cbbTrangThai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.cbbTrangThai.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbbTrangThai.DropDownHeight = 100;
-            this.cbbTrangThai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbTrangThai.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbbTrangThai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(142)))), ((int)(((byte)(142)))));
-            this.cbbTrangThai.FormattingEnabled = true;
-            this.cbbTrangThai.HoverSelectionColor = System.Drawing.Color.Empty;
-            this.cbbTrangThai.IntegralHeight = false;
-            this.cbbTrangThai.ItemHeight = 20;
-            this.cbbTrangThai.Items.AddRange(new object[] {
-            "Đang đợi",
-            "Đang sử dụng",
-            "Bị treo"});
-            this.cbbTrangThai.Location = new System.Drawing.Point(151, 227);
-            this.cbbTrangThai.Name = "cbbTrangThai";
-            this.cbbTrangThai.Size = new System.Drawing.Size(165, 26);
-            this.cbbTrangThai.StartIndex = 0;
-            this.cbbTrangThai.TabIndex = 34;
-            // 
-            // ambiance_Label9
-            // 
-            this.ambiance_Label9.AutoSize = true;
-            this.ambiance_Label9.BackColor = System.Drawing.Color.Transparent;
-            this.ambiance_Label9.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.ambiance_Label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
-            this.ambiance_Label9.Location = new System.Drawing.Point(12, 230);
-            this.ambiance_Label9.Name = "ambiance_Label9";
-            this.ambiance_Label9.Size = new System.Drawing.Size(75, 20);
-            this.ambiance_Label9.TabIndex = 35;
-            this.ambiance_Label9.Text = "Trạng thái";
+            this.btCloseAndSave.Click += new System.EventHandler(this.btCloseAndSave_Click);
             // 
             // tbDCThanhToan
             // 
@@ -152,6 +392,7 @@
             this.tbDCCaiDat.TabIndex = 30;
             this.tbDCCaiDat.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.tbDCCaiDat.UseSystemPasswordChar = false;
+            this.tbDCCaiDat.TextChanged += new System.EventHandler(this.tbDCCaiDat_TextChanged);
             // 
             // ambiance_Label6
             // 
@@ -206,6 +447,7 @@
             this.tbSoDienThoai.TabIndex = 26;
             this.tbSoDienThoai.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.tbSoDienThoai.UseSystemPasswordChar = false;
+            this.tbSoDienThoai.TextChanged += new System.EventHandler(this.tbSoDienThoai_TextChanged);
             // 
             // ambiance_Label4
             // 
@@ -260,6 +502,7 @@
             this.tbSoCMND.TabIndex = 22;
             this.tbSoCMND.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.tbSoCMND.UseSystemPasswordChar = false;
+            this.tbSoCMND.TextChanged += new System.EventHandler(this.tbSoCMND_TextChanged);
             // 
             // ambiance_Label2
             // 
@@ -300,243 +543,31 @@
             this.ambiance_Label1.TabIndex = 19;
             this.ambiance_Label1.Text = "Họ và tên";
             // 
-            // ambiance_Label10
-            // 
-            this.ambiance_Label10.AutoSize = true;
-            this.ambiance_Label10.BackColor = System.Drawing.Color.Transparent;
-            this.ambiance_Label10.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.ambiance_Label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
-            this.ambiance_Label10.Location = new System.Drawing.Point(441, 273);
-            this.ambiance_Label10.Name = "ambiance_Label10";
-            this.ambiance_Label10.Size = new System.Drawing.Size(67, 20);
-            this.ambiance_Label10.TabIndex = 38;
-            this.ambiance_Label10.Text = "Hóa đơn";
-            // 
-            // cbbHoaDon
-            // 
-            this.cbbHoaDon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.cbbHoaDon.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbbHoaDon.DropDownHeight = 100;
-            this.cbbHoaDon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbHoaDon.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbbHoaDon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(142)))), ((int)(((byte)(142)))));
-            this.cbbHoaDon.FormattingEnabled = true;
-            this.cbbHoaDon.HoverSelectionColor = System.Drawing.Color.Empty;
-            this.cbbHoaDon.IntegralHeight = false;
-            this.cbbHoaDon.ItemHeight = 20;
-            this.cbbHoaDon.Items.AddRange(new object[] {
-            "Chưa thanh toán",
-            "Đã thanh toán"});
-            this.cbbHoaDon.Location = new System.Drawing.Point(552, 270);
-            this.cbbHoaDon.Name = "cbbHoaDon";
-            this.cbbHoaDon.Size = new System.Drawing.Size(161, 26);
-            this.cbbHoaDon.StartIndex = 0;
-            this.cbbHoaDon.TabIndex = 35;
-            // 
-            // tbCloseAndNotSave
-            // 
-            this.tbCloseAndNotSave.BackColor = System.Drawing.Color.Transparent;
-            this.tbCloseAndNotSave.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.tbCloseAndNotSave.Image = null;
-            this.tbCloseAndNotSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tbCloseAndNotSave.InActiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.tbCloseAndNotSave.InActiveColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(237)))), ((int)(((byte)(236)))));
-            this.tbCloseAndNotSave.Location = new System.Drawing.Point(413, 367);
-            this.tbCloseAndNotSave.Name = "tbCloseAndNotSave";
-            this.tbCloseAndNotSave.Size = new System.Drawing.Size(163, 38);
-            this.tbCloseAndNotSave.TabIndex = 40;
-            this.tbCloseAndNotSave.Text = "Đóng và không lưu";
-            this.tbCloseAndNotSave.TextAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // ambiance_Label11
-            // 
-            this.ambiance_Label11.AutoSize = true;
-            this.ambiance_Label11.BackColor = System.Drawing.Color.Transparent;
-            this.ambiance_Label11.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.ambiance_Label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
-            this.ambiance_Label11.Location = new System.Drawing.Point(11, 318);
-            this.ambiance_Label11.Name = "ambiance_Label11";
-            this.ambiance_Label11.Size = new System.Drawing.Size(112, 20);
-            this.ambiance_Label11.TabIndex = 41;
-            this.ambiance_Label11.Text = "Lưu lượng (Mb)";
-            // 
-            // tbLuuLuong
-            // 
-            this.tbLuuLuong.BackColor = System.Drawing.Color.Transparent;
-            this.tbLuuLuong.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.tbLuuLuong.ForeColor = System.Drawing.Color.DimGray;
-            this.tbLuuLuong.Location = new System.Drawing.Point(152, 313);
-            this.tbLuuLuong.MaxLength = 32767;
-            this.tbLuuLuong.Multiline = false;
-            this.tbLuuLuong.Name = "tbLuuLuong";
-            this.tbLuuLuong.ReadOnly = false;
-            this.tbLuuLuong.Size = new System.Drawing.Size(208, 28);
-            this.tbLuuLuong.TabIndex = 36;
-            this.tbLuuLuong.Text = "125,265";
-            this.tbLuuLuong.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.tbLuuLuong.UseSystemPasswordChar = false;
-            // 
-            // ambiance_TextBox1
-            // 
-            this.ambiance_TextBox1.BackColor = System.Drawing.Color.Transparent;
-            this.ambiance_TextBox1.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.ambiance_TextBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.ambiance_TextBox1.Location = new System.Drawing.Point(151, 270);
-            this.ambiance_TextBox1.MaxLength = 32767;
-            this.ambiance_TextBox1.Multiline = false;
-            this.ambiance_TextBox1.Name = "ambiance_TextBox1";
-            this.ambiance_TextBox1.ReadOnly = false;
-            this.ambiance_TextBox1.Size = new System.Drawing.Size(209, 28);
-            this.ambiance_TextBox1.TabIndex = 37;
-            this.ambiance_TextBox1.Text = "152,362,358";
-            this.ambiance_TextBox1.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.ambiance_TextBox1.UseSystemPasswordChar = false;
-            // 
-            // ambiance_Label12
-            // 
-            this.ambiance_Label12.AutoSize = true;
-            this.ambiance_Label12.BackColor = System.Drawing.Color.Transparent;
-            this.ambiance_Label12.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.ambiance_Label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
-            this.ambiance_Label12.Location = new System.Drawing.Point(12, 273);
-            this.ambiance_Label12.Name = "ambiance_Label12";
-            this.ambiance_Label12.Size = new System.Drawing.Size(117, 20);
-            this.ambiance_Label12.TabIndex = 44;
-            this.ambiance_Label12.Text = "Tổng tiền (VNĐ)";
-            // 
-            // ambiance_TextBox2
-            // 
-            this.ambiance_TextBox2.BackColor = System.Drawing.Color.Transparent;
-            this.ambiance_TextBox2.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.ambiance_TextBox2.ForeColor = System.Drawing.Color.DimGray;
-            this.ambiance_TextBox2.Location = new System.Drawing.Point(551, 142);
-            this.ambiance_TextBox2.MaxLength = 32767;
-            this.ambiance_TextBox2.Multiline = false;
-            this.ambiance_TextBox2.Name = "ambiance_TextBox2";
-            this.ambiance_TextBox2.ReadOnly = false;
-            this.ambiance_TextBox2.Size = new System.Drawing.Size(161, 28);
-            this.ambiance_TextBox2.TabIndex = 33;
-            this.ambiance_TextBox2.Text = "Khong cho phep chinh sua";
-            this.ambiance_TextBox2.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.ambiance_TextBox2.UseSystemPasswordChar = false;
-            // 
-            // ambiance_Label13
-            // 
-            this.ambiance_Label13.AutoSize = true;
-            this.ambiance_Label13.BackColor = System.Drawing.Color.Transparent;
-            this.ambiance_Label13.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.ambiance_Label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
-            this.ambiance_Label13.Location = new System.Drawing.Point(441, 150);
-            this.ambiance_Label13.Name = "ambiance_Label13";
-            this.ambiance_Label13.Size = new System.Drawing.Size(46, 20);
-            this.ambiance_Label13.TabIndex = 47;
-            this.ambiance_Label13.Text = "EMail";
-            // 
-            // ambiance_Label14
-            // 
-            this.ambiance_Label14.AutoSize = true;
-            this.ambiance_Label14.BackColor = System.Drawing.Color.Transparent;
-            this.ambiance_Label14.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.ambiance_Label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
-            this.ambiance_Label14.Location = new System.Drawing.Point(441, 230);
-            this.ambiance_Label14.Name = "ambiance_Label14";
-            this.ambiance_Label14.Size = new System.Drawing.Size(72, 20);
-            this.ambiance_Label14.TabIndex = 49;
-            this.ambiance_Label14.Text = "Ngày cấp";
-            // 
-            // ambiance_TextBox3
-            // 
-            this.ambiance_TextBox3.BackColor = System.Drawing.Color.Transparent;
-            this.ambiance_TextBox3.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.ambiance_TextBox3.ForeColor = System.Drawing.Color.DimGray;
-            this.ambiance_TextBox3.Location = new System.Drawing.Point(551, 224);
-            this.ambiance_TextBox3.MaxLength = 32767;
-            this.ambiance_TextBox3.Multiline = false;
-            this.ambiance_TextBox3.Name = "ambiance_TextBox3";
-            this.ambiance_TextBox3.ReadOnly = false;
-            this.ambiance_TextBox3.Size = new System.Drawing.Size(162, 28);
-            this.ambiance_TextBox3.TabIndex = 48;
-            this.ambiance_TextBox3.Text = "Ngày bắt đầu sử dụng";
-            this.ambiance_TextBox3.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.ambiance_TextBox3.UseSystemPasswordChar = false;
-            // 
-            // ambiance_TextBox4
-            // 
-            this.ambiance_TextBox4.BackColor = System.Drawing.Color.Transparent;
-            this.ambiance_TextBox4.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.ambiance_TextBox4.ForeColor = System.Drawing.Color.DimGray;
-            this.ambiance_TextBox4.Location = new System.Drawing.Point(552, 185);
-            this.ambiance_TextBox4.MaxLength = 32767;
-            this.ambiance_TextBox4.Multiline = false;
-            this.ambiance_TextBox4.Name = "ambiance_TextBox4";
-            this.ambiance_TextBox4.ReadOnly = false;
-            this.ambiance_TextBox4.Size = new System.Drawing.Size(161, 28);
-            this.ambiance_TextBox4.TabIndex = 53;
-            this.ambiance_TextBox4.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.ambiance_TextBox4.UseSystemPasswordChar = false;
-            // 
-            // ambiance_Label8
-            // 
-            this.ambiance_Label8.AutoSize = true;
-            this.ambiance_Label8.BackColor = System.Drawing.Color.Transparent;
-            this.ambiance_Label8.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.ambiance_Label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
-            this.ambiance_Label8.Location = new System.Drawing.Point(441, 190);
-            this.ambiance_Label8.Name = "ambiance_Label8";
-            this.ambiance_Label8.Size = new System.Drawing.Size(72, 20);
-            this.ambiance_Label8.TabIndex = 52;
-            this.ambiance_Label8.Text = "password";
-            // 
-            // ambiance_TextBox5
-            // 
-            this.ambiance_TextBox5.BackColor = System.Drawing.Color.Transparent;
-            this.ambiance_TextBox5.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.ambiance_TextBox5.ForeColor = System.Drawing.Color.DimGray;
-            this.ambiance_TextBox5.Location = new System.Drawing.Point(150, 185);
-            this.ambiance_TextBox5.MaxLength = 32767;
-            this.ambiance_TextBox5.Multiline = false;
-            this.ambiance_TextBox5.Name = "ambiance_TextBox5";
-            this.ambiance_TextBox5.ReadOnly = false;
-            this.ambiance_TextBox5.Size = new System.Drawing.Size(210, 28);
-            this.ambiance_TextBox5.TabIndex = 51;
-            this.ambiance_TextBox5.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.ambiance_TextBox5.UseSystemPasswordChar = false;
-            // 
-            // ambiance_Label15
-            // 
-            this.ambiance_Label15.AutoSize = true;
-            this.ambiance_Label15.BackColor = System.Drawing.Color.Transparent;
-            this.ambiance_Label15.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.ambiance_Label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
-            this.ambiance_Label15.Location = new System.Drawing.Point(12, 190);
-            this.ambiance_Label15.Name = "ambiance_Label15";
-            this.ambiance_Label15.Size = new System.Drawing.Size(75, 20);
-            this.ambiance_Label15.TabIndex = 50;
-            this.ambiance_Label15.Text = "Username";
-            // 
             // FormHienThiKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(731, 411);
-            this.Controls.Add(this.ambiance_TextBox4);
+            this.Controls.Add(this.cbbGoiCuoc);
+            this.Controls.Add(this.ambiance_Label16);
+            this.Controls.Add(this.cbbTT);
+            this.Controls.Add(this.ambiance_Label9);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.tbPassword);
             this.Controls.Add(this.ambiance_Label8);
-            this.Controls.Add(this.ambiance_TextBox5);
+            this.Controls.Add(this.tbUserName);
             this.Controls.Add(this.ambiance_Label15);
             this.Controls.Add(this.ambiance_Label14);
-            this.Controls.Add(this.ambiance_TextBox3);
             this.Controls.Add(this.ambiance_Label13);
-            this.Controls.Add(this.ambiance_TextBox2);
+            this.Controls.Add(this.tbEmail);
             this.Controls.Add(this.ambiance_TextBox1);
             this.Controls.Add(this.ambiance_Label12);
             this.Controls.Add(this.tbLuuLuong);
             this.Controls.Add(this.ambiance_Label11);
             this.Controls.Add(this.tbCloseAndNotSave);
-            this.Controls.Add(this.cbbHoaDon);
+            this.Controls.Add(this.cbbDoiTuong);
             this.Controls.Add(this.ambiance_Label10);
             this.Controls.Add(this.btCloseAndSave);
-            this.Controls.Add(this.cbbTrangThai);
-            this.Controls.Add(this.ambiance_Label9);
             this.Controls.Add(this.tbDCThanhToan);
             this.Controls.Add(this.ambiance_Label7);
             this.Controls.Add(this.tbDCCaiDat);
@@ -553,6 +584,7 @@
             this.Controls.Add(this.ambiance_Label1);
             this.Name = "FormHienThiKhachHang";
             this.Text = "Tên khách hàng - ID: 13520844";
+            this.Load += new System.EventHandler(this.FormHienThiKhachHang_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -561,8 +593,6 @@
         #endregion
 
         private Ambiance.Ambiance_Button_1 btCloseAndSave;
-        private Ambiance.Ambiance_ComboBox cbbTrangThai;
-        private Ambiance.Ambiance_Label ambiance_Label9;
         private Ambiance.Ambiance_TextBox tbDCThanhToan;
         private Ambiance.Ambiance_Label ambiance_Label7;
         private Ambiance.Ambiance_TextBox tbDCCaiDat;
@@ -578,19 +608,23 @@
         private Ambiance.Ambiance_TextBox tbHoVaTen;
         private Ambiance.Ambiance_Label ambiance_Label1;
         private Ambiance.Ambiance_Label ambiance_Label10;
-        private Ambiance.Ambiance_ComboBox cbbHoaDon;
+        private Ambiance.Ambiance_ComboBox cbbDoiTuong;
         private Ambiance.Ambiance_Button_1 tbCloseAndNotSave;
         private Ambiance.Ambiance_Label ambiance_Label11;
         private Ambiance.Ambiance_TextBox tbLuuLuong;
         private Ambiance.Ambiance_TextBox ambiance_TextBox1;
         private Ambiance.Ambiance_Label ambiance_Label12;
-        private Ambiance.Ambiance_TextBox ambiance_TextBox2;
+        private Ambiance.Ambiance_TextBox tbEmail;
         private Ambiance.Ambiance_Label ambiance_Label13;
         private Ambiance.Ambiance_Label ambiance_Label14;
-        private Ambiance.Ambiance_TextBox ambiance_TextBox3;
-        private Ambiance.Ambiance_TextBox ambiance_TextBox4;
+        private Ambiance.Ambiance_TextBox tbPassword;
         private Ambiance.Ambiance_Label ambiance_Label8;
-        private Ambiance.Ambiance_TextBox ambiance_TextBox5;
+        private Ambiance.Ambiance_TextBox tbUserName;
         private Ambiance.Ambiance_Label ambiance_Label15;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private Ambiance.Ambiance_ComboBox cbbTT;
+        private Ambiance.Ambiance_Label ambiance_Label9;
+        private Ambiance.Ambiance_ComboBox cbbGoiCuoc;
+        private Ambiance.Ambiance_Label ambiance_Label16;
     }
 }

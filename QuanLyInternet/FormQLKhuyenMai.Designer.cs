@@ -31,6 +31,8 @@
             this.btOK = new Ambiance.Ambiance_Button_1();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ambiance_Button_11 = new Ambiance.Ambiance_Button_1();
+            this.ambiance_Button_12 = new Ambiance.Ambiance_Button_1();
+            this.ambiance_Button_14 = new Ambiance.Ambiance_Button_1();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,12 +75,47 @@
             this.ambiance_Button_11.TabIndex = 42;
             this.ambiance_Button_11.Text = "Đóng";
             this.ambiance_Button_11.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.ambiance_Button_11.Click += new System.EventHandler(this.ambiance_Button_11_Click);
+            // 
+            // ambiance_Button_12
+            // 
+            this.ambiance_Button_12.BackColor = System.Drawing.Color.Transparent;
+            this.ambiance_Button_12.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.ambiance_Button_12.Image = null;
+            this.ambiance_Button_12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ambiance_Button_12.InActiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.ambiance_Button_12.InActiveColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(237)))), ((int)(((byte)(236)))));
+            this.ambiance_Button_12.Location = new System.Drawing.Point(153, 12);
+            this.ambiance_Button_12.Name = "ambiance_Button_12";
+            this.ambiance_Button_12.Size = new System.Drawing.Size(91, 38);
+            this.ambiance_Button_12.TabIndex = 43;
+            this.ambiance_Button_12.Text = "Xóa";
+            this.ambiance_Button_12.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.ambiance_Button_12.Click += new System.EventHandler(this.ambiance_Button_12_Click);
+            // 
+            // ambiance_Button_14
+            // 
+            this.ambiance_Button_14.BackColor = System.Drawing.Color.Transparent;
+            this.ambiance_Button_14.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.ambiance_Button_14.Image = null;
+            this.ambiance_Button_14.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ambiance_Button_14.InActiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.ambiance_Button_14.InActiveColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(237)))), ((int)(((byte)(236)))));
+            this.ambiance_Button_14.Location = new System.Drawing.Point(305, 12);
+            this.ambiance_Button_14.Name = "ambiance_Button_14";
+            this.ambiance_Button_14.Size = new System.Drawing.Size(91, 38);
+            this.ambiance_Button_14.TabIndex = 45;
+            this.ambiance_Button_14.Text = "Tải Lại";
+            this.ambiance_Button_14.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.ambiance_Button_14.Click += new System.EventHandler(this.ambiance_Button_14_Click);
             // 
             // FormQLKhuyenMai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(806, 414);
+            this.Controls.Add(this.ambiance_Button_14);
+            this.Controls.Add(this.ambiance_Button_12);
             this.Controls.Add(this.ambiance_Button_11);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btOK);
@@ -94,5 +131,7 @@
         private Ambiance.Ambiance_Button_1 btOK;
         private System.Windows.Forms.DataGridView dataGridView1;
         private Ambiance.Ambiance_Button_1 ambiance_Button_11;
+        private Ambiance.Ambiance_Button_1 ambiance_Button_12;
+        private Ambiance.Ambiance_Button_1 ambiance_Button_14;
     }
 }

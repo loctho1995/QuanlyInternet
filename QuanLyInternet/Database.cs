@@ -42,6 +42,11 @@ namespace QuanLyInternet
         public ThamSo thamSo
         { get; set; }
 
+        public TinhTrang_BUS TinhTrang
+        { get; set; }
+
+        public ThongTinTruyCap_BUS ThongTinTruyCap
+        { get; set; }
         private Database()
         {
             InitDataBase();
@@ -58,7 +63,8 @@ namespace QuanLyInternet
             HopDong = new HopDong_BUS();
             LoaiGioTruyCap = new LoaiGioTruyCap_BUS();
             thamSo = new ThamSo();
-
+            TinhTrang = new TinhTrang_BUS();
+            ThongTinTruyCap = new ThongTinTruyCap_BUS();
         }
     }
 

@@ -60,6 +60,7 @@
     <Compile Include="ChartControl.designer.cs">
       <DependentUpon>ChartControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="ComboboxItem.cs" />
     <Compile Include="DAO\quanlydangkyinternet.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

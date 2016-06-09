@@ -49,6 +49,8 @@
             this.ambiance_Label8 = new Ambiance.Ambiance_Label();
             this.ambiance_ComboBox2 = new Ambiance.Ambiance_ComboBox();
             this.ambiance_Label10 = new Ambiance.Ambiance_Label();
+            this.ambiance_Label11 = new Ambiance.Ambiance_Label();
+            this.ambiance_ComboBox3 = new Ambiance.Ambiance_ComboBox();
             this.SuspendLayout();
             // 
             // ambiance_Button_11
@@ -59,7 +61,7 @@
             this.ambiance_Button_11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ambiance_Button_11.InActiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.ambiance_Button_11.InActiveColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(237)))), ((int)(((byte)(236)))));
-            this.ambiance_Button_11.Location = new System.Drawing.Point(553, 231);
+            this.ambiance_Button_11.Location = new System.Drawing.Point(550, 267);
             this.ambiance_Button_11.Name = "ambiance_Button_11";
             this.ambiance_Button_11.Size = new System.Drawing.Size(193, 38);
             this.ambiance_Button_11.TabIndex = 18;
@@ -80,9 +82,7 @@
             this.ambiance_ComboBox1.IntegralHeight = false;
             this.ambiance_ComboBox1.ItemHeight = 20;
             this.ambiance_ComboBox1.Items.AddRange(new object[] {
-            "Đang đợi",
-            "Đang sử dụng",
-            "Bị treo"});
+            "1"});
             this.ambiance_ComboBox1.Location = new System.Drawing.Point(536, 156);
             this.ambiance_ComboBox1.Name = "ambiance_ComboBox1";
             this.ambiance_ComboBox1.Size = new System.Drawing.Size(207, 26);
@@ -325,11 +325,7 @@
             this.ambiance_ComboBox2.IntegralHeight = false;
             this.ambiance_ComboBox2.ItemHeight = 20;
             this.ambiance_ComboBox2.Items.AddRange(new object[] {
-            "F10 (10 Mbps)",
-            "F15 (15 Mbps)",
-            "F20 (20 Mbps)",
-            "F25 (25 Mbps)",
-            "F32 (32 Mbps)"});
+            "1"});
             this.ambiance_ComboBox2.Location = new System.Drawing.Point(127, 191);
             this.ambiance_ComboBox2.Name = "ambiance_ComboBox2";
             this.ambiance_ComboBox2.Size = new System.Drawing.Size(211, 26);
@@ -348,11 +344,45 @@
             this.ambiance_Label10.TabIndex = 21;
             this.ambiance_Label10.Text = "Gói cước";
             // 
+            // ambiance_Label11
+            // 
+            this.ambiance_Label11.AutoSize = true;
+            this.ambiance_Label11.BackColor = System.Drawing.Color.Transparent;
+            this.ambiance_Label11.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.ambiance_Label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
+            this.ambiance_Label11.Location = new System.Drawing.Point(12, 234);
+            this.ambiance_Label11.Name = "ambiance_Label11";
+            this.ambiance_Label11.Size = new System.Drawing.Size(105, 20);
+            this.ambiance_Label11.TabIndex = 23;
+            this.ambiance_Label11.Text = "Mã Đối Tượng";
+            // 
+            // ambiance_ComboBox3
+            // 
+            this.ambiance_ComboBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.ambiance_ComboBox3.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ambiance_ComboBox3.DropDownHeight = 100;
+            this.ambiance_ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ambiance_ComboBox3.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.ambiance_ComboBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(142)))), ((int)(((byte)(142)))));
+            this.ambiance_ComboBox3.FormattingEnabled = true;
+            this.ambiance_ComboBox3.HoverSelectionColor = System.Drawing.Color.Empty;
+            this.ambiance_ComboBox3.IntegralHeight = false;
+            this.ambiance_ComboBox3.ItemHeight = 20;
+            this.ambiance_ComboBox3.Items.AddRange(new object[] {
+            "1"});
+            this.ambiance_ComboBox3.Location = new System.Drawing.Point(128, 233);
+            this.ambiance_ComboBox3.Name = "ambiance_ComboBox3";
+            this.ambiance_ComboBox3.Size = new System.Drawing.Size(211, 26);
+            this.ambiance_ComboBox3.StartIndex = 0;
+            this.ambiance_ComboBox3.TabIndex = 24;
+            // 
             // FormDangKiMoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(758, 280);
+            this.ClientSize = new System.Drawing.Size(758, 338);
+            this.Controls.Add(this.ambiance_ComboBox3);
+            this.Controls.Add(this.ambiance_Label11);
             this.Controls.Add(this.ambiance_ComboBox2);
             this.Controls.Add(this.ambiance_Label10);
             this.Controls.Add(this.ambiance_Label8);
@@ -404,5 +434,7 @@
         private Ambiance.Ambiance_Label ambiance_Label8;
         private Ambiance.Ambiance_ComboBox ambiance_ComboBox2;
         private Ambiance.Ambiance_Label ambiance_Label10;
+        private Ambiance.Ambiance_Label ambiance_Label11;
+        private Ambiance.Ambiance_ComboBox ambiance_ComboBox3;
     }
 }

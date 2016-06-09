@@ -7,7 +7,7 @@ using System.Data;
 
 namespace QuanLyInternet.BUS
 {
-    class TinhTrang_BUS
+    public class TinhTrang_BUS
     {
         public DataTable getAllResult()
         {
@@ -35,17 +35,17 @@ namespace QuanLyInternet.BUS
 
         public void add(string matinhtrang, string tentinhtrang)
         {
-            SQLDataContext.SQLData.addTinhtrang(matinhtrang, tentinhtrang);
+            SQLDataContext.SQLData.addTinhTrang(matinhtrang, tentinhtrang);
         }
 
         public void edit(string matinhtrang, string tentinhtrang)
         {
-            SQLDataContext.SQLData.editTinhtrang(matinhtrang, tentinhtrang);
+            SQLDataContext.SQLData.editTinhTrang(matinhtrang, tentinhtrang);
         }
 
         public void delete(string matinhtrang)
         {
-            SQLDataContext.SQLData.deleteTinhtrang(matinhtrang);
+            SQLDataContext.SQLData.deleteTinhTrang(matinhtrang);
         }
     }
 }

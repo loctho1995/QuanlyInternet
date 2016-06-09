@@ -15,13 +15,60 @@ namespace QuanLyInternet
         public FormQLKhuyenMai()
         {
             InitializeComponent();
-            this.dataGridView1.DataSource = Database.GetInstance.CTKM.getAllResult();
+            LoadData();
         }
 
         private void btOK_Click(object sender, EventArgs e)
         {
             FormCTKhuyenMai ctkm = new FormCTKhuyenMai();
-            ctkm.Show();        
+            ctkm.Show();
+
         }
+
+        private void ambiance_Button_12_Click(object sender, EventArgs e)
+        {
+
+            int maHDindex = dataGridView1.Columns["MaCTKM"].Index;
+            //dataGridView1.SelectedRows;
+            int rowIndex = dataGridView1.CurrentCell.RowIndex;
+            string maCTKM = dataGridView1[maHDindex, rowIndex].Value.ToString();
+            try
+            {
+                Database.GetInstance.CTKM.deleteCTKM(maCTKM);
+                LoadData();
+                MessageBox.Show("Thanh Cong");
+            }
+            catch
+            {
+                MessageBox.Show("Co loi xay ra");
+            }
+        }
+
+        private void LoadData()
+        {
+            this.dataGridView1.DataSource = Database.GetInstance.CTKM.getAllResult();
+        }
+
+        private void ambiance_Button_11_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void ambiance_Button_13_Click(object sender, EventArgs e)
+        {
+            int maHDindex = dataGridView1.Columns["MaCTKM"].Index;
+            //dataGridView1.SelectedRows;
+            int rowIndex = dataGridView1.CurrentCell.RowIndex;
+            string maCTKM = dataGridView1[maHDindex, rowIndex].Value.ToString();
+
+
+        }
+
+        private void ambiance_Button_14_Click(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
+
     }
 }

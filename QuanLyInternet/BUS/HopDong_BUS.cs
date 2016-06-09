@@ -58,8 +58,8 @@ namespace QuanLyInternet.BUS
                 dt.Rows.Add(r);
             }
 
-            if (dt.Rows.Count == 0)
-                return null;
+            //if (dt.Rows.Count == 0)
+            //    return null;
             return dt;
         }
 
