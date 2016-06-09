@@ -219,6 +219,7 @@
             this.Controls.Add(this.cbbGoiCuoc);
             this.Name = "FormQLGoiCuoc";
             this.Text = "Quản lý gói cước";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.FormQLGoiCuoc_Load);
             this.groupBox.ResumeLayout(false);
             this.groupBox.PerformLayout();

@@ -419,6 +419,7 @@
             this.Controls.Add(this.ambiance_Label1);
             this.Name = "FormSuaThongTin";
             this.Text = "SuaThongTin";
+            this.TopMost = true;
             this.ResumeLayout(false);
             this.PerformLayout();
 

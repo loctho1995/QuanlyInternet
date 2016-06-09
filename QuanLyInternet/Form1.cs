@@ -51,25 +51,31 @@ namespace QuanLyInternet
         private void monoFlat_Button1_Click(object sender, EventArgs e)
         {
             FormDangKiMoi form = new FormDangKiMoi();
-            form.Show();
+            form.ShowDialog();
         }
 
         private void monoFlat_Button2_Click(object sender, EventArgs e)
         {
             FormHoSoKhachHang form = new FormHoSoKhachHang();
-            form.Show();
+            form.ShowDialog();
         }
 
         private void monoFlat_Button7_Click(object sender, EventArgs e)
         {
             FormQLGoiCuoc fr = new FormQLGoiCuoc();
-            fr.Show();
+            fr.ShowDialog();
         }
 
         private void monoFlat_Button3_Click(object sender, EventArgs e)
         {
             FormQLKhuyenMai km = new FormQLKhuyenMai();
-            km.Show();
+            km.ShowDialog();
+        }
+
+        private void monoFlat_Button6_Click(object sender, EventArgs e)
+        {
+            FormDSDinhChiTruyCap dsDinhChi = new FormDSDinhChiTruyCap();
+            dsDinhChi.ShowDialog();
         }
     }
 }

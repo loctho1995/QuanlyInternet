@@ -406,6 +406,7 @@
             this.Controls.Add(this.ambiance_Label1);
             this.Name = "FormDangKiMoi";
             this.Text = "Đăng kí mới";
+            this.TopMost = true;
             this.ResumeLayout(false);
             this.PerformLayout();
 

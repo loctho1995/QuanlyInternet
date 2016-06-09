@@ -44,7 +44,7 @@ namespace QuanLyInternet
                 int rowIndex = dataGridView1.CurrentCell.RowIndex;
                 string maHD = dataGridView1[maHDindex, rowIndex].Value.ToString();
                 FormHienThiKhachHang hienThiKhachHang = new FormHienThiKhachHang(maHD);
-                hienThiKhachHang.Show();
+                hienThiKhachHang.ShowDialog();
             }
             catch
             {
@@ -59,12 +59,13 @@ namespace QuanLyInternet
             DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn xóa?", "Xác Nhận", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                int maHDindex = dataGridView1.Columns["MaHopDong"].Index;
-                //dataGridView1.SelectedRows;
-                int rowIndex = dataGridView1.CurrentCell.RowIndex;
-                string maHD = dataGridView1[maHDindex, rowIndex].Value.ToString();
+                
                 try
                 {
+                    int maHDindex = dataGridView1.Columns["MaHopDong"].Index;
+                    //dataGridView1.SelectedRows;
+                    int rowIndex = dataGridView1.CurrentCell.RowIndex;
+                    string maHD = dataGridView1[maHDindex, rowIndex].Value.ToString();
                     Database.GetInstance.HopDong.deleteHopDong(maHD);
                     reload();
                 }

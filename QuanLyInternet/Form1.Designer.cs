@@ -85,6 +85,7 @@
             this.monoFlat_Button6.TabIndex = 18;
             this.monoFlat_Button6.Text = "Báo cáo";
             this.monoFlat_Button6.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.monoFlat_Button6.Click += new System.EventHandler(this.monoFlat_Button6_Click);
             // 
             // lbPercentUnpaid
             // 
