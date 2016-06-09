@@ -17,20 +17,11 @@ namespace QuanLyInternet
         public FormCTKhuyenMai()
         {
             InitializeComponent();
-            cbbDoiTuong.Items.Clear();
             cbbGoiCuoc.Items.Clear();
             DataTable dt = Database.GetInstance.DoiTuong.getAllResult();
             int maDTindex = dt.Columns.IndexOf("MaDoiTuong");
             int MoTaDTIndex = dt.Columns.IndexOf("MoTa");
             
-            foreach (DataRow row in dt.Rows)
-            {
-                ComboboxItem item = new ComboboxItem();
-                item.Value = row.ItemArray[maDTindex].ToString();
-                item.Text = row.ItemArray[MoTaDTIndex].ToString();
-                cbbDoiTuong.Items.Add(item);
-            }
-            cbbDoiTuong.SelectedIndex = 0;
 
             DataTable maGC = Database.GetInstance.GoiCuoc.getAllResult();
             int maGCindex = maGC.Columns.IndexOf("MaGoiCuoc");
@@ -51,52 +42,50 @@ namespace QuanLyInternet
             InitializeComponent();
             this.maCTKM = maCTKM;
             editing = true;
-            cbbDoiTuong.Items.Clear();
+            
             cbbGoiCuoc.Items.Clear();
 
-            //DataTable dt = Database.GetInstance.CTKM.get(maHD);
-
-            //ambiance_TextBox1.Text = 
+            DataTable CTKMDTB = Database.GetInstance.CTKM.getCTKMWith(maCTKM);
 
 
+            int NoiDungIndex = CTKMDTB.Columns.IndexOf("NoiDung");
+            int TuNgayIndex = CTKMDTB.Columns.IndexOf("TuNgay");
+            int DenNgayIndex = CTKMDTB.Columns.IndexOf("DenNgay");
+            int MaGoiCuocKhuyenMaiIndex = CTKMDTB.Columns.IndexOf("MaGoiCuocKhuyenMai");
+            int PhiDangKyKhuyenMaiIndex = CTKMDTB.Columns.IndexOf("PhiDangKyKhuyenMai");
 
+            var CTKMRow = CTKMDTB.Rows[0];
 
-
-
-
-
-
-
+            ambiance_TextBox1.Text = CTKMRow.ItemArray[NoiDungIndex].ToString();
+            ambiance_TextBox2.Text = CTKMRow.ItemArray[PhiDangKyKhuyenMaiIndex].ToString();
+            dateTimePicker1.Value = Convert.ToDateTime(CTKMRow.ItemArray[TuNgayIndex].ToString());
+            dateTimePicker2.Value = Convert.ToDateTime(CTKMRow.ItemArray[DenNgayIndex].ToString());
 
 
 
 
 
             DataTable dt = Database.GetInstance.DoiTuong.getAllResult();
-            int maDTindex = dt.Columns.IndexOf("MaDoiTuong");
-            int MoTaDTIndex = dt.Columns.IndexOf("MoTa");
-
-            foreach (DataRow row in dt.Rows)
-            {
-                ComboboxItem item = new ComboboxItem();
-                item.Value = row.ItemArray[maDTindex].ToString();
-                item.Text = row.ItemArray[MoTaDTIndex].ToString();
-                cbbDoiTuong.Items.Add(item);
-            }
-            cbbDoiTuong.SelectedIndex = 0;
+    
 
             DataTable maGC = Database.GetInstance.GoiCuoc.getAllResult();
             int maGCindex = maGC.Columns.IndexOf("MaGoiCuoc");
 
+            int index = 0;
             foreach (DataRow row in maGC.Rows)
             {
                 ComboboxItem item = new ComboboxItem();
                 item.Text = row.ItemArray[maGCindex].ToString();
                 item.Value = item.Text;
                 cbbGoiCuoc.Items.Add(item);
+                if (item.Value.ToString() == CTKMRow.ItemArray[MaGoiCuocKhuyenMaiIndex].ToString())
+                {
+                    cbbGoiCuoc.SelectedIndex = index;
+                }
+                    index++;
             }
 
-            cbbGoiCuoc.SelectedIndex = 0;
+            
 
 
 
@@ -138,7 +127,25 @@ namespace QuanLyInternet
             }
             else
             {
- 
+                DialogResult dialogResult = MessageBox.Show("Bạn muốn chỉnh sửa?", "Xác Nhận", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    try
+                    {
+                        Database.GetInstance.CTKM.editCTKM(maCTKM, ambiance_TextBox1.Text, dateTimePicker1.Value, dateTimePicker2.Value, (cbbGoiCuoc.SelectedItem as ComboboxItem).Value.ToString(), float.Parse(ambiance_TextBox2.Text));
+                        MessageBox.Show("Thanh cong");
+                        this.Close();
+                    }
+
+                    catch
+                    {
+                        MessageBox.Show("Co loi xay ra");
+                    }
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    
+                }
             }
             
 
@@ -159,6 +166,11 @@ namespace QuanLyInternet
         private void ambiance_Button_11_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void FormCTKhuyenMai_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

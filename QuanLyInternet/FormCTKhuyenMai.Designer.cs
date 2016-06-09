@@ -34,8 +34,6 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.ambiance_Label3 = new Ambiance.Ambiance_Label();
-            this.ambiance_Label4 = new Ambiance.Ambiance_Label();
-            this.cbbDoiTuong = new Ambiance.Ambiance_ComboBox();
             this.ambiance_Label5 = new Ambiance.Ambiance_Label();
             this.cbbGoiCuoc = new Ambiance.Ambiance_ComboBox();
             this.ambiance_Label6 = new Ambiance.Ambiance_Label();
@@ -109,38 +107,6 @@
             this.ambiance_Label3.TabIndex = 4;
             this.ambiance_Label3.Text = "Đến ngày";
             // 
-            // ambiance_Label4
-            // 
-            this.ambiance_Label4.AutoSize = true;
-            this.ambiance_Label4.BackColor = System.Drawing.Color.Transparent;
-            this.ambiance_Label4.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.ambiance_Label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
-            this.ambiance_Label4.Location = new System.Drawing.Point(12, 91);
-            this.ambiance_Label4.Name = "ambiance_Label4";
-            this.ambiance_Label4.Size = new System.Drawing.Size(77, 20);
-            this.ambiance_Label4.TabIndex = 6;
-            this.ambiance_Label4.Text = "Đối tượng";
-            // 
-            // cbbDoiTuong
-            // 
-            this.cbbDoiTuong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.cbbDoiTuong.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbbDoiTuong.DropDownHeight = 100;
-            this.cbbDoiTuong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbDoiTuong.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbbDoiTuong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(142)))), ((int)(((byte)(142)))));
-            this.cbbDoiTuong.FormattingEnabled = true;
-            this.cbbDoiTuong.HoverSelectionColor = System.Drawing.Color.Empty;
-            this.cbbDoiTuong.IntegralHeight = false;
-            this.cbbDoiTuong.ItemHeight = 20;
-            this.cbbDoiTuong.Items.AddRange(new object[] {
-            "1"});
-            this.cbbDoiTuong.Location = new System.Drawing.Point(140, 90);
-            this.cbbDoiTuong.Name = "cbbDoiTuong";
-            this.cbbDoiTuong.Size = new System.Drawing.Size(160, 26);
-            this.cbbDoiTuong.StartIndex = 0;
-            this.cbbDoiTuong.TabIndex = 7;
-            // 
             // ambiance_Label5
             // 
             this.ambiance_Label5.AutoSize = true;
@@ -179,7 +145,7 @@
             this.ambiance_Label6.BackColor = System.Drawing.Color.Transparent;
             this.ambiance_Label6.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.ambiance_Label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
-            this.ambiance_Label6.Location = new System.Drawing.Point(12, 137);
+            this.ambiance_Label6.Location = new System.Drawing.Point(12, 96);
             this.ambiance_Label6.Name = "ambiance_Label6";
             this.ambiance_Label6.Size = new System.Drawing.Size(108, 20);
             this.ambiance_Label6.TabIndex = 10;
@@ -190,7 +156,7 @@
             this.ambiance_TextBox2.BackColor = System.Drawing.Color.Transparent;
             this.ambiance_TextBox2.Font = new System.Drawing.Font("Tahoma", 11F);
             this.ambiance_TextBox2.ForeColor = System.Drawing.Color.DimGray;
-            this.ambiance_TextBox2.Location = new System.Drawing.Point(140, 132);
+            this.ambiance_TextBox2.Location = new System.Drawing.Point(141, 96);
             this.ambiance_TextBox2.MaxLength = 32767;
             this.ambiance_TextBox2.Multiline = false;
             this.ambiance_TextBox2.Name = "ambiance_TextBox2";
@@ -244,8 +210,6 @@
             this.Controls.Add(this.ambiance_Label6);
             this.Controls.Add(this.cbbGoiCuoc);
             this.Controls.Add(this.ambiance_Label5);
-            this.Controls.Add(this.cbbDoiTuong);
-            this.Controls.Add(this.ambiance_Label4);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.ambiance_Label3);
             this.Controls.Add(this.dateTimePicker1);
@@ -254,6 +218,7 @@
             this.Controls.Add(this.ambiance_Label1);
             this.Name = "FormCTKhuyenMai";
             this.Text = "Chương trình khuyến mãi";
+            this.Load += new System.EventHandler(this.FormCTKhuyenMai_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -267,8 +232,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private Ambiance.Ambiance_Label ambiance_Label3;
-        private Ambiance.Ambiance_Label ambiance_Label4;
-        private Ambiance.Ambiance_ComboBox cbbDoiTuong;
         private Ambiance.Ambiance_Label ambiance_Label5;
         private Ambiance.Ambiance_ComboBox cbbGoiCuoc;
         private Ambiance.Ambiance_Label ambiance_Label6;

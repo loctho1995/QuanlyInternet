@@ -34,8 +34,27 @@ namespace QuanLyInternet
 
         private void LoadData()
         {
-            //DataTable dt = Database.GetInstance.GoiCuoc.ge((cbbGoiCuoc.SelectedItem as ComboboxItem).Value.ToString());
+            DataTable CTKMDTB = Database.GetInstance.GoiCuoc.getGoiCuocWith((cbbGoiCuoc.SelectedItem as ComboboxItem).Value.ToString());
 
+
+
+            int TocDoIndex = CTKMDTB.Columns.IndexOf("TocDo");
+            int CuocThueBaoThangIndex = CTKMDTB.Columns.IndexOf("CuocThueBaoThang");
+            int SoMBMienPhiIndex = CTKMDTB.Columns.IndexOf("SoMBMienPhi");
+
+            var CTKMRow = CTKMDTB.Rows[0];
+
+            tbTocDoc.Text = CTKMRow.ItemArray[TocDoIndex].ToString();
+            tbCuocPhi.Text = CTKMRow.ItemArray[CuocThueBaoThangIndex].ToString();
+            tbLuuLuongMienPhi.Text = CTKMRow.ItemArray[SoMBMienPhiIndex].ToString();
+
+            groupBox.Text = (cbbGoiCuoc.SelectedItem as ComboboxItem).Text;
+
+        }
+
+        private void cbbGoiCuoc_SelectedValueChanged(object sender, EventArgs e)
+        {
+            LoadData();
         }
     }
 }

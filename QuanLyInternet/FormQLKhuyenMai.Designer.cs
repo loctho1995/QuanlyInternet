@@ -33,6 +33,7 @@
             this.ambiance_Button_11 = new Ambiance.Ambiance_Button_1();
             this.ambiance_Button_12 = new Ambiance.Ambiance_Button_1();
             this.ambiance_Button_14 = new Ambiance.Ambiance_Button_1();
+            this.ambiance_Button_13 = new Ambiance.Ambiance_Button_1();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,6 +61,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(782, 307);
             this.dataGridView1.TabIndex = 41;
+            this.dataGridView1.DoubleClick += new System.EventHandler(this.ambiance_Button_13_Click_1);
             // 
             // ambiance_Button_11
             // 
@@ -85,7 +87,7 @@
             this.ambiance_Button_12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ambiance_Button_12.InActiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.ambiance_Button_12.InActiveColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(237)))), ((int)(((byte)(236)))));
-            this.ambiance_Button_12.Location = new System.Drawing.Point(153, 12);
+            this.ambiance_Button_12.Location = new System.Drawing.Point(282, 12);
             this.ambiance_Button_12.Name = "ambiance_Button_12";
             this.ambiance_Button_12.Size = new System.Drawing.Size(91, 38);
             this.ambiance_Button_12.TabIndex = 43;
@@ -101,7 +103,7 @@
             this.ambiance_Button_14.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ambiance_Button_14.InActiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.ambiance_Button_14.InActiveColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(237)))), ((int)(((byte)(236)))));
-            this.ambiance_Button_14.Location = new System.Drawing.Point(305, 12);
+            this.ambiance_Button_14.Location = new System.Drawing.Point(405, 12);
             this.ambiance_Button_14.Name = "ambiance_Button_14";
             this.ambiance_Button_14.Size = new System.Drawing.Size(91, 38);
             this.ambiance_Button_14.TabIndex = 45;
@@ -109,11 +111,28 @@
             this.ambiance_Button_14.TextAlignment = System.Drawing.StringAlignment.Center;
             this.ambiance_Button_14.Click += new System.EventHandler(this.ambiance_Button_14_Click);
             // 
+            // ambiance_Button_13
+            // 
+            this.ambiance_Button_13.BackColor = System.Drawing.Color.Transparent;
+            this.ambiance_Button_13.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.ambiance_Button_13.Image = null;
+            this.ambiance_Button_13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ambiance_Button_13.InActiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.ambiance_Button_13.InActiveColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(237)))), ((int)(((byte)(236)))));
+            this.ambiance_Button_13.Location = new System.Drawing.Point(136, 12);
+            this.ambiance_Button_13.Name = "ambiance_Button_13";
+            this.ambiance_Button_13.Size = new System.Drawing.Size(91, 38);
+            this.ambiance_Button_13.TabIndex = 46;
+            this.ambiance_Button_13.Text = "Chi Tiết";
+            this.ambiance_Button_13.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.ambiance_Button_13.Click += new System.EventHandler(this.ambiance_Button_13_Click_1);
+            // 
             // FormQLKhuyenMai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(806, 414);
+            this.Controls.Add(this.ambiance_Button_13);
             this.Controls.Add(this.ambiance_Button_14);
             this.Controls.Add(this.ambiance_Button_12);
             this.Controls.Add(this.ambiance_Button_11);
@@ -133,5 +152,6 @@
         private Ambiance.Ambiance_Button_1 ambiance_Button_11;
         private Ambiance.Ambiance_Button_1 ambiance_Button_12;
         private Ambiance.Ambiance_Button_1 ambiance_Button_14;
+        private Ambiance.Ambiance_Button_1 ambiance_Button_13;
     }
 }

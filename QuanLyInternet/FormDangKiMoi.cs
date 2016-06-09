@@ -60,7 +60,7 @@ namespace QuanLyInternet
         {
             if (System.Text.RegularExpressions.Regex.IsMatch(tbSoCMND.Text, "[^0-9]"))
             {
-                MessageBox.Show("Please enter only numbers.");
+                MessageBox.Show("Vui lòng chỉ điền chữ số!");
 
                 tbSoCMND.Text = "";
             }
@@ -74,7 +74,7 @@ namespace QuanLyInternet
         {
             if (System.Text.RegularExpressions.Regex.IsMatch(tbSoDienThoai.Text, "[^0-9]"))
             {
-                MessageBox.Show("Please enter only numbers.");
+                MessageBox.Show("Vui lòng chỉ điền chữ số.");
                 tbSoDienThoai.Text = "";
             }
         }
@@ -83,7 +83,7 @@ namespace QuanLyInternet
         {
             if (tbHoVaTen.Text == "" || tbNgheNghiep.Text == "" || tbDCThuongTru.Text == "" || tbDCThanhToan.Text == "" || tbHoVaTen.Text == "" || tbSoCMND.Text == "" || tbSoDienThoai.Text == "")
             {
-                MessageBox.Show("Khong co truong nao duoc de trong!");
+                MessageBox.Show("Không trường nào được để trống!");
                 return;
             }
             DataTable dt = Database.GetInstance.HopDong.getAllResult();
@@ -125,13 +125,13 @@ namespace QuanLyInternet
                                                         "@email"
                                                         );
                 
-                MessageBox.Show("Thanh Cong");
+                MessageBox.Show("Thành Công");
                 this.Close();
 
             }
             catch (System.Data.SqlClient.SqlException exc)
             {
-                MessageBox.Show("Co loi xay ra" + exc.Source);
+                MessageBox.Show("Có lỗi xảy ra" + exc.Source);
             }
         }
     }

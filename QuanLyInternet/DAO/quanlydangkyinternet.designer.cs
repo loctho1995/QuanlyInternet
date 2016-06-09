@@ -63,7 +63,7 @@ namespace QuanLyInternet.DAO
     #endregion
 		
 		public quanlydangkyinternetDataContext() : 
-				base(global::QuanLyInternet.Properties.Settings.Default.QuanLyDangKyInternetConnectionString, mappingSource)
+				base(global::QuanLyInternet.Properties.Settings.Default.QuanLyDangKyInternetConnectionString2, mappingSource)
 		{
 			OnCreated();
 		}
@@ -260,17 +260,17 @@ namespace QuanLyInternet.DAO
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.addTinhTrang")]
-		public int addTinhTrang([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string matinhtrang, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string noidung)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), matinhtrang, noidung);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.addThongTinTruyCap")]
 		public int addThongTinTruyCap([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string mahopdong, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> ngaytruycap, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Time")] System.Nullable<System.TimeSpan> thoidiemtruycap, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string diachitruycap, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Float")] System.Nullable<double> dungluongsudung)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mahopdong, ngaytruycap, thoidiemtruycap, diachitruycap, dungluongsudung);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.addTinhTrang")]
+		public int addTinhTrang([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string matinhtrang, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string noidung)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), matinhtrang, noidung);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -410,17 +410,17 @@ namespace QuanLyInternet.DAO
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.editTinhTrang")]
-		public int editTinhTrang([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string matinhtrang, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string noidung)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), matinhtrang, noidung);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.editThamSo")]
 		public int editThamSo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Float")] System.Nullable<double> phidangky, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> ngaybatdauthuphi, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> ngayketthucthuphi)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), phidangky, ngaybatdauthuphi, ngayketthucthuphi);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.editTinhTrang")]
+		public int editTinhTrang([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string matinhtrang, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string noidung)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), matinhtrang, noidung);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -494,13 +494,6 @@ namespace QuanLyInternet.DAO
 			return ((ISingleResult<getLoaiGioTruyCapResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.getTinhTrang")]
-		public ISingleResult<getTinhTrangResult> getTinhTrang()
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<getTinhTrangResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.getThamSo")]
 		public ISingleResult<getThamSoResult> getThamSo()
 		{
@@ -513,6 +506,13 @@ namespace QuanLyInternet.DAO
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<getThongTinTruyCapResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.getTinhTrang")]
+		public ISingleResult<getTinhTrangResult> getTinhTrang()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<getTinhTrangResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.searchHopDong")]
@@ -4072,50 +4072,6 @@ namespace QuanLyInternet.DAO
 		}
 	}
 	
-	public partial class getTinhTrangResult
-	{
-		
-		private string _MaTinhTrang;
-		
-		private string _NoiDung;
-		
-		public getTinhTrangResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaTinhTrang", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
-		public string MaTinhTrang
-		{
-			get
-			{
-				return this._MaTinhTrang;
-			}
-			set
-			{
-				if ((this._MaTinhTrang != value))
-				{
-					this._MaTinhTrang = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NoiDung", DbType="VarChar(100)")]
-		public string NoiDung
-		{
-			get
-			{
-				return this._NoiDung;
-			}
-			set
-			{
-				if ((this._NoiDung != value))
-				{
-					this._NoiDung = value;
-				}
-			}
-		}
-	}
-	
 	public partial class getThamSoResult
 	{
 		
@@ -4289,6 +4245,50 @@ namespace QuanLyInternet.DAO
 				if ((this._DungLuongSuDung != value))
 				{
 					this._DungLuongSuDung = value;
+				}
+			}
+		}
+	}
+	
+	public partial class getTinhTrangResult
+	{
+		
+		private string _MaTinhTrang;
+		
+		private string _NoiDung;
+		
+		public getTinhTrangResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaTinhTrang", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string MaTinhTrang
+		{
+			get
+			{
+				return this._MaTinhTrang;
+			}
+			set
+			{
+				if ((this._MaTinhTrang != value))
+				{
+					this._MaTinhTrang = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NoiDung", DbType="VarChar(100)")]
+		public string NoiDung
+		{
+			get
+			{
+				return this._NoiDung;
+			}
+			set
+			{
+				if ((this._NoiDung != value))
+				{
+					this._NoiDung = value;
 				}
 			}
 		}

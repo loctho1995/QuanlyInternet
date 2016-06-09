@@ -27,21 +27,29 @@ namespace QuanLyInternet
 
         private void ambiance_Button_12_Click(object sender, EventArgs e)
         {
+            DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn xóa?", "Xác Nhận", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                int maHDindex = dataGridView1.Columns["MaCTKM"].Index;
+                //dataGridView1.SelectedRows;
+                int rowIndex = dataGridView1.CurrentCell.RowIndex;
+                string maCTKM = dataGridView1[maHDindex, rowIndex].Value.ToString();
+                try
+                {
+                    Database.GetInstance.CTKM.deleteCTKM(maCTKM);
+                    LoadData();
+                    MessageBox.Show("Thành Công");
+                }
+                catch
+                {
+                    MessageBox.Show("Có lỗi xảy ra");
+                }
+            }
+            else if (dialogResult == DialogResult.No)
+            {
 
-            int maHDindex = dataGridView1.Columns["MaCTKM"].Index;
-            //dataGridView1.SelectedRows;
-            int rowIndex = dataGridView1.CurrentCell.RowIndex;
-            string maCTKM = dataGridView1[maHDindex, rowIndex].Value.ToString();
-            try
-            {
-                Database.GetInstance.CTKM.deleteCTKM(maCTKM);
-                LoadData();
-                MessageBox.Show("Thanh Cong");
             }
-            catch
-            {
-                MessageBox.Show("Co loi xay ra");
-            }
+            
         }
 
         private void LoadData()
@@ -54,19 +62,32 @@ namespace QuanLyInternet
             this.Close();
         }
 
-        private void ambiance_Button_13_Click(object sender, EventArgs e)
-        {
-            int maHDindex = dataGridView1.Columns["MaCTKM"].Index;
-            //dataGridView1.SelectedRows;
-            int rowIndex = dataGridView1.CurrentCell.RowIndex;
-            string maCTKM = dataGridView1[maHDindex, rowIndex].Value.ToString();
-
-
-        }
-
         private void ambiance_Button_14_Click(object sender, EventArgs e)
         {
             LoadData();
+        }
+
+        private void ambiance_Button_13_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                int maHDindex = dataGridView1.Columns["MaCTKM"].Index;
+                //dataGridView1.SelectedRows;
+                int rowIndex = dataGridView1.CurrentCell.RowIndex;
+                string maCTKM = dataGridView1[maHDindex, rowIndex].Value.ToString();
+
+                //DataTable dt = Database.GetInstance.CTKM.getCTKMWith(maCTKM);
+
+                FormCTKhuyenMai ctkm = new FormCTKhuyenMai(maCTKM);
+                ctkm.Show();
+            }
+            catch
+            {
+ 
+            }
+            
+
+
         }
 
 

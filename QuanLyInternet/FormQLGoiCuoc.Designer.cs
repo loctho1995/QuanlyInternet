@@ -61,6 +61,7 @@
             this.cbbGoiCuoc.Size = new System.Drawing.Size(156, 26);
             this.cbbGoiCuoc.StartIndex = 0;
             this.cbbGoiCuoc.TabIndex = 0;
+            this.cbbGoiCuoc.SelectedValueChanged += new System.EventHandler(this.cbbGoiCuoc_SelectedValueChanged);
             // 
             // ambiance_Label1
             // 
