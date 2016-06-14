@@ -100,7 +100,6 @@ namespace QuanLyInternet
                 maHDmoi++;
             }
 
-            int cmnd = Int32.Parse(tbSoCMND.Text);
             //int stk = Int32.Parse(tbSoTaiKhoan.Text);
 
             int sdt = Int32.Parse(tbSoDienThoai.Text);
@@ -108,12 +107,12 @@ namespace QuanLyInternet
             {
                 Database.GetInstance.HopDong.addHopDong(maHDmoi.ToString(),
                                                         tbHoVaTen.Text,
-                                                        cmnd,
+                                                        tbSoCMND.Text,
                                                         tbNgheNghiep.Text,
                                                         tbDCThuongTru.Text,
                                                         tbDCCaidat.Text,
                                                         tbDCThanhToan.Text,
-                                                        sdt,
+                                                        tbSoDienThoai.Text,
                                                         dateTimePicker1.Value,
                                                         (ambiance_ComboBox3.SelectedItem as ComboboxItem).Value.ToString(),
                                                         (ambiance_ComboBox2.SelectedItem as ComboboxItem).Value.ToString(),

@@ -95,7 +95,7 @@ namespace QuanLyInternet
         {
             if( ambiance_TextBox1.Text == "" || ambiance_TextBox2.Text == "")
             {
-                MessageBox.Show ( " Vui long dien day du thong tin dumbass");
+                MessageBox.Show ( " Vui lòng điền đầy đủ thông tin!");
                 return;
             }
             if (!editing)
@@ -116,13 +116,13 @@ namespace QuanLyInternet
                 try
                 {
                     Database.GetInstance.CTKM.addCTKM(maHDmoi.ToString(), ambiance_TextBox1.Text, dateTimePicker1.Value, dateTimePicker2.Value, (cbbGoiCuoc.SelectedItem as ComboboxItem).Value.ToString(), float.Parse(ambiance_TextBox2.Text));
-                    MessageBox.Show("Thanh cong");
+                    MessageBox.Show("Thành công!");
                     this.Close();
                 }
 
                 catch
                 {
-                    MessageBox.Show("Co loi xay ra");
+                    MessageBox.Show("Có lỗi xảy ra!");
                 }
             }
             else
@@ -133,13 +133,13 @@ namespace QuanLyInternet
                     try
                     {
                         Database.GetInstance.CTKM.editCTKM(maCTKM, ambiance_TextBox1.Text, dateTimePicker1.Value, dateTimePicker2.Value, (cbbGoiCuoc.SelectedItem as ComboboxItem).Value.ToString(), float.Parse(ambiance_TextBox2.Text));
-                        MessageBox.Show("Thanh cong");
+                        MessageBox.Show("Thành công");
                         this.Close();
                     }
 
                     catch
                     {
-                        MessageBox.Show("Co loi xay ra");
+                        MessageBox.Show("Có lỗi xảy ra");
                     }
                 }
                 else if (dialogResult == DialogResult.No)
@@ -157,7 +157,7 @@ namespace QuanLyInternet
         {
             if (System.Text.RegularExpressions.Regex.IsMatch(ambiance_TextBox2.Text, "[^0-9]"))
             {
-                MessageBox.Show("Please enter only numbers.");
+                MessageBox.Show("Vui lòng chỉ điền chữ số.");
 
                 ambiance_TextBox2.Text = "";
             }

@@ -179,19 +179,19 @@ namespace QuanLyInternet
                 tbPassword.Text == "" || tbUserName.Text == ""
                 )
             {
-                MessageBox.Show("Khong co truong nao duoc de trong!");
+                MessageBox.Show("Không được trường nào để trống!");
                 return;
             }
             try
             {
                 Database.GetInstance.HopDong.editHopDong(this.maHD,
                                                         tbHoVaTen.Text,
-                                                        Int32.Parse(tbSoCMND.Text),
+                                                        (tbSoCMND.Text),
                                                         tbNgheNghiep.Text,
                                                         tbDCThuongTru.Text,
                                                         tbDCCaiDat.Text,
                                                         tbDCThanhToan.Text,
-                                                        Int32.Parse(tbSoDienThoai.Text),
+                                                        (tbSoDienThoai.Text),
                                                         dateTimePicker1.Value,
                                                         (cbbDoiTuong.SelectedItem as ComboboxItem).Value.ToString(),
                                                         (cbbGoiCuoc.SelectedItem as ComboboxItem).Value.ToString(),
@@ -202,12 +202,12 @@ namespace QuanLyInternet
                                                         tbPassword.Text,
                                                         tbEmail.Text
                                                         );
-                MessageBox.Show(" Thanh COng");
+                MessageBox.Show(" Thành Công");
                 this.Close();
             }
             catch ( Exception exc)
             {
-                MessageBox.Show(" Co loi xay ra");
+                MessageBox.Show(" Có lỗi xảy ra");
             }
             
         }

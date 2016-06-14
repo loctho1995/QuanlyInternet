@@ -44,7 +44,7 @@ namespace QuanLyInternet
                 int rowIndex = dataGridView1.CurrentCell.RowIndex;
                 string maHD = dataGridView1[maHDindex, rowIndex].Value.ToString();
                 FormHienThiKhachHang hienThiKhachHang = new FormHienThiKhachHang(maHD);
-                hienThiKhachHang.ShowDialog();
+                hienThiKhachHang.Show();
             }
             catch
             {

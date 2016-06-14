@@ -80,7 +80,7 @@ namespace QuanLyInternet
                 try
                 {
                     ExpEcel(dataTable, path);
-                    MessageBox.Show("Success");
+                    MessageBox.Show("Thành công");
 
                 }
                 catch
