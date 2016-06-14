@@ -15,12 +15,12 @@ namespace QuanLyInternet.BUS
             dt.Columns.Add("STT", typeof(int));
             dt.Columns.Add("MaHopDong", typeof(string));
             dt.Columns.Add("HoTen", typeof(string));
-            dt.Columns.Add("CMND", typeof(int));
+            dt.Columns.Add("CMND", typeof(string));
             dt.Columns.Add("NgheNghiep", typeof(string));
             dt.Columns.Add("DCNha", typeof(string));
             dt.Columns.Add("DCCaiDat", typeof(string));
             dt.Columns.Add("DCThanhToan", typeof(string));
-            dt.Columns.Add("SoDienThoai", typeof(int));
+            dt.Columns.Add("SoDienThoai", typeof(string));
             dt.Columns.Add("NgayDangKy", typeof(DateTime));
             dt.Columns.Add("MaDoiTuong", typeof(string));
             dt.Columns.Add("MaGoiCuoc", typeof(string));
@@ -69,12 +69,12 @@ namespace QuanLyInternet.BUS
             dt.Columns.Add("STT", typeof(int));
             dt.Columns.Add("MaHopDong", typeof(string));
             dt.Columns.Add("HoTen", typeof(string));
-            dt.Columns.Add("CMND", typeof(int));
+            dt.Columns.Add("CMND", typeof(string));
             dt.Columns.Add("NgheNghiep", typeof(string));
             dt.Columns.Add("DCNha", typeof(string));
             dt.Columns.Add("DCCaiDat", typeof(string));
             dt.Columns.Add("DCThanhToan", typeof(string));
-            dt.Columns.Add("SoDienThoai", typeof(int));
+            dt.Columns.Add("SoDienThoai", typeof(string));
             dt.Columns.Add("NgayDangKy", typeof(DateTime));
             dt.Columns.Add("MaDoiTuong", typeof(string));
             dt.Columns.Add("MaGoiCuoc", typeof(string));
@@ -123,12 +123,12 @@ namespace QuanLyInternet.BUS
             dt.Columns.Add("STT", typeof(int));
             dt.Columns.Add("MaHopDong", typeof(string));
             dt.Columns.Add("HoTen", typeof(string));
-            dt.Columns.Add("CMND", typeof(int));
+            dt.Columns.Add("CMND", typeof(string));
             dt.Columns.Add("NgheNghiep", typeof(string));
             dt.Columns.Add("DCNha", typeof(string));
             dt.Columns.Add("DCCaiDat", typeof(string));
             dt.Columns.Add("DCThanhToan", typeof(string));
-            dt.Columns.Add("SoDienThoai", typeof(int));
+            dt.Columns.Add("SoDienThoai", typeof(string));
             dt.Columns.Add("NgayDangKy", typeof(DateTime));
             dt.Columns.Add("MaDoiTuong", typeof(string));
             dt.Columns.Add("MaGoiCuoc", typeof(string));
@@ -171,14 +171,14 @@ namespace QuanLyInternet.BUS
             return dt;
         }
 
-        public void addHopDong(string mahopdong, string hoten, int cmnd, string nghenghiep, string dcnha, string dccaidat, string dcthanhtoan, int sodienthoai, DateTime ngaydangky, string madoituong, string magoicuoc, DateTime ngayapdunggoicuoc, float phidangky, string tinhtrang, string username, string password, string email)
+        public void addHopDong(string mahopdong, string hoten, string cmnd, string nghenghiep, string dcnha, string dccaidat, string dcthanhtoan, string sodienthoai, DateTime ngaydangky, string madoituong, string magoicuoc, DateTime ngayapdunggoicuoc, float phidangky, string tinhtrang, string username, string password, string email)
         {
-            SQLDataContext.SQLData.addHopDong(mahopdong, hoten, cmnd.ToString(), nghenghiep, dcnha, dccaidat, dcthanhtoan, sodienthoai.ToString(), ngaydangky, madoituong, magoicuoc, ngayapdunggoicuoc, phidangky, tinhtrang, username, password, email);
+            SQLDataContext.SQLData.addHopDong(mahopdong, hoten, cmnd, nghenghiep, dcnha, dccaidat, dcthanhtoan, sodienthoai, ngaydangky, madoituong, magoicuoc, ngayapdunggoicuoc, phidangky, tinhtrang, username, password, email);
         }
 
-        public void editHopDong(string mahopdong, string hoten, int cmnd, string nghenghiep, string dcnha, string dccaidat, string dcthanhtoan, int sodienthoai, DateTime ngaydangky, string madoituong, string magoicuoc, DateTime ngayapdunggoicuoc, float phidangky, string tinhtrang, string username, string password, string email)
+        public void editHopDong(string mahopdong, string hoten, string cmnd, string nghenghiep, string dcnha, string dccaidat, string dcthanhtoan, string sodienthoai, DateTime ngaydangky, string madoituong, string magoicuoc, DateTime ngayapdunggoicuoc, float phidangky, string tinhtrang, string username, string password, string email)
         {
-            SQLDataContext.SQLData.editHopDong(mahopdong, hoten, cmnd.ToString(), nghenghiep, dcnha, dccaidat, dcthanhtoan, sodienthoai.ToString(), ngaydangky, madoituong, magoicuoc, ngayapdunggoicuoc, phidangky, tinhtrang, username, password, email);
+            SQLDataContext.SQLData.editHopDong(mahopdong, hoten, cmnd, nghenghiep, dcnha, dccaidat, dcthanhtoan, sodienthoai, ngaydangky, madoituong, magoicuoc, ngayapdunggoicuoc, phidangky, tinhtrang, username, password, email);
         }
 
         public void deleteHopDong(string mahopdong)

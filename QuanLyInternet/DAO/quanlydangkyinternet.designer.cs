@@ -1998,7 +1998,7 @@ namespace QuanLyInternet.DAO
 		
 		private string _HoTen;
 		
-		private System.Nullable<int> _CMND;
+		private string _CMND;
 		
 		private string _NgheNghiep;
 		
@@ -2008,7 +2008,7 @@ namespace QuanLyInternet.DAO
 		
 		private string _DCThanhToan;
 		
-		private System.Nullable<int> _SoDienThoai;
+		private string _SoDienThoai;
 		
 		private System.Nullable<System.DateTime> _NgayDangKy;
 		
@@ -2046,7 +2046,7 @@ namespace QuanLyInternet.DAO
     partial void OnMaHopDongChanged();
     partial void OnHoTenChanging(string value);
     partial void OnHoTenChanged();
-    partial void OnCMNDChanging(System.Nullable<int> value);
+    partial void OnCMNDChanging(string value);
     partial void OnCMNDChanged();
     partial void OnNgheNghiepChanging(string value);
     partial void OnNgheNghiepChanged();
@@ -2056,7 +2056,7 @@ namespace QuanLyInternet.DAO
     partial void OnDCCaiDatChanged();
     partial void OnDCThanhToanChanging(string value);
     partial void OnDCThanhToanChanged();
-    partial void OnSoDienThoaiChanging(System.Nullable<int> value);
+    partial void OnSoDienThoaiChanging(string value);
     partial void OnSoDienThoaiChanged();
     partial void OnNgayDangKyChanging(System.Nullable<System.DateTime> value);
     partial void OnNgayDangKyChanged();
@@ -2128,8 +2128,8 @@ namespace QuanLyInternet.DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CMND", DbType="Int")]
-		public System.Nullable<int> CMND
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CMND", DbType="VarChar(50)")]
+		public string CMND
 		{
 			get
 			{
@@ -2228,8 +2228,8 @@ namespace QuanLyInternet.DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoDienThoai", DbType="Int")]
-		public System.Nullable<int> SoDienThoai
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoDienThoai", DbType="VarChar(50)")]
+		public string SoDienThoai
 		{
 			get
 			{

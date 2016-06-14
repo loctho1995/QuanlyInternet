@@ -76,12 +76,12 @@
     <Type Name="HOPDONG">
       <Column Name="MaHopDong" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="HoTen" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CMND" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CMND" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="NgheNghiep" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="DCNha" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
       <Column Name="DCCaiDat" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
       <Column Name="DCThanhToan" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
-      <Column Name="SoDienThoai" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SoDienThoai" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="NgayDangKy" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="MaDoiTuong" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="MaGoiCuoc" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
