@@ -13,11 +13,11 @@ namespace QuanLyInternet.BUS
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("STT", typeof(int));
-            dt.Columns.Add("MaHopDong", typeof(string));
-            dt.Columns.Add("NgayTruyCap", typeof(DateTime));
-            dt.Columns.Add("ThoiDiemTruyCap", typeof(TimeSpan));
-            dt.Columns.Add("DiaChiTruyCap", typeof(string));
-            dt.Columns.Add("DungLuongSuDung", typeof(float));
+            dt.Columns.Add("Mã Hợp Đồng", typeof(string));
+            dt.Columns.Add("Ngày Truy Cập", typeof(DateTime));
+            dt.Columns.Add("Thời Điểm Truy Cập", typeof(TimeSpan));
+            dt.Columns.Add("Địa Chỉ Truy Cập", typeof(string));
+            dt.Columns.Add("Dung Lượng Sử Dụng", typeof(float));
 
             var tt = SQLDataContext.SQLData.getThongTinTruyCap();
 
@@ -25,11 +25,11 @@ namespace QuanLyInternet.BUS
             {
                 DataRow r = dt.NewRow();
                 r["STT"] = i.STT;
-                r["MaHopDong"] = i.MaHopDong;
-                r["NgayTruyCap"] = i.NgayTruyCap;
-                r["ThoiDiemTruyCap"] = i.ThoiDiemTruyCap;
-                r["DiaChiTruyCap"] = i.DiaChiTruyCap;
-                r["DungLuongSuDung"] = i.DungLuongSuDung;
+                r["Mã Hợp Đồng"] = i.MaHopDong;
+                r["Ngày Truy Cập"] = i.NgayTruyCap;
+                r["Thời Điểm Truy Cập"] = i.ThoiDiemTruyCap;
+                r["Địa Chỉ Truy Cập"] = i.DiaChiTruyCap;
+                r["Dung Lượng Sử Dụng"] = i.DungLuongSuDung;
                 dt.Rows.Add(r);
             }
 

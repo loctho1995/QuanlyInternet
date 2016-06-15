@@ -33,7 +33,7 @@ namespace QuanLyInternet
                 
                 try
                 {
-                    int maHDindex = dataGridView1.Columns["MaCTKM"].Index;
+                    int maHDindex = dataGridView1.Columns["Mã CTKM"].Index;
                     //dataGridView1.SelectedRows;
                     int rowIndex = dataGridView1.CurrentCell.RowIndex;
                     string maCTKM = dataGridView1[maHDindex, rowIndex].Value.ToString();
@@ -72,7 +72,7 @@ namespace QuanLyInternet
         {
             try
             {
-                int maHDindex = dataGridView1.Columns["MaCTKM"].Index;
+                int maHDindex = dataGridView1.Columns["Mã CTKM"].Index;
                 //dataGridView1.SelectedRows;
                 int rowIndex = dataGridView1.CurrentCell.RowIndex;
                 string maCTKM = dataGridView1[maHDindex, rowIndex].Value.ToString();

@@ -13,9 +13,9 @@ namespace QuanLyInternet.BUS
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("STT", typeof(int));
-            dt.Columns.Add("MaGoiCuoc", typeof(string));
-            dt.Columns.Add("MaLoaiGioTruyCap", typeof(string));
-            dt.Columns.Add("DonGia", typeof(float));
+            dt.Columns.Add("Mã Gói Cước", typeof(string));
+            dt.Columns.Add("Mã Loại Giờ Truy Cập", typeof(string));
+            dt.Columns.Add("Đơn Giá", typeof(float));
 
             var kh = SQLDataContext.SQLData.getCTGoiCuoc();
             int stt = 1;
@@ -23,9 +23,9 @@ namespace QuanLyInternet.BUS
             {
                 DataRow r = dt.NewRow();
                 r["STT"] = stt++;
-                r["MaGoiCuoc"] = i.MaGoiCuoc;
-                r["MaLoaiGioTruyCap"] = i.MaLoaiGioTruyCap;
-                r["DonGia"] = i.DonGia;
+                r["Mã Gói Cước"] = i.MaGoiCuoc;
+                r["Mã Loại Giờ Truy Cập"] = i.MaLoaiGioTruyCap;
+                r["Đơn Giá"] = i.DonGia;
                 dt.Rows.Add(r);
             }
 

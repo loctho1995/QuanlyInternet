@@ -56,7 +56,7 @@
             this.ambiance_Button_11.Name = "ambiance_Button_11";
             this.ambiance_Button_11.Size = new System.Drawing.Size(177, 30);
             this.ambiance_Button_11.TabIndex = 2;
-            this.ambiance_Button_11.Text = "Preview";
+            this.ambiance_Button_11.Text = "Xem Trước";
             this.ambiance_Button_11.TextAlignment = System.Drawing.StringAlignment.Center;
             this.ambiance_Button_11.Click += new System.EventHandler(this.ambiance_Button_11_Click);
             // 
@@ -72,7 +72,7 @@
             this.ambiance_Button_12.Name = "ambiance_Button_12";
             this.ambiance_Button_12.Size = new System.Drawing.Size(177, 30);
             this.ambiance_Button_12.TabIndex = 3;
-            this.ambiance_Button_12.Text = "Print";
+            this.ambiance_Button_12.Text = "In";
             this.ambiance_Button_12.TextAlignment = System.Drawing.StringAlignment.Center;
             this.ambiance_Button_12.Click += new System.EventHandler(this.ambiance_Button_12_Click);
             // 
@@ -88,7 +88,7 @@
             this.ambiance_Button_13.Name = "ambiance_Button_13";
             this.ambiance_Button_13.Size = new System.Drawing.Size(177, 30);
             this.ambiance_Button_13.TabIndex = 4;
-            this.ambiance_Button_13.Text = "Export";
+            this.ambiance_Button_13.Text = "Xuất";
             this.ambiance_Button_13.TextAlignment = System.Drawing.StringAlignment.Center;
             this.ambiance_Button_13.Click += new System.EventHandler(this.ambiance_Button_13_Click);
             // 

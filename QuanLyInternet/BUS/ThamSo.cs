@@ -12,18 +12,18 @@ namespace QuanLyInternet.BUS
         public DataTable getAllResult()
         {
             DataTable dt = new DataTable();
-            dt.Columns.Add("PhiDangKy", typeof(float));
-            dt.Columns.Add("NgayBatDauThuPhi", typeof(int));
-            dt.Columns.Add("NgayKetThucThuPhi", typeof(int));
+            dt.Columns.Add("Phí Đăng ký", typeof(float));
+            dt.Columns.Add("Ngày Bắt đầu thu phí", typeof(int));
+            dt.Columns.Add("Ngày kết thúc thu phí", typeof(int));
 
             var tt = SQLDataContext.SQLData.getThamSo();
 
             foreach (var i in tt)
             {
                 DataRow r = dt.NewRow();
-                r["PhiDangKy"] = i.PhiDangKy;
-                r["NgayBatDauThuPhi"] = i.NgayBatDauThuPhi;
-                r["NgayKetThucThuPhi"] = i.NgayKetThucThuPhi;
+                r["Phí Đăng ký"] = i.PhiDangKy;
+                r["Ngày Bắt đầu thu phí"] = i.NgayBatDauThuPhi;
+                r["Ngày kết thúc thu phí"] = i.NgayKetThucThuPhi;
                 dt.Rows.Add(r);
             }
 

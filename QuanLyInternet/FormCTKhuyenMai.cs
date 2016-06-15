@@ -18,23 +18,31 @@ namespace QuanLyInternet
         {
             InitializeComponent();
             cbbGoiCuoc.Items.Clear();
-            DataTable dt = Database.GetInstance.DoiTuong.getAllResult();
-            int maDTindex = dt.Columns.IndexOf("MaDoiTuong");
-            int MoTaDTIndex = dt.Columns.IndexOf("MoTa");
-            
-
-            DataTable maGC = Database.GetInstance.GoiCuoc.getAllResult();
-            int maGCindex = maGC.Columns.IndexOf("MaGoiCuoc");
-
-            foreach (DataRow row in maGC.Rows)
+            try
             {
-                ComboboxItem item = new ComboboxItem();
-                item.Text = row.ItemArray[maGCindex].ToString();
-                item.Value = item.Text;
-                cbbGoiCuoc.Items.Add(item);
-            }
+                DataTable dt = Database.GetInstance.DoiTuong.getAllResult();
+                int maDTindex = dt.Columns.IndexOf("Mã Đối Tượng");
+                int MoTaDTIndex = dt.Columns.IndexOf("Mô Tả");
 
-            cbbGoiCuoc.SelectedIndex = 0;
+
+                DataTable maGC = Database.GetInstance.GoiCuoc.getAllResult();
+                int maGCindex = maGC.Columns.IndexOf("Mã Gói Cước");
+
+                foreach (DataRow row in maGC.Rows)
+                {
+                    ComboboxItem item = new ComboboxItem();
+                    item.Text = row.ItemArray[maGCindex].ToString();
+                    item.Value = item.Text;
+                    cbbGoiCuoc.Items.Add(item);
+                }
+
+                cbbGoiCuoc.SelectedIndex = 0;
+            }
+            catch
+            {
+ 
+            }
+            
         }
 
         public FormCTKhuyenMai(string maCTKM)
@@ -48,11 +56,11 @@ namespace QuanLyInternet
             DataTable CTKMDTB = Database.GetInstance.CTKM.getCTKMWith(maCTKM);
 
 
-            int NoiDungIndex = CTKMDTB.Columns.IndexOf("NoiDung");
-            int TuNgayIndex = CTKMDTB.Columns.IndexOf("TuNgay");
-            int DenNgayIndex = CTKMDTB.Columns.IndexOf("DenNgay");
-            int MaGoiCuocKhuyenMaiIndex = CTKMDTB.Columns.IndexOf("MaGoiCuocKhuyenMai");
-            int PhiDangKyKhuyenMaiIndex = CTKMDTB.Columns.IndexOf("PhiDangKyKhuyenMai");
+            int NoiDungIndex = CTKMDTB.Columns.IndexOf("Nội Dung");
+            int TuNgayIndex = CTKMDTB.Columns.IndexOf("Từ Ngày");
+            int DenNgayIndex = CTKMDTB.Columns.IndexOf("Đến Ngày");
+            int MaGoiCuocKhuyenMaiIndex = CTKMDTB.Columns.IndexOf("Mã Gói Cước KM");
+            int PhiDangKyKhuyenMaiIndex = CTKMDTB.Columns.IndexOf("Phí Đăng Ký KM");
 
             var CTKMRow = CTKMDTB.Rows[0];
 
@@ -69,7 +77,7 @@ namespace QuanLyInternet
     
 
             DataTable maGC = Database.GetInstance.GoiCuoc.getAllResult();
-            int maGCindex = maGC.Columns.IndexOf("MaGoiCuoc");
+            int maGCindex = maGC.Columns.IndexOf("Mã Gói Cước");
 
             int index = 0;
             foreach (DataRow row in maGC.Rows)
@@ -98,10 +106,16 @@ namespace QuanLyInternet
                 MessageBox.Show ( " Vui lòng điền đầy đủ thông tin!");
                 return;
             }
+
+            if (dateTimePicker1.Value.CompareTo(dateTimePicker2.Value) > 0)
+            {
+                MessageBox.Show("Ngày bắt đầu chương trình phải sớm hơn ngày kết thúc");
+                return;
+            }
             if (!editing)
             {
                 DataTable dt = Database.GetInstance.CTKM.getAllResult();
-                int maCTKMindex = dt.Columns.IndexOf("MaCTKM");
+                int maCTKMindex = dt.Columns.IndexOf("Mã CTKM");
                 List<int> maCTKMindexes = new List<int>();
                 foreach (DataRow row in dt.Rows)
                 {
