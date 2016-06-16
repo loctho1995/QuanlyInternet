@@ -62,13 +62,15 @@
             this.ambiance_Label2 = new Ambiance.Ambiance_Label();
             this.tbHoVaTen = new Ambiance.Ambiance_TextBox();
             this.ambiance_Label1 = new Ambiance.Ambiance_Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.ambiance_Label17 = new Ambiance.Ambiance_Label();
             this.SuspendLayout();
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(150, 312);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(160, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(210, 20);
             this.dateTimePicker1.TabIndex = 54;
             // 
             // cbbGoiCuoc
@@ -129,7 +131,7 @@
             this.ambiance_Label9.BackColor = System.Drawing.Color.Transparent;
             this.ambiance_Label9.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.ambiance_Label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
-            this.ambiance_Label9.Location = new System.Drawing.Point(433, 318);
+            this.ambiance_Label9.Location = new System.Drawing.Point(441, 318);
             this.ambiance_Label9.Name = "ambiance_Label9";
             this.ambiance_Label9.Size = new System.Drawing.Size(75, 20);
             this.ambiance_Label9.TabIndex = 56;
@@ -295,7 +297,7 @@
             this.tbCloseAndNotSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tbCloseAndNotSave.InActiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.tbCloseAndNotSave.InActiveColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(237)))), ((int)(((byte)(236)))));
-            this.tbCloseAndNotSave.Location = new System.Drawing.Point(413, 367);
+            this.tbCloseAndNotSave.Location = new System.Drawing.Point(422, 410);
             this.tbCloseAndNotSave.Name = "tbCloseAndNotSave";
             this.tbCloseAndNotSave.Size = new System.Drawing.Size(163, 38);
             this.tbCloseAndNotSave.TabIndex = 40;
@@ -343,7 +345,7 @@
             this.btCloseAndSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btCloseAndSave.InActiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.btCloseAndSave.InActiveColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(237)))), ((int)(((byte)(236)))));
-            this.btCloseAndSave.Location = new System.Drawing.Point(582, 367);
+            this.btCloseAndSave.Location = new System.Drawing.Point(591, 410);
             this.btCloseAndSave.Name = "btCloseAndSave";
             this.btCloseAndSave.Size = new System.Drawing.Size(133, 38);
             this.btCloseAndSave.TabIndex = 37;
@@ -475,6 +477,7 @@
             this.tbNgheNghiep.TabIndex = 24;
             this.tbNgheNghiep.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.tbNgheNghiep.UseSystemPasswordChar = false;
+            this.tbNgheNghiep.TextChanged += new System.EventHandler(this.tbNgheNghiep_TextChanged);
             // 
             // ambiance_Label3
             // 
@@ -530,6 +533,7 @@
             this.tbHoVaTen.TabIndex = 20;
             this.tbHoVaTen.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.tbHoVaTen.UseSystemPasswordChar = false;
+            this.tbHoVaTen.TextChanged += new System.EventHandler(this.tbHoVaTen_TextChanged);
             // 
             // ambiance_Label1
             // 
@@ -543,11 +547,32 @@
             this.ambiance_Label1.TabIndex = 19;
             this.ambiance_Label1.Text = "Họ và tên";
             // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(148, 352);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(210, 20);
+            this.dateTimePicker2.TabIndex = 60;
+            // 
+            // ambiance_Label17
+            // 
+            this.ambiance_Label17.AutoSize = true;
+            this.ambiance_Label17.BackColor = System.Drawing.Color.Transparent;
+            this.ambiance_Label17.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.ambiance_Label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
+            this.ambiance_Label17.Location = new System.Drawing.Point(9, 353);
+            this.ambiance_Label17.Name = "ambiance_Label17";
+            this.ambiance_Label17.Size = new System.Drawing.Size(103, 20);
+            this.ambiance_Label17.TabIndex = 59;
+            this.ambiance_Label17.Text = "Ngày áp dụng";
+            // 
             // FormHienThiKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(731, 411);
+            this.ClientSize = new System.Drawing.Size(731, 460);
+            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.ambiance_Label17);
             this.Controls.Add(this.cbbGoiCuoc);
             this.Controls.Add(this.ambiance_Label16);
             this.Controls.Add(this.cbbTT);
@@ -626,5 +651,7 @@
         private Ambiance.Ambiance_Label ambiance_Label9;
         private Ambiance.Ambiance_ComboBox cbbGoiCuoc;
         private Ambiance.Ambiance_Label ambiance_Label16;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private Ambiance.Ambiance_Label ambiance_Label17;
     }
 }

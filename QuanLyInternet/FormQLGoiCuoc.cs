@@ -56,5 +56,10 @@ namespace QuanLyInternet
         {
             LoadData();
         }
+
+        private void ambiance_Button_11_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

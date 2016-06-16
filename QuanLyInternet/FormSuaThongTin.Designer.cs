@@ -62,7 +62,7 @@
             this.btCancle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btCancle.InActiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.btCancle.InActiveColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(237)))), ((int)(((byte)(236)))));
-            this.btCancle.Location = new System.Drawing.Point(645, 266);
+            this.btCancle.Location = new System.Drawing.Point(645, 256);
             this.btCancle.Name = "btCancle";
             this.btCancle.Size = new System.Drawing.Size(91, 38);
             this.btCancle.TabIndex = 37;
@@ -225,6 +225,7 @@
             this.tbNgheNghiep.TabIndex = 24;
             this.tbNgheNghiep.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.tbNgheNghiep.UseSystemPasswordChar = false;
+            this.tbNgheNghiep.TextChanged += new System.EventHandler(this.tbNgheNghiep_TextChanged);
             // 
             // ambiance_Label3
             // 
@@ -279,6 +280,7 @@
             this.tbHoVaTen.TabIndex = 20;
             this.tbHoVaTen.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.tbHoVaTen.UseSystemPasswordChar = false;
+            this.tbHoVaTen.TextChanged += new System.EventHandler(this.tbHoVaTen_TextChanged);
             // 
             // ambiance_Label1
             // 
@@ -300,7 +302,7 @@
             this.btOK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btOK.InActiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.btOK.InActiveColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(237)))), ((int)(((byte)(236)))));
-            this.btOK.Location = new System.Drawing.Point(534, 266);
+            this.btOK.Location = new System.Drawing.Point(534, 256);
             this.btOK.Name = "btOK";
             this.btOK.Size = new System.Drawing.Size(91, 38);
             this.btOK.TabIndex = 38;
@@ -392,7 +394,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(749, 312);
+            this.ClientSize = new System.Drawing.Size(749, 304);
             this.Controls.Add(this.ambiance_TextBox3);
             this.Controls.Add(this.ambiance_Label11);
             this.Controls.Add(this.ambiance_TextBox2);
