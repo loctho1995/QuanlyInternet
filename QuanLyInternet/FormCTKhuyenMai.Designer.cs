@@ -218,7 +218,6 @@
             this.Controls.Add(this.ambiance_Label1);
             this.Name = "FormCTKhuyenMai";
             this.Text = "Chương trình khuyến mãi";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.FormCTKhuyenMai_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

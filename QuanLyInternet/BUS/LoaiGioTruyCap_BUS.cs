@@ -13,8 +13,8 @@ namespace QuanLyInternet.BUS
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("STT", typeof(int));
-            dt.Columns.Add("MaLoaiGioTruyCap", typeof(string));
-            dt.Columns.Add("KhoangThoiGian", typeof(string));
+            dt.Columns.Add("Mã Loại Giờ Truy Cập", typeof(string));
+            dt.Columns.Add("Khoảng Thời Gian", typeof(string));
 
             var tt = SQLDataContext.SQLData.getLoaiGioTruyCap();
             int stt = 1;
@@ -22,8 +22,8 @@ namespace QuanLyInternet.BUS
             {
                 DataRow r = dt.NewRow();
                 r["STT"] = stt++;
-                r["MaLoaiGioTruyCap"] = i.MaLoaiGioTruyCap;
-                r["KhoangThoiGian"] = i.KhoangThoiGian;
+                r["Mã Loại Giờ Truy Cập"] = i.MaLoaiGioTruyCap;
+                r["Khoảng Thời Gian"] = i.KhoangThoiGian;
 
                 dt.Rows.Add(r);
             }

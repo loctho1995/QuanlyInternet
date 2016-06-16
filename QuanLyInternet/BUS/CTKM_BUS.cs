@@ -13,12 +13,12 @@ namespace QuanLyInternet.BUS
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("STT", typeof(int));
-            dt.Columns.Add("MaCTKM", typeof(string));
-            dt.Columns.Add("NoiDung", typeof(string));
-            dt.Columns.Add("TuNgay", typeof(DateTime));
-            dt.Columns.Add("DenNgay", typeof(DateTime));
-            dt.Columns.Add("MaGoiCuocKhuyenMai", typeof(string));
-            dt.Columns.Add("PhiDangKyKhuyenMai", typeof(float));
+            dt.Columns.Add("Mã CTKM", typeof(string));
+            dt.Columns.Add("Nội Dung", typeof(string));
+            dt.Columns.Add("Từ Ngày", typeof(DateTime));
+            dt.Columns.Add("Đến Ngày", typeof(DateTime));
+            dt.Columns.Add("Mã Gói Cước KM", typeof(string));
+            dt.Columns.Add("Phí Đăng Ký KM", typeof(float));
 
             var kh = SQLDataContext.SQLData.getCTKM();
             int stt = 1;
@@ -26,12 +26,12 @@ namespace QuanLyInternet.BUS
             {
                 DataRow r = dt.NewRow();
                 r["STT"] = stt++;
-                r["MaCTKM"] = i.MaCTKM;
-                r["NoiDung"] = i.NoiDung;
-                r["TuNgay"] = i.TuNgay;
-                r["DenNgay"] = i.DenNgay;
-                r["MaGoiCuocKhuyenMai"] = i.MaGoiCuocKhuyenMai;
-                r["PhiDangKyKhuyenMai"] = i.PhiDangKyKhuyenMai;
+                r["Mã CTKM"] = i.MaCTKM;
+                r["Nội Dung"] = i.NoiDung;
+                r["Từ Ngày"] = i.TuNgay;
+                r["Đến Ngày"] = i.DenNgay;
+                r["Mã Gói Cước KM"] = i.MaGoiCuocKhuyenMai;
+                r["Phí Đăng Ký KM"] = i.PhiDangKyKhuyenMai;
                 dt.Rows.Add(r);
             }
 
@@ -44,12 +44,12 @@ namespace QuanLyInternet.BUS
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("STT", typeof(int));
-            dt.Columns.Add("MaCTKM", typeof(string));
-            dt.Columns.Add("NoiDung", typeof(string));
-            dt.Columns.Add("TuNgay", typeof(DateTime));
-            dt.Columns.Add("DenNgay", typeof(DateTime));
-            dt.Columns.Add("MaGoiCuocKhuyenMai", typeof(string));
-            dt.Columns.Add("PhiDangKyKhuyenMai", typeof(float));
+            dt.Columns.Add("Mã CTKM", typeof(string));
+            dt.Columns.Add("Nội Dung", typeof(string));
+            dt.Columns.Add("Từ Ngày", typeof(DateTime));
+            dt.Columns.Add("Đến Ngày", typeof(DateTime));
+            dt.Columns.Add("Mã Gói Cước KM", typeof(string));
+            dt.Columns.Add("Phí Đăng Ký KM", typeof(float));
 
             var kh = SQLDataContext.SQLData.getCTKMWith(mactkm);
             int stt = 1;
@@ -57,12 +57,12 @@ namespace QuanLyInternet.BUS
             {
                 DataRow r = dt.NewRow();
                 r["STT"] = stt++;
-                r["MaCTKM"] = i.MaCTKM;
-                r["NoiDung"] = i.NoiDung;
-                r["TuNgay"] = i.TuNgay;
-                r["DenNgay"] = i.DenNgay;
-                r["MaGoiCuocKhuyenMai"] = i.MaGoiCuocKhuyenMai;
-                r["PhiDangKyKhuyenMai"] = i.PhiDangKyKhuyenMai;
+                r["Mã CTKM"] = i.MaCTKM;
+                r["Nội Dung"] = i.NoiDung;
+                r["Từ Ngày"] = i.TuNgay;
+                r["Đến Ngày"] = i.DenNgay;
+                r["Mã Gói Cước KM"] = i.MaGoiCuocKhuyenMai;
+                r["Phí Đăng Ký KM"] = i.PhiDangKyKhuyenMai;
                 dt.Rows.Add(r);
             }
 

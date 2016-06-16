@@ -29,11 +29,10 @@
         private void InitializeComponent()
         {
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.ambiance_Label13 = new Ambiance.Ambiance_Label();
             this.ambiance_Label8 = new Ambiance.Ambiance_Label();
-            this.ambiance_ComboBox3 = new Ambiance.Ambiance_ComboBox();
-            this.ambiance_Label11 = new Ambiance.Ambiance_Label();
-            this.ambiance_ComboBox2 = new Ambiance.Ambiance_ComboBox();
-            this.ambiance_Label10 = new Ambiance.Ambiance_Label();
+            this.tbEmail = new Ambiance.Ambiance_TextBox();
+            this.ambiance_Label12 = new Ambiance.Ambiance_Label();
             this.ambiance_Button_11 = new Ambiance.Ambiance_Button_1();
             this.ambiance_ComboBox1 = new Ambiance.Ambiance_ComboBox();
             this.ambiance_Label9 = new Ambiance.Ambiance_Label();
@@ -51,14 +50,30 @@
             this.ambiance_Label2 = new Ambiance.Ambiance_Label();
             this.tbHoVaTen = new Ambiance.Ambiance_TextBox();
             this.ambiance_Label1 = new Ambiance.Ambiance_Label();
+            this.ambiance_ComboBox3 = new Ambiance.Ambiance_ComboBox();
+            this.ambiance_Label11 = new Ambiance.Ambiance_Label();
+            this.ambiance_ComboBox2 = new Ambiance.Ambiance_ComboBox();
+            this.ambiance_Label10 = new Ambiance.Ambiance_Label();
             this.SuspendLayout();
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(128, 245);
+            this.dateTimePicker1.Location = new System.Drawing.Point(154, 245);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(210, 20);
             this.dateTimePicker1.TabIndex = 25;
+            // 
+            // ambiance_Label13
+            // 
+            this.ambiance_Label13.AutoSize = true;
+            this.ambiance_Label13.BackColor = System.Drawing.Color.Transparent;
+            this.ambiance_Label13.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.ambiance_Label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
+            this.ambiance_Label13.Location = new System.Drawing.Point(12, 199);
+            this.ambiance_Label13.Name = "ambiance_Label13";
+            this.ambiance_Label13.Size = new System.Drawing.Size(115, 20);
+            this.ambiance_Label13.TabIndex = 27;
+            this.ambiance_Label13.Text = "kiểu khách hàng";
             // 
             // ambiance_Label8
             // 
@@ -72,69 +87,34 @@
             this.ambiance_Label8.TabIndex = 26;
             this.ambiance_Label8.Text = "Ngày áp dụng";
             // 
-            // ambiance_ComboBox3
+            // tbEmail
             // 
-            this.ambiance_ComboBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.ambiance_ComboBox3.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.ambiance_ComboBox3.DropDownHeight = 100;
-            this.ambiance_ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ambiance_ComboBox3.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.ambiance_ComboBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(142)))), ((int)(((byte)(142)))));
-            this.ambiance_ComboBox3.FormattingEnabled = true;
-            this.ambiance_ComboBox3.HoverSelectionColor = System.Drawing.Color.Empty;
-            this.ambiance_ComboBox3.IntegralHeight = false;
-            this.ambiance_ComboBox3.ItemHeight = 20;
-            this.ambiance_ComboBox3.Items.AddRange(new object[] {
-            "1"});
-            this.ambiance_ComboBox3.Location = new System.Drawing.Point(536, 194);
-            this.ambiance_ComboBox3.Name = "ambiance_ComboBox3";
-            this.ambiance_ComboBox3.Size = new System.Drawing.Size(211, 26);
-            this.ambiance_ComboBox3.StartIndex = 0;
-            this.ambiance_ComboBox3.TabIndex = 24;
+            this.tbEmail.BackColor = System.Drawing.Color.Transparent;
+            this.tbEmail.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.tbEmail.ForeColor = System.Drawing.Color.DimGray;
+            this.tbEmail.Location = new System.Drawing.Point(536, 197);
+            this.tbEmail.MaxLength = 32767;
+            this.tbEmail.Multiline = false;
+            this.tbEmail.Name = "tbEmail";
+            this.tbEmail.ReadOnly = false;
+            this.tbEmail.Size = new System.Drawing.Size(204, 28);
+            this.tbEmail.TabIndex = 26;
+            this.tbEmail.Text = "Email@example.com";
+            this.tbEmail.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.tbEmail.UseSystemPasswordChar = false;
+            this.tbEmail.TextChanged += new System.EventHandler(this.tbEmail_TextChanged);
             // 
-            // ambiance_Label11
+            // ambiance_Label12
             // 
-            this.ambiance_Label11.AutoSize = true;
-            this.ambiance_Label11.BackColor = System.Drawing.Color.Transparent;
-            this.ambiance_Label11.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.ambiance_Label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
-            this.ambiance_Label11.Location = new System.Drawing.Point(409, 195);
-            this.ambiance_Label11.Name = "ambiance_Label11";
-            this.ambiance_Label11.Size = new System.Drawing.Size(80, 20);
-            this.ambiance_Label11.TabIndex = 23;
-            this.ambiance_Label11.Text = "Đối Tượng";
-            // 
-            // ambiance_ComboBox2
-            // 
-            this.ambiance_ComboBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.ambiance_ComboBox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.ambiance_ComboBox2.DropDownHeight = 100;
-            this.ambiance_ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ambiance_ComboBox2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.ambiance_ComboBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(142)))), ((int)(((byte)(142)))));
-            this.ambiance_ComboBox2.FormattingEnabled = true;
-            this.ambiance_ComboBox2.HoverSelectionColor = System.Drawing.Color.Empty;
-            this.ambiance_ComboBox2.IntegralHeight = false;
-            this.ambiance_ComboBox2.ItemHeight = 20;
-            this.ambiance_ComboBox2.Items.AddRange(new object[] {
-            "1"});
-            this.ambiance_ComboBox2.Location = new System.Drawing.Point(128, 194);
-            this.ambiance_ComboBox2.Name = "ambiance_ComboBox2";
-            this.ambiance_ComboBox2.Size = new System.Drawing.Size(211, 26);
-            this.ambiance_ComboBox2.StartIndex = 0;
-            this.ambiance_ComboBox2.TabIndex = 22;
-            // 
-            // ambiance_Label10
-            // 
-            this.ambiance_Label10.AutoSize = true;
-            this.ambiance_Label10.BackColor = System.Drawing.Color.Transparent;
-            this.ambiance_Label10.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.ambiance_Label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
-            this.ambiance_Label10.Location = new System.Drawing.Point(12, 200);
-            this.ambiance_Label10.Name = "ambiance_Label10";
-            this.ambiance_Label10.Size = new System.Drawing.Size(68, 20);
-            this.ambiance_Label10.TabIndex = 21;
-            this.ambiance_Label10.Text = "Gói cước";
+            this.ambiance_Label12.AutoSize = true;
+            this.ambiance_Label12.BackColor = System.Drawing.Color.Transparent;
+            this.ambiance_Label12.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.ambiance_Label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
+            this.ambiance_Label12.Location = new System.Drawing.Point(405, 205);
+            this.ambiance_Label12.Name = "ambiance_Label12";
+            this.ambiance_Label12.Size = new System.Drawing.Size(46, 20);
+            this.ambiance_Label12.TabIndex = 25;
+            this.ambiance_Label12.Text = "Email";
             // 
             // ambiance_Button_11
             // 
@@ -189,7 +169,7 @@
             this.tbDCThanhToan.BackColor = System.Drawing.Color.Transparent;
             this.tbDCThanhToan.Font = new System.Drawing.Font("Tahoma", 11F);
             this.tbDCThanhToan.ForeColor = System.Drawing.Color.DimGray;
-            this.tbDCThanhToan.Location = new System.Drawing.Point(128, 151);
+            this.tbDCThanhToan.Location = new System.Drawing.Point(154, 151);
             this.tbDCThanhToan.MaxLength = 32767;
             this.tbDCThanhToan.Multiline = false;
             this.tbDCThanhToan.Name = "tbDCThanhToan";
@@ -244,7 +224,7 @@
             this.tbDCThuongTru.BackColor = System.Drawing.Color.Transparent;
             this.tbDCThuongTru.Font = new System.Drawing.Font("Tahoma", 11F);
             this.tbDCThuongTru.ForeColor = System.Drawing.Color.DimGray;
-            this.tbDCThuongTru.Location = new System.Drawing.Point(127, 108);
+            this.tbDCThuongTru.Location = new System.Drawing.Point(153, 108);
             this.tbDCThuongTru.MaxLength = 32767;
             this.tbDCThuongTru.Multiline = false;
             this.tbDCThuongTru.Name = "tbDCThuongTru";
@@ -299,7 +279,7 @@
             this.tbNgheNghiep.BackColor = System.Drawing.Color.Transparent;
             this.tbNgheNghiep.Font = new System.Drawing.Font("Tahoma", 11F);
             this.tbNgheNghiep.ForeColor = System.Drawing.Color.DimGray;
-            this.tbNgheNghiep.Location = new System.Drawing.Point(127, 63);
+            this.tbNgheNghiep.Location = new System.Drawing.Point(153, 63);
             this.tbNgheNghiep.MaxLength = 32767;
             this.tbNgheNghiep.Multiline = false;
             this.tbNgheNghiep.Name = "tbNgheNghiep";
@@ -355,7 +335,7 @@
             this.tbHoVaTen.BackColor = System.Drawing.Color.Transparent;
             this.tbHoVaTen.Font = new System.Drawing.Font("Tahoma", 11F);
             this.tbHoVaTen.ForeColor = System.Drawing.Color.DimGray;
-            this.tbHoVaTen.Location = new System.Drawing.Point(127, 18);
+            this.tbHoVaTen.Location = new System.Drawing.Point(153, 18);
             this.tbHoVaTen.MaxLength = 32767;
             this.tbHoVaTen.Multiline = false;
             this.tbHoVaTen.Name = "tbHoVaTen";
@@ -378,17 +358,80 @@
             this.ambiance_Label1.TabIndex = 0;
             this.ambiance_Label1.Text = "Họ và tên";
             // 
+            // ambiance_ComboBox3
+            // 
+            this.ambiance_ComboBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.ambiance_ComboBox3.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ambiance_ComboBox3.DropDownHeight = 100;
+            this.ambiance_ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ambiance_ComboBox3.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.ambiance_ComboBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(142)))), ((int)(((byte)(142)))));
+            this.ambiance_ComboBox3.FormattingEnabled = true;
+            this.ambiance_ComboBox3.HoverSelectionColor = System.Drawing.Color.Empty;
+            this.ambiance_ComboBox3.IntegralHeight = false;
+            this.ambiance_ComboBox3.ItemHeight = 20;
+            this.ambiance_ComboBox3.Items.AddRange(new object[] {
+            "1"});
+            this.ambiance_ComboBox3.Location = new System.Drawing.Point(153, 197);
+            this.ambiance_ComboBox3.Name = "ambiance_ComboBox3";
+            this.ambiance_ComboBox3.Size = new System.Drawing.Size(211, 26);
+            this.ambiance_ComboBox3.StartIndex = 0;
+            this.ambiance_ComboBox3.TabIndex = 24;
+            // 
+            // ambiance_Label11
+            // 
+            this.ambiance_Label11.AutoSize = true;
+            this.ambiance_Label11.BackColor = System.Drawing.Color.Transparent;
+            this.ambiance_Label11.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.ambiance_Label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
+            this.ambiance_Label11.Location = new System.Drawing.Point(409, 195);
+            this.ambiance_Label11.Name = "ambiance_Label11";
+            this.ambiance_Label11.Size = new System.Drawing.Size(80, 20);
+            this.ambiance_Label11.TabIndex = 23;
+            this.ambiance_Label11.Text = "Đối Tượng";
+            // 
+            // ambiance_ComboBox2
+            // 
+            this.ambiance_ComboBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.ambiance_ComboBox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ambiance_ComboBox2.DropDownHeight = 100;
+            this.ambiance_ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ambiance_ComboBox2.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.ambiance_ComboBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(142)))), ((int)(((byte)(142)))));
+            this.ambiance_ComboBox2.FormattingEnabled = true;
+            this.ambiance_ComboBox2.HoverSelectionColor = System.Drawing.Color.Empty;
+            this.ambiance_ComboBox2.IntegralHeight = false;
+            this.ambiance_ComboBox2.ItemHeight = 20;
+            this.ambiance_ComboBox2.Items.AddRange(new object[] {
+            "1"});
+            this.ambiance_ComboBox2.Location = new System.Drawing.Point(128, 194);
+            this.ambiance_ComboBox2.Name = "ambiance_ComboBox2";
+            this.ambiance_ComboBox2.Size = new System.Drawing.Size(211, 26);
+            this.ambiance_ComboBox2.StartIndex = 0;
+            this.ambiance_ComboBox2.TabIndex = 22;
+            // 
+            // ambiance_Label10
+            // 
+            this.ambiance_Label10.AutoSize = true;
+            this.ambiance_Label10.BackColor = System.Drawing.Color.Transparent;
+            this.ambiance_Label10.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.ambiance_Label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(77)))));
+            this.ambiance_Label10.Location = new System.Drawing.Point(12, 200);
+            this.ambiance_Label10.Name = "ambiance_Label10";
+            this.ambiance_Label10.Size = new System.Drawing.Size(68, 20);
+            this.ambiance_Label10.TabIndex = 21;
+            this.ambiance_Label10.Text = "Gói cước";
+            // 
             // FormDangKiMoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(758, 344);
+            this.ClientSize = new System.Drawing.Size(758, 338);
+            this.Controls.Add(this.ambiance_Label13);
             this.Controls.Add(this.ambiance_Label8);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.ambiance_ComboBox3);
-            this.Controls.Add(this.ambiance_Label11);
-            this.Controls.Add(this.ambiance_ComboBox2);
-            this.Controls.Add(this.ambiance_Label10);
+            this.Controls.Add(this.tbEmail);
+            this.Controls.Add(this.ambiance_Label12);
             this.Controls.Add(this.ambiance_Button_11);
             this.Controls.Add(this.ambiance_ComboBox1);
             this.Controls.Add(this.ambiance_Label9);
@@ -406,6 +449,7 @@
             this.Controls.Add(this.ambiance_Label2);
             this.Controls.Add(this.tbHoVaTen);
             this.Controls.Add(this.ambiance_Label1);
+            this.Controls.Add(this.ambiance_ComboBox3);
             this.Name = "FormDangKiMoi";
             this.Text = "Đăng kí mới";
             this.ResumeLayout(false);
@@ -438,5 +482,8 @@
         private Ambiance.Ambiance_ComboBox ambiance_ComboBox3;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private Ambiance.Ambiance_Label ambiance_Label8;
+        private Ambiance.Ambiance_TextBox tbEmail;
+        private Ambiance.Ambiance_Label ambiance_Label12;
+        private Ambiance.Ambiance_Label ambiance_Label13;
     }
 }

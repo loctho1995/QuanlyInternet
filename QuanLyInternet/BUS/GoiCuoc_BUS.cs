@@ -13,10 +13,10 @@ namespace QuanLyInternet.BUS
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("STT", typeof(int));
-            dt.Columns.Add("MaGoiCuoc", typeof(string));
-            dt.Columns.Add("TocDo", typeof(float));
-            dt.Columns.Add("CuocThueBaoThang", typeof(float));
-            dt.Columns.Add("SoMBMienPhi", typeof(float));
+            dt.Columns.Add("Mã Gói Cước", typeof(string));
+            dt.Columns.Add("Tốc Độ", typeof(float));
+            dt.Columns.Add("Cước Thuê Bao Tháng", typeof(float));
+            dt.Columns.Add("Số MB miễn phí", typeof(float));
 
             var kh = SQLDataContext.SQLData.getGoiCuoc();
             int stt = 1;
@@ -26,10 +26,10 @@ namespace QuanLyInternet.BUS
                     //continue;
                 DataRow r = dt.NewRow();
                 r["STT"] = stt++;
-                r["MaGoiCuoc"] = i.MaGoiCuoc;
-                r["TocDo"] = i.TocDo;
-                r["CuocThueBaoThang"] = i.CuocThueBaoThang;
-                r["SoMBMienPhi"] = i.SoMBMienPhi;
+                r["Mã Gói Cước"] = i.MaGoiCuoc;
+                r["Tốc Độ"] = i.TocDo;
+                r["Cước Thuê Bao Tháng"] = i.CuocThueBaoThang;
+                r["Số MB miễn phí"] = i.SoMBMienPhi;
                 dt.Rows.Add(r);
             }
 
@@ -42,10 +42,10 @@ namespace QuanLyInternet.BUS
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("STT", typeof(int));
-            dt.Columns.Add("MaGoiCuoc", typeof(string));
-            dt.Columns.Add("TocDo", typeof(float));
-            dt.Columns.Add("CuocThueBaoThang", typeof(float));
-            dt.Columns.Add("SoMBMienPhi", typeof(float));
+            dt.Columns.Add("Mã Gói Cước", typeof(string));
+            dt.Columns.Add("Tốc Độ", typeof(float));
+            dt.Columns.Add("Cước Thuê Bao Tháng", typeof(float));
+            dt.Columns.Add("Số MB miễn phí", typeof(float));
 
             var kh = SQLDataContext.SQLData.getGoiCuocWith(magoicuoc);
             int stt = 1;
@@ -55,10 +55,10 @@ namespace QuanLyInternet.BUS
                 //continue;
                 DataRow r = dt.NewRow();
                 r["STT"] = stt++;
-                r["MaGoiCuoc"] = i.MaGoiCuoc;
-                r["TocDo"] = i.TocDo;
-                r["CuocThueBaoThang"] = i.CuocThueBaoThang;
-                r["SoMBMienPhi"] = i.SoMBMienPhi;
+                r["Mã Gói Cước"] = i.MaGoiCuoc;
+                r["Tốc Độ"] = i.TocDo;
+                r["Cước Thuê Bao Tháng"] = i.CuocThueBaoThang;
+                r["Số MB miễn phí"] = i.SoMBMienPhi;
                 dt.Rows.Add(r);
             }
 

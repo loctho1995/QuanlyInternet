@@ -13,8 +13,8 @@ namespace QuanLyInternet.BUS
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("STT", typeof(int));
-            dt.Columns.Add("MaCTKM", typeof(string));
-            dt.Columns.Add("MaDoiTuong", typeof(string));
+            dt.Columns.Add("Mã CTKM", typeof(string));
+            dt.Columns.Add("Mã Đối Tượng", typeof(string));
 
             var km = SQLDataContext.SQLData.getDoiTuongApDungKM();
             int stt = 1;
@@ -22,8 +22,8 @@ namespace QuanLyInternet.BUS
             {
                 DataRow r = dt.NewRow();
                 r["STT"] = stt++;
-                r["MaCTKM"] = i.MaCTKM;
-                r["MaDoiTuong"] = i.MaDoiTuong;
+                r["Mã CTKM"] = i.MaCTKM;
+                r["Mã Đối Tượng"] = i.MaDoiTuong;
                 dt.Rows.Add(r);
             }
 

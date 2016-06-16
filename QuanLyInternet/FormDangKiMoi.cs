@@ -20,8 +20,8 @@ namespace QuanLyInternet
             ambiance_ComboBox2.Items.Clear();
             ambiance_ComboBox3.Items.Clear();
             DataTable dt = Database.GetInstance.DoiTuong.getAllResult();
-            int maDTindex = dt.Columns.IndexOf("MaDoiTuong");
-            int MoTaDTIndex = dt.Columns.IndexOf("MoTa");
+            int maDTindex = dt.Columns.IndexOf("Mã Đối Tượng");
+            int MoTaDTIndex = dt.Columns.IndexOf("Mô tả");
             foreach (DataRow row in dt.Rows)
             {
                 ComboboxItem item = new ComboboxItem();
@@ -32,7 +32,7 @@ namespace QuanLyInternet
             ambiance_ComboBox3.SelectedIndex = 0;
 
             DataTable maGC = Database.GetInstance.GoiCuoc.getAllResult();
-            int maGCindex = maGC.Columns.IndexOf("MaGoiCuoc");
+            int maGCindex = maGC.Columns.IndexOf("Mã Gói Cước");
 
             foreach (DataRow row in maGC.Rows)
             {
@@ -45,8 +45,8 @@ namespace QuanLyInternet
             ambiance_ComboBox2.SelectedIndex = 0;
 
             DataTable maTT = Database.GetInstance.TinhTrang.getAllResult();
-            int maTTindex = maTT.Columns.IndexOf("MaTinhTrang");
-            int NoiDungmaTTIndex = maTT.Columns.IndexOf("NoiDung");
+            int maTTindex = maTT.Columns.IndexOf("Mã Tình Trạng");
+            int NoiDungmaTTIndex = maTT.Columns.IndexOf("Nội Dung");
             foreach (DataRow row in maTT.Rows)
             {
                 ComboboxItem item = new ComboboxItem();
@@ -63,7 +63,7 @@ namespace QuanLyInternet
             {
                 MessageBox.Show("Vui lòng chỉ điền chữ số!");
 
-                tbSoCMND.Text = "";
+                tbSoCMND.Text = tbSoCMND.Text.Substring(0, tbSoCMND.Text.Length - 1);
             }
         }
 
@@ -76,7 +76,7 @@ namespace QuanLyInternet
             if (System.Text.RegularExpressions.Regex.IsMatch(tbSoDienThoai.Text, "[^0-9]"))
             {
                 MessageBox.Show("Vui lòng chỉ điền chữ số.");
-                tbSoDienThoai.Text = "";
+                tbSoDienThoai.Text = tbSoDienThoai.Text.Substring(0, tbSoCMND.Text.Length - 1);
             }
         }
 
@@ -88,7 +88,7 @@ namespace QuanLyInternet
                 return;
             }
             DataTable dt = Database.GetInstance.HopDong.getAllResult();
-            int maHDindex = dt.Columns.IndexOf("MaHopDong");
+            int maHDindex = dt.Columns.IndexOf("Mã Hợp Đồng");
             List<int> maHDindexes = new List<int>();
             foreach (DataRow row in dt.Rows)
             {
@@ -100,10 +100,12 @@ namespace QuanLyInternet
             {
                 maHDmoi++;
             }
-
+            var GC = Database.GetInstance.GoiCuoc.getGoiCuocWith((ambiance_ComboBox2.SelectedItem as ComboboxItem).Value.ToString());
+            int cuocphiindex = GC.Columns.IndexOf("Cước Thuê Bao Tháng");
+            var KHRow = dt.Rows[0];
+            string cuocphi = KHRow.ItemArray[cuocphiindex].ToString();
             //int stk = Int32.Parse(tbSoTaiKhoan.Text);
 
-            int sdt = Int32.Parse(tbSoDienThoai.Text);
             try
             {
                 Database.GetInstance.HopDong.addHopDong(maHDmoi.ToString(),
@@ -117,16 +119,18 @@ namespace QuanLyInternet
                                                         DateTime.Now,
                                                         (ambiance_ComboBox3.SelectedItem as ComboboxItem).Value.ToString(),
                                                         (ambiance_ComboBox2.SelectedItem as ComboboxItem).Value.ToString(),
-                                                        dateTimePicker1.Value,
-                                                        1,
+                                                        DateTime.Now,
+                                                        float.Parse(cuocphi),
                                                         (ambiance_ComboBox1.SelectedItem as ComboboxItem).Value.ToString(),
                                                         "user",
                                                         "password",
-                                                        "@email"
+                                                        tbEmail.Text
                                                         );
                 
                 MessageBox.Show("Thành Công");
+                new FormHoaDon(maHDmoi.ToString()).Show();
                 this.Close();
+
 
             }
             catch (System.Data.SqlClient.SqlException exc)
@@ -134,17 +138,22 @@ namespace QuanLyInternet
                 MessageBox.Show("Có lỗi xảy ra" + exc.Source);
             }
         }
+        private void tbEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }    
 
         private void tbHoVaTen_TextChanged(object sender, EventArgs e)
         {
             for(int i = 0;i < (sender as Ambiance.Ambiance_TextBox).Text.Length;i++)
             {
                 if(CharUnicodeInfo.GetUnicodeCategory((sender as Ambiance.Ambiance_TextBox).Text[i]) != UnicodeCategory.UppercaseLetter
-                    && CharUnicodeInfo.GetUnicodeCategory((sender as Ambiance.Ambiance_TextBox).Text[i]) != UnicodeCategory.LowercaseLetter)
+                    && CharUnicodeInfo.GetUnicodeCategory((sender as Ambiance.Ambiance_TextBox).Text[i]) != UnicodeCategory.LowercaseLetter
+                    && ((sender as Ambiance.Ambiance_TextBox).Text[i]) != ' ')
                 {
                     MessageBox.Show("Vui lòng chỉ điền chữ!");
 
-                    tbHoVaTen.Text = "";
+                    (sender as Ambiance.Ambiance_TextBox).Text = "";
                 }
             }
         }
@@ -154,11 +163,12 @@ namespace QuanLyInternet
             for(int i = 0;i < (sender as Ambiance.Ambiance_TextBox).Text.Length;i++)
             {
                 if(CharUnicodeInfo.GetUnicodeCategory((sender as Ambiance.Ambiance_TextBox).Text[i]) != UnicodeCategory.UppercaseLetter
-                    && CharUnicodeInfo.GetUnicodeCategory((sender as Ambiance.Ambiance_TextBox).Text[i]) != UnicodeCategory.LowercaseLetter)
+                    && CharUnicodeInfo.GetUnicodeCategory((sender as Ambiance.Ambiance_TextBox).Text[i]) != UnicodeCategory.LowercaseLetter
+                    && ((sender as Ambiance.Ambiance_TextBox).Text[i]) != ' ')
                 {
                     MessageBox.Show("Vui lòng chỉ điền chữ!");
 
-                    tbHoVaTen.Text = "";
+                    (sender as Ambiance.Ambiance_TextBox).Text = "";
                 }
             }
         }

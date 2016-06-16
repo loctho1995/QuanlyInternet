@@ -45,5 +45,10 @@ namespace QuanLyInternet
                 }
             }
         }
+        private void btOK_Click(object sender, EventArgs e)
+        {
+
+
+        }
     }
 }

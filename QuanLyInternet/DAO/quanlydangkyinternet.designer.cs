@@ -33,9 +33,9 @@ namespace QuanLyInternet.DAO
     partial void InsertCTGOICUOC(CTGOICUOC instance);
     partial void UpdateCTGOICUOC(CTGOICUOC instance);
     partial void DeleteCTGOICUOC(CTGOICUOC instance);
-    partial void InsertTINHTRANG(TINHTRANG instance);
-    partial void UpdateTINHTRANG(TINHTRANG instance);
-    partial void DeleteTINHTRANG(TINHTRANG instance);
+    partial void InsertTHONGTINTRUYCAP(THONGTINTRUYCAP instance);
+    partial void UpdateTHONGTINTRUYCAP(THONGTINTRUYCAP instance);
+    partial void DeleteTHONGTINTRUYCAP(THONGTINTRUYCAP instance);
     partial void InsertCTKM(CTKM instance);
     partial void UpdateCTKM(CTKM instance);
     partial void DeleteCTKM(CTKM instance);
@@ -57,13 +57,13 @@ namespace QuanLyInternet.DAO
     partial void InsertLOAIGIOTRUYCAP(LOAIGIOTRUYCAP instance);
     partial void UpdateLOAIGIOTRUYCAP(LOAIGIOTRUYCAP instance);
     partial void DeleteLOAIGIOTRUYCAP(LOAIGIOTRUYCAP instance);
-    partial void InsertTHONGTINTRUYCAP(THONGTINTRUYCAP instance);
-    partial void UpdateTHONGTINTRUYCAP(THONGTINTRUYCAP instance);
-    partial void DeleteTHONGTINTRUYCAP(THONGTINTRUYCAP instance);
+    partial void InsertTINHTRANG(TINHTRANG instance);
+    partial void UpdateTINHTRANG(TINHTRANG instance);
+    partial void DeleteTINHTRANG(TINHTRANG instance);
     #endregion
 		
 		public quanlydangkyinternetDataContext() : 
-				base(global::QuanLyInternet.Properties.Settings.Default.QuanLyDangKyInternetConnectionString2, mappingSource)
+				base(global::QuanLyInternet.Properties.Settings.Default.QuanLyDangKyInternetConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -100,11 +100,11 @@ namespace QuanLyInternet.DAO
 			}
 		}
 		
-		public System.Data.Linq.Table<TINHTRANG> TINHTRANGs
+		public System.Data.Linq.Table<THONGTINTRUYCAP> THONGTINTRUYCAPs
 		{
 			get
 			{
-				return this.GetTable<TINHTRANG>();
+				return this.GetTable<THONGTINTRUYCAP>();
 			}
 		}
 		
@@ -164,19 +164,19 @@ namespace QuanLyInternet.DAO
 			}
 		}
 		
+		public System.Data.Linq.Table<TINHTRANG> TINHTRANGs
+		{
+			get
+			{
+				return this.GetTable<TINHTRANG>();
+			}
+		}
+		
 		public System.Data.Linq.Table<THAMSO> THAMSOs
 		{
 			get
 			{
 				return this.GetTable<THAMSO>();
-			}
-		}
-		
-		public System.Data.Linq.Table<THONGTINTRUYCAP> THONGTINTRUYCAPs
-		{
-			get
-			{
-				return this.GetTable<THONGTINTRUYCAP>();
 			}
 		}
 		
@@ -260,17 +260,17 @@ namespace QuanLyInternet.DAO
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.addThongTinTruyCap")]
-		public int addThongTinTruyCap([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string mahopdong, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> ngaytruycap, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Time")] System.Nullable<System.TimeSpan> thoidiemtruycap, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string diachitruycap, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Float")] System.Nullable<double> dungluongsudung)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mahopdong, ngaytruycap, thoidiemtruycap, diachitruycap, dungluongsudung);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.addTinhTrang")]
 		public int addTinhTrang([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string matinhtrang, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(100)")] string noidung)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), matinhtrang, noidung);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.addThongTinTruyCap")]
+		public int addThongTinTruyCap([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string mahopdong, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> ngaytruycap, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Time")] System.Nullable<System.TimeSpan> thoidiemtruycap, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string diachitruycap, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Float")] System.Nullable<double> dungluongsudung)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mahopdong, ngaytruycap, thoidiemtruycap, diachitruycap, dungluongsudung);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -410,17 +410,17 @@ namespace QuanLyInternet.DAO
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.editThamSo")]
-		public int editThamSo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Float")] System.Nullable<double> phidangky, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> ngaybatdauthuphi, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> ngayketthucthuphi)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), phidangky, ngaybatdauthuphi, ngayketthucthuphi);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.editTinhTrang")]
 		public int editTinhTrang([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string matinhtrang, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(100)")] string noidung)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), matinhtrang, noidung);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.editThamSo")]
+		public int editThamSo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Float")] System.Nullable<double> phidangky, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> ngaybatdauthuphi, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> ngayketthucthuphi)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), phidangky, ngaybatdauthuphi, ngayketthucthuphi);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -494,6 +494,13 @@ namespace QuanLyInternet.DAO
 			return ((ISingleResult<getLoaiGioTruyCapResult>)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.getTinhTrang")]
+		public ISingleResult<getTinhTrangResult> getTinhTrang()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<getTinhTrangResult>)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.getThamSo")]
 		public ISingleResult<getThamSoResult> getThamSo()
 		{
@@ -506,13 +513,6 @@ namespace QuanLyInternet.DAO
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<getThongTinTruyCapResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.getTinhTrang")]
-		public ISingleResult<getTinhTrangResult> getTinhTrang()
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<getTinhTrangResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.searchHopDong")]
@@ -715,84 +715,205 @@ namespace QuanLyInternet.DAO
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TINHTRANG")]
-	public partial class TINHTRANG : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.THONGTINTRUYCAP")]
+	public partial class THONGTINTRUYCAP : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _MaTinhTrang;
+		private int _STT;
 		
-		private string _NoiDung;
+		private string _MaHopDong;
 		
-		private EntitySet<HOPDONG> _HOPDONGs;
+		private System.Nullable<System.DateTime> _NgayTruyCap;
+		
+		private System.Nullable<System.TimeSpan> _ThoiDiemTruyCap;
+		
+		private string _DiaChiTruyCap;
+		
+		private System.Nullable<double> _DungLuongSuDung;
+		
+		private EntityRef<HOPDONG> _HOPDONG;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnMaTinhTrangChanging(string value);
-    partial void OnMaTinhTrangChanged();
-    partial void OnNoiDungChanging(string value);
-    partial void OnNoiDungChanged();
+    partial void OnSTTChanging(int value);
+    partial void OnSTTChanged();
+    partial void OnMaHopDongChanging(string value);
+    partial void OnMaHopDongChanged();
+    partial void OnNgayTruyCapChanging(System.Nullable<System.DateTime> value);
+    partial void OnNgayTruyCapChanged();
+    partial void OnThoiDiemTruyCapChanging(System.Nullable<System.TimeSpan> value);
+    partial void OnThoiDiemTruyCapChanged();
+    partial void OnDiaChiTruyCapChanging(string value);
+    partial void OnDiaChiTruyCapChanged();
+    partial void OnDungLuongSuDungChanging(System.Nullable<double> value);
+    partial void OnDungLuongSuDungChanged();
     #endregion
 		
-		public TINHTRANG()
+		public THONGTINTRUYCAP()
 		{
-			this._HOPDONGs = new EntitySet<HOPDONG>(new Action<HOPDONG>(this.attach_HOPDONGs), new Action<HOPDONG>(this.detach_HOPDONGs));
+			this._HOPDONG = default(EntityRef<HOPDONG>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaTinhTrang", DbType="VarChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string MaTinhTrang
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STT", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int STT
 		{
 			get
 			{
-				return this._MaTinhTrang;
+				return this._STT;
 			}
 			set
 			{
-				if ((this._MaTinhTrang != value))
+				if ((this._STT != value))
 				{
-					this.OnMaTinhTrangChanging(value);
+					this.OnSTTChanging(value);
 					this.SendPropertyChanging();
-					this._MaTinhTrang = value;
-					this.SendPropertyChanged("MaTinhTrang");
-					this.OnMaTinhTrangChanged();
+					this._STT = value;
+					this.SendPropertyChanged("STT");
+					this.OnSTTChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NoiDung", DbType="NVarChar(100)")]
-		public string NoiDung
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaHopDong", DbType="VarChar(10)")]
+		public string MaHopDong
 		{
 			get
 			{
-				return this._NoiDung;
+				return this._MaHopDong;
 			}
 			set
 			{
-				if ((this._NoiDung != value))
+				if ((this._MaHopDong != value))
 				{
-					this.OnNoiDungChanging(value);
+					if (this._HOPDONG.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMaHopDongChanging(value);
 					this.SendPropertyChanging();
-					this._NoiDung = value;
-					this.SendPropertyChanged("NoiDung");
-					this.OnNoiDungChanged();
+					this._MaHopDong = value;
+					this.SendPropertyChanged("MaHopDong");
+					this.OnMaHopDongChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TINHTRANG_HOPDONG", Storage="_HOPDONGs", ThisKey="MaTinhTrang", OtherKey="TinhTrang")]
-		public EntitySet<HOPDONG> HOPDONGs
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayTruyCap", DbType="Date")]
+		public System.Nullable<System.DateTime> NgayTruyCap
 		{
 			get
 			{
-				return this._HOPDONGs;
+				return this._NgayTruyCap;
 			}
 			set
 			{
-				this._HOPDONGs.Assign(value);
+				if ((this._NgayTruyCap != value))
+				{
+					this.OnNgayTruyCapChanging(value);
+					this.SendPropertyChanging();
+					this._NgayTruyCap = value;
+					this.SendPropertyChanged("NgayTruyCap");
+					this.OnNgayTruyCapChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ThoiDiemTruyCap", DbType="Time")]
+		public System.Nullable<System.TimeSpan> ThoiDiemTruyCap
+		{
+			get
+			{
+				return this._ThoiDiemTruyCap;
+			}
+			set
+			{
+				if ((this._ThoiDiemTruyCap != value))
+				{
+					this.OnThoiDiemTruyCapChanging(value);
+					this.SendPropertyChanging();
+					this._ThoiDiemTruyCap = value;
+					this.SendPropertyChanged("ThoiDiemTruyCap");
+					this.OnThoiDiemTruyCapChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiaChiTruyCap", DbType="VarChar(50)")]
+		public string DiaChiTruyCap
+		{
+			get
+			{
+				return this._DiaChiTruyCap;
+			}
+			set
+			{
+				if ((this._DiaChiTruyCap != value))
+				{
+					this.OnDiaChiTruyCapChanging(value);
+					this.SendPropertyChanging();
+					this._DiaChiTruyCap = value;
+					this.SendPropertyChanged("DiaChiTruyCap");
+					this.OnDiaChiTruyCapChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DungLuongSuDung", DbType="Float")]
+		public System.Nullable<double> DungLuongSuDung
+		{
+			get
+			{
+				return this._DungLuongSuDung;
+			}
+			set
+			{
+				if ((this._DungLuongSuDung != value))
+				{
+					this.OnDungLuongSuDungChanging(value);
+					this.SendPropertyChanging();
+					this._DungLuongSuDung = value;
+					this.SendPropertyChanged("DungLuongSuDung");
+					this.OnDungLuongSuDungChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="HOPDONG_THONGTINTRUYCAP", Storage="_HOPDONG", ThisKey="MaHopDong", OtherKey="MaHopDong", IsForeignKey=true)]
+		public HOPDONG HOPDONG
+		{
+			get
+			{
+				return this._HOPDONG.Entity;
+			}
+			set
+			{
+				HOPDONG previousValue = this._HOPDONG.Entity;
+				if (((previousValue != value) 
+							|| (this._HOPDONG.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._HOPDONG.Entity = null;
+						previousValue.THONGTINTRUYCAPs.Remove(this);
+					}
+					this._HOPDONG.Entity = value;
+					if ((value != null))
+					{
+						value.THONGTINTRUYCAPs.Add(this);
+						this._MaHopDong = value.MaHopDong;
+					}
+					else
+					{
+						this._MaHopDong = default(string);
+					}
+					this.SendPropertyChanged("HOPDONG");
+				}
 			}
 		}
 		
@@ -814,18 +935,6 @@ namespace QuanLyInternet.DAO
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_HOPDONGs(HOPDONG entity)
-		{
-			this.SendPropertyChanging();
-			entity.TINHTRANG1 = this;
-		}
-		
-		private void detach_HOPDONGs(HOPDONG entity)
-		{
-			this.SendPropertyChanging();
-			entity.TINHTRANG1 = null;
 		}
 	}
 	
@@ -1919,9 +2028,9 @@ namespace QuanLyInternet.DAO
 		
 		private string _Email;
 		
-		private EntitySet<HOADONTHANG> _HOADONTHANGs;
-		
 		private EntitySet<THONGTINTRUYCAP> _THONGTINTRUYCAPs;
+		
+		private EntitySet<HOADONTHANG> _HOADONTHANGs;
 		
 		private EntityRef<DOITUONG> _DOITUONG;
 		
@@ -1971,8 +2080,8 @@ namespace QuanLyInternet.DAO
 		
 		public HOPDONG()
 		{
-			this._HOADONTHANGs = new EntitySet<HOADONTHANG>(new Action<HOADONTHANG>(this.attach_HOADONTHANGs), new Action<HOADONTHANG>(this.detach_HOADONTHANGs));
 			this._THONGTINTRUYCAPs = new EntitySet<THONGTINTRUYCAP>(new Action<THONGTINTRUYCAP>(this.attach_THONGTINTRUYCAPs), new Action<THONGTINTRUYCAP>(this.detach_THONGTINTRUYCAPs));
+			this._HOADONTHANGs = new EntitySet<HOADONTHANG>(new Action<HOADONTHANG>(this.attach_HOADONTHANGs), new Action<HOADONTHANG>(this.detach_HOADONTHANGs));
 			this._DOITUONG = default(EntityRef<DOITUONG>);
 			this._GOICUOC = default(EntityRef<GOICUOC>);
 			this._TINHTRANG1 = default(EntityRef<TINHTRANG>);
@@ -2331,19 +2440,6 @@ namespace QuanLyInternet.DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="HOPDONG_HOADONTHANG", Storage="_HOADONTHANGs", ThisKey="MaHopDong", OtherKey="MaHopDong")]
-		public EntitySet<HOADONTHANG> HOADONTHANGs
-		{
-			get
-			{
-				return this._HOADONTHANGs;
-			}
-			set
-			{
-				this._HOADONTHANGs.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="HOPDONG_THONGTINTRUYCAP", Storage="_THONGTINTRUYCAPs", ThisKey="MaHopDong", OtherKey="MaHopDong")]
 		public EntitySet<THONGTINTRUYCAP> THONGTINTRUYCAPs
 		{
@@ -2354,6 +2450,19 @@ namespace QuanLyInternet.DAO
 			set
 			{
 				this._THONGTINTRUYCAPs.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="HOPDONG_HOADONTHANG", Storage="_HOADONTHANGs", ThisKey="MaHopDong", OtherKey="MaHopDong")]
+		public EntitySet<HOADONTHANG> HOADONTHANGs
+		{
+			get
+			{
+				return this._HOADONTHANGs;
+			}
+			set
+			{
+				this._HOADONTHANGs.Assign(value);
 			}
 		}
 		
@@ -2479,18 +2588,6 @@ namespace QuanLyInternet.DAO
 			}
 		}
 		
-		private void attach_HOADONTHANGs(HOADONTHANG entity)
-		{
-			this.SendPropertyChanging();
-			entity.HOPDONG = this;
-		}
-		
-		private void detach_HOADONTHANGs(HOADONTHANG entity)
-		{
-			this.SendPropertyChanging();
-			entity.HOPDONG = null;
-		}
-		
 		private void attach_THONGTINTRUYCAPs(THONGTINTRUYCAP entity)
 		{
 			this.SendPropertyChanging();
@@ -2498,6 +2595,18 @@ namespace QuanLyInternet.DAO
 		}
 		
 		private void detach_THONGTINTRUYCAPs(THONGTINTRUYCAP entity)
+		{
+			this.SendPropertyChanging();
+			entity.HOPDONG = null;
+		}
+		
+		private void attach_HOADONTHANGs(HOADONTHANG entity)
+		{
+			this.SendPropertyChanging();
+			entity.HOPDONG = this;
+		}
+		
+		private void detach_HOADONTHANGs(HOADONTHANG entity)
 		{
 			this.SendPropertyChanging();
 			entity.HOPDONG = null;
@@ -2618,6 +2727,120 @@ namespace QuanLyInternet.DAO
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TINHTRANG")]
+	public partial class TINHTRANG : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _MaTinhTrang;
+		
+		private string _NoiDung;
+		
+		private EntitySet<HOPDONG> _HOPDONGs;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaTinhTrangChanging(string value);
+    partial void OnMaTinhTrangChanged();
+    partial void OnNoiDungChanging(string value);
+    partial void OnNoiDungChanged();
+    #endregion
+		
+		public TINHTRANG()
+		{
+			this._HOPDONGs = new EntitySet<HOPDONG>(new Action<HOPDONG>(this.attach_HOPDONGs), new Action<HOPDONG>(this.detach_HOPDONGs));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaTinhTrang", DbType="VarChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string MaTinhTrang
+		{
+			get
+			{
+				return this._MaTinhTrang;
+			}
+			set
+			{
+				if ((this._MaTinhTrang != value))
+				{
+					this.OnMaTinhTrangChanging(value);
+					this.SendPropertyChanging();
+					this._MaTinhTrang = value;
+					this.SendPropertyChanged("MaTinhTrang");
+					this.OnMaTinhTrangChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NoiDung", DbType="NVarChar(100)")]
+		public string NoiDung
+		{
+			get
+			{
+				return this._NoiDung;
+			}
+			set
+			{
+				if ((this._NoiDung != value))
+				{
+					this.OnNoiDungChanging(value);
+					this.SendPropertyChanging();
+					this._NoiDung = value;
+					this.SendPropertyChanged("NoiDung");
+					this.OnNoiDungChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TINHTRANG_HOPDONG", Storage="_HOPDONGs", ThisKey="MaTinhTrang", OtherKey="TinhTrang")]
+		public EntitySet<HOPDONG> HOPDONGs
+		{
+			get
+			{
+				return this._HOPDONGs;
+			}
+			set
+			{
+				this._HOPDONGs.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_HOPDONGs(HOPDONG entity)
+		{
+			this.SendPropertyChanging();
+			entity.TINHTRANG1 = this;
+		}
+		
+		private void detach_HOPDONGs(HOPDONG entity)
+		{
+			this.SendPropertyChanging();
+			entity.TINHTRANG1 = null;
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.THAMSO")]
 	public partial class THAMSO
 	{
@@ -2677,229 +2900,6 @@ namespace QuanLyInternet.DAO
 				{
 					this._NgayKetThucThuPhi = value;
 				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.THONGTINTRUYCAP")]
-	public partial class THONGTINTRUYCAP : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _STT;
-		
-		private string _MaHopDong;
-		
-		private System.Nullable<System.DateTime> _NgayTruyCap;
-		
-		private System.Nullable<System.TimeSpan> _ThoiDiemTruyCap;
-		
-		private string _DiaChiTruyCap;
-		
-		private System.Nullable<double> _DungLuongSuDung;
-		
-		private EntityRef<HOPDONG> _HOPDONG;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnSTTChanging(int value);
-    partial void OnSTTChanged();
-    partial void OnMaHopDongChanging(string value);
-    partial void OnMaHopDongChanged();
-    partial void OnNgayTruyCapChanging(System.Nullable<System.DateTime> value);
-    partial void OnNgayTruyCapChanged();
-    partial void OnThoiDiemTruyCapChanging(System.Nullable<System.TimeSpan> value);
-    partial void OnThoiDiemTruyCapChanged();
-    partial void OnDiaChiTruyCapChanging(string value);
-    partial void OnDiaChiTruyCapChanged();
-    partial void OnDungLuongSuDungChanging(System.Nullable<double> value);
-    partial void OnDungLuongSuDungChanged();
-    #endregion
-		
-		public THONGTINTRUYCAP()
-		{
-			this._HOPDONG = default(EntityRef<HOPDONG>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STT", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int STT
-		{
-			get
-			{
-				return this._STT;
-			}
-			set
-			{
-				if ((this._STT != value))
-				{
-					this.OnSTTChanging(value);
-					this.SendPropertyChanging();
-					this._STT = value;
-					this.SendPropertyChanged("STT");
-					this.OnSTTChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaHopDong", DbType="VarChar(10)")]
-		public string MaHopDong
-		{
-			get
-			{
-				return this._MaHopDong;
-			}
-			set
-			{
-				if ((this._MaHopDong != value))
-				{
-					if (this._HOPDONG.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMaHopDongChanging(value);
-					this.SendPropertyChanging();
-					this._MaHopDong = value;
-					this.SendPropertyChanged("MaHopDong");
-					this.OnMaHopDongChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayTruyCap", DbType="Date")]
-		public System.Nullable<System.DateTime> NgayTruyCap
-		{
-			get
-			{
-				return this._NgayTruyCap;
-			}
-			set
-			{
-				if ((this._NgayTruyCap != value))
-				{
-					this.OnNgayTruyCapChanging(value);
-					this.SendPropertyChanging();
-					this._NgayTruyCap = value;
-					this.SendPropertyChanged("NgayTruyCap");
-					this.OnNgayTruyCapChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ThoiDiemTruyCap", DbType="Time")]
-		public System.Nullable<System.TimeSpan> ThoiDiemTruyCap
-		{
-			get
-			{
-				return this._ThoiDiemTruyCap;
-			}
-			set
-			{
-				if ((this._ThoiDiemTruyCap != value))
-				{
-					this.OnThoiDiemTruyCapChanging(value);
-					this.SendPropertyChanging();
-					this._ThoiDiemTruyCap = value;
-					this.SendPropertyChanged("ThoiDiemTruyCap");
-					this.OnThoiDiemTruyCapChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiaChiTruyCap", DbType="VarChar(50)")]
-		public string DiaChiTruyCap
-		{
-			get
-			{
-				return this._DiaChiTruyCap;
-			}
-			set
-			{
-				if ((this._DiaChiTruyCap != value))
-				{
-					this.OnDiaChiTruyCapChanging(value);
-					this.SendPropertyChanging();
-					this._DiaChiTruyCap = value;
-					this.SendPropertyChanged("DiaChiTruyCap");
-					this.OnDiaChiTruyCapChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DungLuongSuDung", DbType="Float")]
-		public System.Nullable<double> DungLuongSuDung
-		{
-			get
-			{
-				return this._DungLuongSuDung;
-			}
-			set
-			{
-				if ((this._DungLuongSuDung != value))
-				{
-					this.OnDungLuongSuDungChanging(value);
-					this.SendPropertyChanging();
-					this._DungLuongSuDung = value;
-					this.SendPropertyChanged("DungLuongSuDung");
-					this.OnDungLuongSuDungChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="HOPDONG_THONGTINTRUYCAP", Storage="_HOPDONG", ThisKey="MaHopDong", OtherKey="MaHopDong", IsForeignKey=true)]
-		public HOPDONG HOPDONG
-		{
-			get
-			{
-				return this._HOPDONG.Entity;
-			}
-			set
-			{
-				HOPDONG previousValue = this._HOPDONG.Entity;
-				if (((previousValue != value) 
-							|| (this._HOPDONG.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._HOPDONG.Entity = null;
-						previousValue.THONGTINTRUYCAPs.Remove(this);
-					}
-					this._HOPDONG.Entity = value;
-					if ((value != null))
-					{
-						value.THONGTINTRUYCAPs.Add(this);
-						this._MaHopDong = value.MaHopDong;
-					}
-					else
-					{
-						this._MaHopDong = default(string);
-					}
-					this.SendPropertyChanged("HOPDONG");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
@@ -4072,6 +4072,50 @@ namespace QuanLyInternet.DAO
 		}
 	}
 	
+	public partial class getTinhTrangResult
+	{
+		
+		private string _MaTinhTrang;
+		
+		private string _NoiDung;
+		
+		public getTinhTrangResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaTinhTrang", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string MaTinhTrang
+		{
+			get
+			{
+				return this._MaTinhTrang;
+			}
+			set
+			{
+				if ((this._MaTinhTrang != value))
+				{
+					this._MaTinhTrang = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NoiDung", DbType="NVarChar(100)")]
+		public string NoiDung
+		{
+			get
+			{
+				return this._NoiDung;
+			}
+			set
+			{
+				if ((this._NoiDung != value))
+				{
+					this._NoiDung = value;
+				}
+			}
+		}
+	}
+	
 	public partial class getThamSoResult
 	{
 		
@@ -4245,50 +4289,6 @@ namespace QuanLyInternet.DAO
 				if ((this._DungLuongSuDung != value))
 				{
 					this._DungLuongSuDung = value;
-				}
-			}
-		}
-	}
-	
-	public partial class getTinhTrangResult
-	{
-		
-		private string _MaTinhTrang;
-		
-		private string _NoiDung;
-		
-		public getTinhTrangResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaTinhTrang", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
-		public string MaTinhTrang
-		{
-			get
-			{
-				return this._MaTinhTrang;
-			}
-			set
-			{
-				if ((this._MaTinhTrang != value))
-				{
-					this._MaTinhTrang = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NoiDung", DbType="NVarChar(100)")]
-		public string NoiDung
-		{
-			get
-			{
-				return this._NoiDung;
-			}
-			set
-			{
-				if ((this._NoiDung != value))
-				{
-					this._NoiDung = value;
 				}
 			}
 		}

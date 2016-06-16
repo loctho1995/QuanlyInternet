@@ -26,8 +26,7 @@ namespace QuanLyInternet
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
-            int maHDindex = dataGridView1.Columns["MaHopDong"].Index;
-            //dataGridView1.SelectedRows;
+            int maHDindex = dataGridView1.Columns["Mã Hợp Đồng"].Index;
             int rowIndex = dataGridView1.CurrentCell.RowIndex;
             string maHD = dataGridView1[maHDindex, rowIndex].Value.ToString();
             FormHienThiKhachHang hienThiKhachHang = new FormHienThiKhachHang(maHD);
@@ -39,8 +38,7 @@ namespace QuanLyInternet
         {
             try
             {
-                int maHDindex = dataGridView1.Columns["MaHopDong"].Index;
-                //dataGridView1.SelectedRows;
+                int maHDindex = dataGridView1.Columns["Mã Hợp Đồng"].Index;
                 int rowIndex = dataGridView1.CurrentCell.RowIndex;
                 string maHD = dataGridView1[maHDindex, rowIndex].Value.ToString();
                 FormHienThiKhachHang hienThiKhachHang = new FormHienThiKhachHang(maHD);
@@ -62,8 +60,7 @@ namespace QuanLyInternet
                 
                 try
                 {
-                    int maHDindex = dataGridView1.Columns["MaHopDong"].Index;
-                    //dataGridView1.SelectedRows;
+                    int maHDindex = dataGridView1.Columns["Mã Hợp Đồng"].Index;
                     int rowIndex = dataGridView1.CurrentCell.RowIndex;
                     string maHD = dataGridView1[maHDindex, rowIndex].Value.ToString();
                     Database.GetInstance.HopDong.deleteHopDong(maHD);

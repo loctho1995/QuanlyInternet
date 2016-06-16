@@ -308,6 +308,7 @@
             this.btOK.TabIndex = 38;
             this.btOK.Text = "Hoàn tất";
             this.btOK.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btOK.Click += new System.EventHandler(this.btOK_Click);
             // 
             // ambiance_Label10
             // 
